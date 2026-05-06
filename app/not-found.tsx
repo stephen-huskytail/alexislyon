@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 
 export default function NotFound() {
   return (
-    <main>
+    <main id="page-content">
       <Nav />
       <section className="section flex min-h-[78vh] items-center pt-36">
         <div className="container text-center">

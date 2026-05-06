@@ -97,7 +97,7 @@ const sections = [
 
 export default function Privacy() {
   return (
-    <main>
+    <main id="page-content">
       <Nav />
       <section className="section pt-36">
         <div className="container max-w-4xl">

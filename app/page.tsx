@@ -33,7 +33,7 @@ const homeJsonLd = [
 
 export default function Home() {
   return (
-    <main>
+    <main id="page-content">
       <JsonLd data={homeJsonLd} />
       <Nav />
       <section id="hero" className="dark-section dark relative flex min-h-screen items-center overflow-hidden bg-forest-orbs">
