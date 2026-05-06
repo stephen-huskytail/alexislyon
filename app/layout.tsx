@@ -10,7 +10,15 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://alexislyon.com'),
   title: { default: 'Alexis Lyon | Transformational Guide & Somatic Healer | Telehealth Worldwide', template: '%s | Alexis Lyon' },
   description: 'Transformational guidance rooted in somatic depth, nervous system regulation, psychological flexibility, nature-based healing, and self-trust.',
-  openGraph: { title: 'Alexis Lyon | Transformational Guide & Somatic Healer', description: 'Healing for the wound. Reclaiming for the wildness. Rooted from soul.', url: 'https://alexislyon.com', siteName: 'Alexis Lyon', type: 'website' },
+  openGraph: {
+    title: 'Alexis Lyon | Transformational Guide & Somatic Healer',
+    description: 'Healing for the wound. Reclaiming for the wildness. Rooted from soul.',
+    url: 'https://alexislyon.com',
+    siteName: 'Alexis Lyon',
+    type: 'website',
+    images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Alexis Lyon — Transformational Guide & Somatic Healer' }]
+  },
+  twitter: { card: 'summary_large_image', images: ['/api/og'] },
   alternates: { canonical: '/' }
 };
 

@@ -4,7 +4,13 @@ import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Alexis Lyon, including cookieless analytics, no cookie banner, contact forms, privacy rights, and data deletion.'
+  description: 'Privacy Policy for Alexis Lyon, including cookieless analytics, no cookie banner, contact forms, privacy rights, and data deletion.',
+  openGraph: {
+    title: 'Privacy Policy',
+    description: 'Cookieless analytics, privacy rights, and data practices for alexislyon.com.',
+    images: [{ url: '/api/og?title=Privacy+Policy&sub=Cookieless+Analytics+and+Privacy+Rights', width: 1200, height: 630, alt: 'Privacy Policy' }]
+  },
+  twitter: { card: 'summary_large_image', images: ['/api/og?title=Privacy+Policy&sub=Cookieless+Analytics+and+Privacy+Rights'] }
 };
 
 const effectiveDate = 'May 6, 2026';

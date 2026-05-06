@@ -4,7 +4,13 @@ import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Disclaimer',
-  description: 'Disclaimer for Alexis Lyon covering coaching, licensing, crisis support, online sessions, results, external links, and intellectual property.'
+  description: 'Disclaimer for Alexis Lyon covering coaching, licensing, crisis support, online sessions, results, external links, and intellectual property.',
+  openGraph: {
+    title: 'Disclaimer',
+    description: 'Important boundaries for transformational coaching and online guidance.',
+    images: [{ url: '/api/og?title=Disclaimer&sub=Important+Boundaries+and+Crisis+Support', width: 1200, height: 630, alt: 'Disclaimer' }]
+  },
+  twitter: { card: 'summary_large_image', images: ['/api/og?title=Disclaimer&sub=Important+Boundaries+and+Crisis+Support'] }
 };
 
 const sections = [
