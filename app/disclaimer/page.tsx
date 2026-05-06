@@ -4,76 +4,57 @@ import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Disclaimer',
-  description: 'Coaching, wellness, telehealth, results, crisis, and website disclaimer for Alexis Lyon.'
+  description: 'Disclaimer for Alexis Lyon covering coaching, licensing, crisis support, online sessions, results, external links, and intellectual property.'
 };
 
 const sections = [
   {
-    title: 'Transformational coaching and guidance — not therapy',
+    title: 'This Is Not Therapy',
     body: [
       'The services described on this website are transformational coaching, somatic guidance, nature-based healing support, education, and personal growth work. They are not psychotherapy, clinical mental health treatment, medical care, diagnosis, or crisis services.',
-      'Alexis Lyon’s clinical background and LMFT experience may inform the depth and integrity of this work, but engaging with this website or booking non-clinical services does not create a therapist-client relationship.'
+      'Using this website, reading its content, submitting a form, booking a consultation, or engaging in non-clinical services does not create a therapist-client relationship.'
     ]
   },
   {
-    title: 'No medical, mental health, or legal advice',
+    title: 'Professional Licensing',
     body: [
-      'Website content is for general informational and educational purposes only. It is not a substitute for professional medical, mental health, psychiatric, legal, financial, or other licensed professional advice.',
-      'Always seek the advice of qualified professionals regarding medical or mental health conditions, medications, diagnosis, treatment decisions, legal questions, or other specialized concerns.'
+      'Alexis Lyon has professional clinical training and is an LMFT licensed in California. That background may inform the depth, ethics, and care of her work.',
+      'Unless specifically agreed in writing through a separate clinical services arrangement, the work offered through this website is not clinical therapy and is not offered as licensed mental health treatment. Services may not be appropriate for every person, location, or circumstance.'
     ]
   },
   {
-    title: 'Crisis and emergency support',
+    title: 'No Guarantee of Results',
     body: [
-      'This website and its contact forms are not monitored for emergencies and should not be used for crisis communication. If you are in immediate danger, call local emergency services now.',
-      'If you are in the United States and experiencing a mental health crisis, call or text 988 for the Suicide & Crisis Lifeline. If you are outside the United States, contact your local emergency number or a local crisis support service.'
+      'Personal growth, somatic practice, nervous system work, and transformational guidance are individual processes. No specific result, outcome, timeline, symptom reduction, relationship change, health change, business outcome, or life change is promised or guaranteed.',
+      'Testimonials, examples, and descriptive language on this site represent individual experiences or the intended spirit of the work and should not be interpreted as typical or guaranteed outcomes.'
     ]
   },
   {
-    title: 'Telehealth, location, and scope of services',
+    title: 'Telehealth and Online Sessions',
     body: [
-      'Alexis may work with clients remotely and globally where appropriate. The availability, scope, and suitability of services can vary based on your location, needs, and applicable laws or professional requirements.',
-      'Submitting a form or scheduling a consultation does not guarantee that services are appropriate, available, or accepted for your situation.'
+      'Alexis may work with clients remotely or online where appropriate. Online sessions require a private location, reliable internet, and your active participation in maintaining your own safety and confidentiality.',
+      'Availability and suitability of services may vary based on your location, needs, and applicable legal or professional requirements. Scheduling a consultation does not guarantee that services will be available or appropriate for your situation.'
     ]
   },
   {
-    title: 'Results are not guaranteed',
+    title: 'External Links',
     body: [
-      'Personal growth, nervous system work, somatic practice, and transformational guidance are highly individual. No specific outcome, timeline, symptom change, relationship change, income change, health result, or life result is promised or guaranteed.',
-      'Testimonials, examples, or descriptive language on this site reflect individual experiences or intended qualities of the work and should not be interpreted as typical or guaranteed results.'
+      'This website may link to or embed third-party tools, websites, scheduling platforms, email services, videos, payment tools, or resources. Alexis Lyon is not responsible for third-party content, privacy practices, terms, security, uptime, or accuracy.',
+      'Use external links and third-party tools at your own discretion and review their policies before submitting information.'
     ]
   },
   {
-    title: 'Informed participation',
+    title: 'Accuracy of Information',
     body: [
-      'Somatic, reflective, emotional, and nature-based practices may bring up strong sensations, memories, feelings, or insights. You are responsible for listening to your body, honoring your limits, and seeking additional professional support when needed.',
-      'Participation in coaching or guidance is voluntary, and you may pause, decline, or stop any practice that does not feel appropriate for you.'
+      'Website content is provided in good faith for general informational and educational purposes. It may not always be complete, current, or error-free. Content may be changed, updated, or removed at any time without notice.',
+      'Nothing on this website should be taken as medical, mental health, legal, financial, or other licensed professional advice.'
     ]
   },
   {
-    title: 'Website information and availability',
+    title: 'Intellectual Property',
     body: [
-      'The content on this website is provided in good faith, but it may not always be complete, current, or free from errors. Website content may be changed, updated, or removed at any time without notice.',
-      'The website may occasionally be unavailable due to maintenance, third-party service issues, internet outages, or other technical causes.'
-    ]
-  },
-  {
-    title: 'External links and third-party tools',
-    body: [
-      'This website may link to or embed third-party tools such as scheduling platforms, email services, video platforms, analytics tools, or payment services. Alexis is not responsible for third-party websites, policies, content, uptime, or data practices.',
-      'Use third-party links and tools at your own discretion and review their terms and privacy policies before submitting information.'
-    ]
-  },
-  {
-    title: 'Intellectual property',
-    body: [
-      'Unless otherwise noted, website copy, structure, branding, and original materials are owned by Alexis Lyon or used with permission. You may not copy, republish, sell, or distribute site materials without written permission, except for brief personal or fair-use references.'
-    ]
-  },
-  {
-    title: 'Limitation of liability',
-    body: [
-      'To the fullest extent permitted by law, Alexis Lyon is not liable for damages or losses arising from your use of this website, reliance on website content, use of third-party links or tools, or participation in services except where liability cannot be excluded under applicable law.'
+      'Unless otherwise noted, the copy, structure, branding, original materials, and creative content on this website are owned by Alexis Lyon or used with permission.',
+      'You may not copy, republish, sell, distribute, or adapt website materials without written permission, except for brief personal or fair-use references.'
     ]
   }
 ];
@@ -89,6 +70,15 @@ export default function Disclaimer() {
           <p className="body-large mt-6 text-mid">
             Please read this disclaimer before using this website, submitting a form, scheduling a consultation, or engaging with Alexis Lyon’s services.
           </p>
+
+          <div className="mt-10 rounded-[2rem] border border-gold/40 bg-warm p-8 shadow-soft">
+            <p className="eyebrow">If you are in crisis</p>
+            <h2 className="display mt-3 text-4xl text-forest">This website is not emergency support.</h2>
+            <p className="mt-5 leading-8 text-mid">
+              If you are in immediate danger, call local emergency services now. If you are in the United States and experiencing a mental health crisis, call or text <strong className="text-forest">988</strong> for the Suicide & Crisis Lifeline. If you are outside the United States, contact your local emergency number or local crisis support service.
+            </p>
+          </div>
+
           <div className="mt-10 space-y-10 text-mid">
             {sections.map((section) => (
               <section key={section.title} className="rounded-[1.5rem] bg-warm p-7">
