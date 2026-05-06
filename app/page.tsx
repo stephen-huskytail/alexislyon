@@ -3,11 +3,38 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { Reveal } from '@/components/Reveal';
 import { ContactForm } from '@/components/ContactForm';
+import { JsonLd } from '@/components/JsonLd';
 import { disclaimerText, offerings, permissions, pillars, recognitions, values } from '@/lib/content';
+
+const homeJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Alexis Lyon',
+    url: 'https://alexislyon.com',
+    description: 'Transformational guidance rooted in somatic depth, nervous system regulation, psychological flexibility, nature-based healing, and self-trust.',
+    inLanguage: 'en-US',
+    publisher: { '@type': 'Person', name: 'Alexis Lyon' }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Alexis Lyon',
+    url: 'https://alexislyon.com',
+    jobTitle: 'Transformational Guide and Somatic Healer',
+    description: 'Transformational guide and healer based on the Pacific coast of Costa Rica, serving clients globally through telehealth.',
+    hasCredential: 'Licensed Marriage and Family Therapist, California',
+    knowsAbout: ['Somatic depth work', 'Nervous system regulation', 'Psychological flexibility', 'Nature-based healing', 'Self-trust', 'Transformational coaching'],
+    address: { '@type': 'PostalAddress', addressCountry: 'CR' },
+    areaServed: ['Worldwide', 'Costa Rica'],
+    sameAs: ['https://alexislyon.com']
+  }
+];
 
 export default function Home() {
   return (
     <main>
+      <JsonLd data={homeJsonLd} />
       <Nav />
       <section id="hero" className="dark-section dark relative flex min-h-screen items-center overflow-hidden bg-forest-orbs">
         <div className="orb left-[8%] top-[18%] h-44 w-44 bg-gold/20" />
