@@ -44,22 +44,25 @@ export default function About() {
 
       {/* Hero */}
       <section className="section pt-36">
-        <div className="container grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
-          <div className="relative min-h-[520px] rounded-t-full overflow-hidden shadow-soft">
-            <Image
-              src="/images/alexis-portrait.jpg"
-              alt="Alexis Lyon — Transformational Guide & Healer"
-              fill
-              className="object-cover object-top"
-              priority
-              sizes="(max-width:768px) 100vw, 40vw"
-            />
+        <div className="container max-w-3xl">
+          <div className="flex flex-col items-center">
+            <div className="relative w-64 sm:w-80 rounded-t-full overflow-hidden shadow-soft aspect-[3/4]">
+              <Image
+                src="/images/alexis-portrait.jpg"
+                alt="Alexis Lyon — Transformational Guide & Healer"
+                fill
+                className="object-cover object-top"
+                priority
+                sizes="320px"
+              />
+            </div>
+            <div className="mt-10 text-center">
+              <p className="eyebrow">About Alexis</p>
+              <h1 className="display mt-5 text-5xl text-forest">Clinical depth in service of soul-rooted transformation.</h1>
+            </div>
           </div>
-          <div>
-            <p className="eyebrow">About Alexis</p>
-            <h1 className="display mt-5 text-6xl text-forest">Clinical depth in service of soul-rooted transformation.</h1>
 
-            <div className="mt-8 space-y-6 text-mid leading-8">
+          <div className="mt-10 space-y-6 text-mid leading-8">
               <p>My name is Alexis Lyon. I am a transformational guide and healer whose work is rooted in over two decades of clinical depth — and I work with people who are ready to stop outsourcing their knowing and finally learn to trust themselves.</p>
               <p>For nearly two decades, I worked as a therapist with foster care youth and families — people whose nervous systems had been shaped by profound rupture, and who were finding their way back to themselves against significant odds. Those years taught me something I have never forgotten: the innate resilience and courage that is available within all of us when we are met with unconditional acceptance, kindness, curiosity, and respect.</p>
               <p>Those youth were my greatest teachers. They showed me, over and over, what becomes possible when a person is genuinely met — not managed, not fixed, not assessed, but truly met. I carry that lesson into every session I hold.</p>
@@ -81,8 +84,7 @@ export default function About() {
               </ul>
             </div>
 
-            <Link className="btn btn-forest mt-8" href="/connect">Begin the Conversation</Link>
-          </div>
+          <Link className="btn btn-forest mt-8 inline-block" href="/connect">Begin the Conversation</Link>
         </div>
       </section>
 
