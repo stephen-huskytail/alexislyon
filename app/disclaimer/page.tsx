@@ -10,7 +10,8 @@ export const metadata: Metadata = {
     description: 'Important boundaries for transformational coaching and online guidance.',
     images: [{ url: '/api/og?title=Disclaimer&sub=Important+Boundaries+and+Crisis+Support', width: 1200, height: 630, alt: 'Disclaimer' }]
   },
-  twitter: { card: 'summary_large_image', images: ['/api/og?title=Disclaimer&sub=Important+Boundaries+and+Crisis+Support'] }
+  twitter: { card: 'summary_large_image', images: ['/api/og?title=Disclaimer&sub=Important+Boundaries+and+Crisis+Support'] },
+  alternates: { canonical: '/disclaimer' }
 };
 
 const sections = [
@@ -72,7 +73,7 @@ export default function Disclaimer() {
       <section className="section pt-36">
         <div className="container max-w-4xl">
           <p className="eyebrow">Important boundaries</p>
-          <h1 className="display mt-5 text-6xl text-forest">Disclaimer</h1>
+          <h1 className="display mt-5 text-4xl sm:text-5xl md:text-6xl text-forest">Disclaimer</h1>
           <p className="body-large mt-6 text-mid">
             Please read this disclaimer before using this website, submitting a form, scheduling a consultation, or engaging with Alexis Lyon’s services.
           </p>

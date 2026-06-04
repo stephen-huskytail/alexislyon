@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
+import { JsonLd } from '@/components/JsonLd';
 import { pillars, meta } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -44,14 +45,39 @@ const pillarVisuals: Record<string, { image: string; alt: string; position: stri
   }
 };
 
+const foundationJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'The Foundation — Nervous System Regulation & Self-Trust',
+    url: 'https://alexislyon.com/the-foundation',
+    description: 'Nervous system regulation, self-trust, and psychological flexibility as the foundation of transformational healing with Alexis Lyon.',
+    inLanguage: 'en-US',
+    isPartOf: { '@type': 'WebSite', url: 'https://alexislyon.com' },
+    author: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Foundation Pillars',
+    url: 'https://alexislyon.com/the-foundation',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Safety', description: 'Safety is built inside the work, over time. Through steady presence, the nervous system learns that aliveness does not have to equal danger.' },
+      { '@type': 'ListItem', position: 2, name: 'Regulation', description: 'Regulation is not control. It is the capacity to stay connected to yourself while sensation, grief, longing, and truth move through.' },
+      { '@type': 'ListItem', position: 3, name: 'Psychological Flexibility', description: 'Awareness, openness, and active engagement create a life led by values — not by old protection strategies.' }
+    ]
+  }
+];
+
 export default function Foundation() {
   return (
     <main id="page-content">
+      <JsonLd data={foundationJsonLd} />
       <Nav />
       <section className="section pt-36">
         <div className="container">
           <p className="eyebrow">The Foundation</p>
-          <h1 className="display mt-5 max-w-5xl text-6xl text-forest">
+          <h1 className="display mt-5 max-w-5xl text-4xl sm:text-5xl md:text-6xl text-forest">
             Self-trust is not a mindset. It is a nervous system phenomenon.
           </h1>
           <p className="body-large mt-7 max-w-4xl text-mid">

@@ -11,25 +11,70 @@ export const metadata: Metadata = {
   description: 'Private-pay transformational coaching, somatic depth work, and nature-based healing with Alexis Lyon.',
   alternates: { canonical: '/work-with-me' },
   openGraph: {
-    title: 'Work With Alexis',
+    title: 'Work With Alexis Lyon — Somatic Coaching & Healing',
     description: 'Private-pay transformational coaching, somatic depth work, and nature-based healing.',
     images: [{ url: '/api/og?title=Work+With+Alexis&sub=Transformational+Coaching', width: 1200, height: 630, alt: 'Work With Alexis' }]
   },
   twitter: { card: 'summary_large_image', images: ['/api/og?title=Work+With+Alexis&sub=Transformational+Coaching'] }
 };
 
-const serviceJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Transformational Coaching with Alexis Lyon',
-  url: 'https://alexislyon.com/work-with-me',
-  description: 'Private-pay transformational coaching, somatic depth work, and nature-based healing support with Alexis Lyon.',
-  provider: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
-  areaServed: ['Worldwide', 'Costa Rica'],
-  serviceType: 'Transformational coaching and somatic depth work',
-  availableChannel: { '@type': 'ServiceChannel', serviceUrl: 'https://alexislyon.com/connect', availableLanguage: 'en' },
-  offers: { '@type': 'Offer', url: 'https://alexislyon.com/connect', availability: 'https://schema.org/InStock', priceSpecification: { '@type': 'PriceSpecification', price: 0, priceCurrency: 'USD', description: 'Free 20-minute consultation' } }
-};
+const serviceJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Transformational Coaching with Alexis Lyon',
+    url: 'https://alexislyon.com/work-with-me',
+    description: 'Private-pay transformational coaching, somatic depth work, and nature-based healing support with Alexis Lyon.',
+    provider: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
+    areaServed: ['Worldwide', 'Costa Rica'],
+    serviceType: 'Transformational coaching and somatic depth work',
+    availableChannel: { '@type': 'ServiceChannel', serviceUrl: 'https://alexislyon.com/connect', availableLanguage: 'en' },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Free 20-Minute Consultation',
+        url: 'https://alexislyon.com/connect',
+        availability: 'https://schema.org/InStock',
+        priceSpecification: { '@type': 'PriceSpecification', price: 0, priceCurrency: 'USD', description: 'Free initial consultation — no commitment required' }
+      },
+      {
+        '@type': 'Offer',
+        name: 'Individual Session',
+        url: 'https://alexislyon.com/connect',
+        availability: 'https://schema.org/InStock',
+        priceSpecification: { '@type': 'PriceSpecification', price: 175, priceCurrency: 'USD', description: 'New client rate — 50-minute session via secure telehealth' }
+      },
+      {
+        '@type': 'Offer',
+        name: "The Becoming — Women's Group",
+        url: 'https://alexislyon.com/connect',
+        availability: 'https://schema.org/InStock',
+        priceSpecification: { '@type': 'PriceSpecification', price: 50, priceCurrency: 'USD', description: "Women's group session — 75–90 minutes, 3×/month or every other week" }
+      }
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How much does transformational coaching cost?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Individual sessions are $175 for new clients. Sliding scale $100–175 is available for ongoing current clients. The Becoming Women\'s Group is $50/session (approximately $100–150/month). All new client relationships begin with a free 20-minute consultation.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the session format?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Individual sessions are 50 minutes via secure telehealth, every other week or 3×/month. Nature-based sessions are 90 minutes in person on the Pacific coast of Costa Rica. Group sessions are 75–90 minutes, minimum 3-month commitment.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is this work available worldwide?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes. All individual and group sessions are available via secure telehealth to clients worldwide. In-person nature-based sessions are available on the Pacific coast of Costa Rica by arrangement.' }
+      }
+    ]
+  }
+];
 
 const individualOfferings = [
   {
@@ -99,7 +144,7 @@ export default function Work() {
       <section className="section dark-section dark pt-36">
         <div className="container">
           <p className="eyebrow">Work with Alexis</p>
-          <h1 className="display mt-5 max-w-4xl text-6xl">Transformational guidance for the wound and the wildness.</h1>
+          <h1 className="display mt-5 max-w-4xl text-4xl sm:text-5xl md:text-6xl">Transformational guidance for the wound and the wildness.</h1>
           <p className="body-large mt-7 max-w-3xl">
             All new client relationships begin with a free 20-minute consultation. Sessions are private-pay. Telehealth for global clients. Nature-based options available on the Pacific coast of Costa Rica.
           </p>

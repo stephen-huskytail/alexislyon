@@ -1,3 +1,8 @@
 "use client";
-import { motion } from 'framer-motion';
-export function Reveal({children, delay=0}:{children:React.ReactNode;delay?:number}){return <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.15}} transition={{duration:.75,delay}}>{children}</motion.div>}
+import { motion, useReducedMotion } from 'framer-motion';
+export function Reveal({children, delay=0}:{children:React.ReactNode;delay?:number}){
+  const reduced = useReducedMotion();
+  const initial = reduced ? {} : {opacity:0,y:24};
+  const animate = reduced ? {} : {opacity:1,y:0};
+  return <motion.div initial={initial} whileInView={animate} viewport={{once:true,amount:.15}} transition={{duration:.75,delay}}>{children}</motion.div>;
+}

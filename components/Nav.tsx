@@ -99,6 +99,15 @@ export function Nav() {
   };
 
   return (
+    <>
+    {pathname !== '/connect' && (
+      <Link
+        href="/connect"
+        className="fixed bottom-0 inset-x-0 z-40 flex items-center justify-center gap-2 bg-forest py-4 text-cream text-sm font-medium tracking-[.06em] shadow-[0_-4px_24px_rgba(27,74,58,.18)] transition-colors hover:bg-sage active:bg-sage lg:hidden"
+      >
+        Begin the Conversation →
+      </Link>
+    )}
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${navClass}`}>
       <a className="skip-link" href="#page-content">Skip to content</a>
       <nav className="container flex items-center justify-between" aria-label="Primary navigation">
@@ -112,7 +121,7 @@ export function Nav() {
               {item.label}
             </Link>
           ))}
-          <Link className="btn btn-gold !px-5 !py-2" href="/connect">Begin</Link>
+          <Link className="btn btn-gold !px-5 !py-3" href="/connect">Begin</Link>
         </div>
 
         <button
@@ -162,5 +171,6 @@ export function Nav() {
         </div>
       </aside>
     </header>
+    </>
   );
 }

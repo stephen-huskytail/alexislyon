@@ -23,13 +23,40 @@ const homeJsonLd = [
     '@type': 'Person',
     name: 'Alexis Lyon',
     url: 'https://alexislyon.com',
+    image: 'https://alexislyon.com/images/alexis-portrait.jpg',
     jobTitle: 'Transformational Guide and Somatic Healer',
     description: 'Transformational guide and healer based on the Pacific coast of Costa Rica, serving clients globally through telehealth.',
     hasCredential: 'Licensed Marriage and Family Therapist, California',
     knowsAbout: ['Somatic depth work', 'Nervous system regulation', 'Psychological flexibility', 'Nature-based healing', 'Self-trust', 'Transformational coaching'],
     address: { '@type': 'PostalAddress', addressCountry: 'CR' },
     areaServed: ['Worldwide', 'Costa Rica'],
-    sameAs: ['https://alexislyon.com']
+    sameAs: []
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Is this therapy?',
+        acceptedAnswer: { '@type': 'Answer', text: 'No. The services offered are transformational coaching and guidance, not therapy or clinical mental health treatment. Alexis Lyon holds a California LMFT license, but the work offered through this site is not clinical therapy.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'How much does a session cost?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Individual sessions are $175 for new clients. Sliding scale $100–175 is available for ongoing current clients. The Women\'s Group is $50/session. All new client relationships begin with a free 20-minute consultation.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where are sessions held?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Sessions are held via secure telehealth for clients worldwide. Nature-based sessions are available in person on the Pacific coast of Costa Rica by arrangement.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'When is Alexis available?',
+        acceptedAnswer: { '@type': 'Answer', text: 'New client availability begins August 1, 2026. Session hours are 9:00 AM–1:45 PM Costa Rica time (CST). Summer hours: 8:00 AM–12:45 PM Pacific. Winter hours: 7:00 AM–11:45 AM Pacific.' }
+      }
+    ]
   }
 ];
 
@@ -43,7 +70,7 @@ export default function Home() {
         <div className="orb bottom-[12%] right-[10%] h-64 w-64 bg-sage-lt/20" />
         <div className="container relative pt-24">
           <Reveal><p className="eyebrow">Alexis Lyon · Transformational Guide & Healer</p></Reveal>
-          <Reveal delay={0.12}><h1 className="display mt-8 max-w-5xl text-6xl md:text-8xl">There is a part of you that needs <em className="gold">healing</em>. And a part of you that needs <em className="gold">reclaiming</em>.</h1></Reveal>
+          <Reveal delay={0.12}><h1 className="display mt-8 max-w-5xl text-4xl sm:text-6xl md:text-8xl">There is a part of you that needs <em className="gold">healing</em>. And a part of you that needs <em className="gold">reclaiming</em>.</h1></Reveal>
           <Reveal delay={0.24}><p className="body-large mt-8 max-w-3xl">I hold space for the wound that carries grief and the wildness that has been waiting to come home — all rooted from soul.</p></Reveal>
           <Reveal delay={0.36}><div className="mt-10 flex flex-wrap gap-4"><Link className="btn btn-gold" href="/connect">Begin the Conversation</Link><Link className="btn btn-ghost" href="#for-you">Is This For You?</Link></div></Reveal>
         </div>

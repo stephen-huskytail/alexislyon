@@ -47,8 +47,8 @@ export const offeringsDetail: [string, string, string, string][] = [
 export const values = ['Beauty','Balance','Growth','Truth','Dignity'];
 export const recognitions = ['You carry a wound that has never been fully witnessed — and you are ready to move through it, not around it.','You sense a part of yourself that was put away long ago — wild, potent, fierce — and you want it back.','You are done waiting to be "healed enough" to pursue the life your soul is calling you toward.','You long for self-trust that does not collapse when things get hard.','You want your dreams held with the same care as your wounds.','You are ready for a guide who can hold both your tenderness and your fire.'];
 export const meta = {
-  about: 'About Alexis Lyon | 22 Years Clinical Depth | Somatic & Nature-Based Healing',
-  work: 'Work With Alexis | Transformational Coaching & Somatic Depth Work',
-  foundation: 'Nervous System Regulation & Self-Trust | Alexis Lyon',
-  connect: 'Schedule a Free Consultation | Alexis Lyon Transformational Guide'
+  about: 'About Alexis Lyon — Transformational Guide & Somatic Healer',
+  work: 'Work With Alexis — Transformational Coaching & Somatic Depth Work',
+  foundation: 'Nervous System Regulation & Self-Trust',
+  connect: 'Schedule a Free Consultation'
 };

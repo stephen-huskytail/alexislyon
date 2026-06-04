@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Meet Alexis Lyon, transformational guide and healer based in Costa Rica with 22 years of clinical depth.',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Alexis Lyon',
+    title: 'About Alexis Lyon — 22 Years of Clinical Depth',
     description: '22 years of clinical depth in service of soul-rooted transformation.',
     images: [{ url: '/api/og?title=About+Alexis+Lyon&sub=Clinical+Depth+and+Soul-Rooted+Transformation', width: 1200, height: 630, alt: 'About Alexis Lyon' }]
   },
@@ -28,6 +28,7 @@ const aboutJsonLd = {
     '@type': 'Person',
     name: 'Alexis Lyon',
     url: 'https://alexislyon.com',
+    image: 'https://alexislyon.com/images/alexis-portrait.jpg',
     jobTitle: 'Transformational Guide and Somatic Healer',
     hasCredential: 'Licensed Marriage and Family Therapist, California',
     knowsAbout: ['Somatic depth work', 'Nervous system regulation', 'Psychological flexibility', 'Nature-based healing', 'Transformational coaching'],

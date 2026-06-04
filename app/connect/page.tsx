@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { ContactForm } from '@/components/ContactForm';
+import { JsonLd } from '@/components/JsonLd';
 import { meta } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -9,11 +10,22 @@ export const metadata: Metadata = {
   description: 'Schedule a free 20-minute consultation with Alexis Lyon or send a private inquiry.',
   alternates: { canonical: '/connect' },
   openGraph: {
-    title: 'Connect With Alexis',
-    description: 'Schedule a free 20-minute consultation.',
+    title: 'Schedule a Free Consultation — Alexis Lyon',
+    description: 'Begin with a free 20-minute conversation. If the work feels aligned, Alexis will share the next step.',
     images: [{ url: '/api/og?title=Connect+With+Alexis&sub=Schedule+a+Free+Consultation', width: 1200, height: 630, alt: 'Connect With Alexis' }]
   },
   twitter: { card: 'summary_large_image', images: ['/api/og?title=Connect+With+Alexis&sub=Schedule+a+Free+Consultation'] }
+};
+
+const connectJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Connect With Alexis Lyon',
+  url: 'https://alexislyon.com/connect',
+  description: 'Schedule a free 20-minute consultation with Alexis Lyon or send a private inquiry about transformational coaching and somatic depth work.',
+  inLanguage: 'en-US',
+  isPartOf: { '@type': 'WebSite', url: 'https://alexislyon.com' },
+  author: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' }
 };
 
 export default function Connect() {
@@ -21,12 +33,13 @@ export default function Connect() {
 
   return (
     <main id="page-content">
+      <JsonLd data={connectJsonLd} />
       <Nav />
       <section className="section pt-36">
         <div className="container grid gap-12 lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <p className="eyebrow">Connect</p>
-            <h1 className="display mt-5 text-6xl text-forest">Schedule a free consultation.</h1>
+            <h1 className="display mt-5 text-4xl sm:text-5xl md:text-6xl text-forest">Schedule a free consultation.</h1>
             <p className="body-large mt-7 text-mid">Begin with a 20-minute conversation. If the work feels aligned, Alexis will share the next step.</p>
             <div className="mt-8"><ContactForm /></div>
           </div>

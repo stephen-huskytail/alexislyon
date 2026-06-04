@@ -10,7 +10,8 @@ export const metadata: Metadata = {
     description: 'Cookieless analytics, privacy rights, and data practices for alexislyon.com.',
     images: [{ url: '/api/og?title=Privacy+Policy&sub=Cookieless+Analytics+and+Privacy+Rights', width: 1200, height: 630, alt: 'Privacy Policy' }]
   },
-  twitter: { card: 'summary_large_image', images: ['/api/og?title=Privacy+Policy&sub=Cookieless+Analytics+and+Privacy+Rights'] }
+  twitter: { card: 'summary_large_image', images: ['/api/og?title=Privacy+Policy&sub=Cookieless+Analytics+and+Privacy+Rights'] },
+  alternates: { canonical: '/privacy-policy' }
 };
 
 const effectiveDate = 'May 6, 2026';
@@ -102,7 +103,7 @@ export default function Privacy() {
       <section className="section pt-36">
         <div className="container max-w-4xl">
           <p className="eyebrow">Website privacy</p>
-          <h1 className="display mt-5 text-6xl text-forest">Privacy Policy</h1>
+          <h1 className="display mt-5 text-4xl sm:text-5xl md:text-6xl text-forest">Privacy Policy</h1>
           <p className="body-large mt-6 text-mid">Effective date: {effectiveDate}</p>
 
           <div className="mt-10 rounded-[2rem] border border-gold/30 bg-warm p-8 shadow-soft">
