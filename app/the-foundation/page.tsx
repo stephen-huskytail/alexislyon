@@ -22,7 +22,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     images: ['/api/og?title=The+Foundation&sub=Self-Trust+and+Nervous+System+Regulation']
-  }
+  },
+  alternates: { canonical: '/the-foundation' }
 };
 
 const pillarVisuals: Record<string, { image: string; alt: string; position: string }> = {
