@@ -2,9 +2,9 @@ export const navItems = [
   { label: 'This For You', href: '/#for-you' }, { label: 'Foundation', href: '/the-foundation' }, { label: 'Work', href: '/work-with-me' }, { label: 'About', href: '/about' }, { label: 'Connect', href: '/connect' }
 ];
 export const disclaimerText = 'The services offered on this site are transformational coaching and guidance, not therapy or clinical mental health treatment, and do not constitute a therapeutic relationship. Alexis Lyon holds an LMFT license in California; that clinical background informs the depth of this work but does not define its scope. If you are experiencing a mental health crisis, please contact a licensed mental health professional or call 988.';
-export const permissions = ['Your symptoms do not disqualify your becoming.','You can move toward what matters while difficulty is still present.','Your tenderness and your fire can belong in the same room.','You do not have to abandon the wound to reclaim the wildness.','Safety is built inside the work, not before it.','Life can be messy and beautiful at the same time.'];
+export const permissions = ['Your symptoms do not disqualify your becoming.','You can move toward what matters while difficulty is still present.','Your tenderness and your fire can belong in the same room.','You do not have to abandon the wound to reclaim the wildness.','Safety is built inside the work, over time.','Life can be messy and beautiful at the same time.'];
 export const pillars = [
-  ['Safety','Safety is built inside the work, not before it. Through steady presence, the nervous system learns that aliveness does not have to equal danger.'],
+  ['Safety','Safety is built inside the work, over time. Through steady presence, the nervous system learns that aliveness does not have to equal danger.'],
   ['Regulation','Regulation is not control. It is the capacity to stay connected to yourself while sensation, grief, longing, and truth move through.'],
   ['Psychological Flexibility','Awareness, openness, and active engagement create a life led by values — not by old protection strategies. Presence is both practice and destination.']
 ];
