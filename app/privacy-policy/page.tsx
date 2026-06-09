@@ -50,7 +50,7 @@ const sections = [
   {
     title: 'Third-Party Services',
     body: [
-      'This website may use trusted third-party services to host the site, measure traffic, process forms, deliver email, schedule appointments, or embed media. These may include Vercel, email delivery providers, Calendly or a similar scheduling service, and other operational tools.',
+      'This website may use trusted third-party services to host the site, measure traffic, process forms, deliver email, or embed media. These may include Vercel, email delivery providers, and other operational tools.',
       'Third-party services may process information only as needed to provide their services. If you interact with an embedded scheduler, email platform, video, payment tool, or other third-party feature, that provider may have its own privacy policy and terms.'
     ]
   },

@@ -42,7 +42,7 @@ const serviceJsonLd = [
         name: 'Individual Session',
         url: 'https://alexislyon.com/connect',
         availability: 'https://schema.org/InStock',
-        priceSpecification: { '@type': 'PriceSpecification', price: 175, priceCurrency: 'USD', description: 'New client rate — 50-minute session via secure telehealth' }
+        priceSpecification: { '@type': 'PriceSpecification', price: 175, priceCurrency: 'USD', description: 'New client rate — 55-minute session via secure telehealth' }
       },
       {
         '@type': 'Offer',
@@ -65,7 +65,7 @@ const serviceJsonLd = [
       {
         '@type': 'Question',
         name: 'What is the session format?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Individual sessions are 50 minutes via secure telehealth, every other week or 3×/month. Nature-based sessions are 90 minutes in person on the Pacific coast of Costa Rica. Group sessions are 75–90 minutes, minimum 3-month commitment.' }
+        acceptedAnswer: { '@type': 'Answer', text: 'Individual sessions are 55 minutes via secure telehealth, every other week or 3×/month. Nature-based sessions are 90 minutes in person on the Pacific coast of Costa Rica. Group sessions are 75–90 minutes, minimum 3-month commitment.' }
       },
       {
         '@type': 'Question',
@@ -82,7 +82,7 @@ const individualOfferings = [
     subtitle: 'For women ready to heal the wound, reclaim the wildness, and learn the body-level experience of self-trust.',
     body: 'Sustained, integrative one-on-one work that weaves together the somatic, the psychological, the spiritual, and the natural world. We move at the pace your nervous system can metabolize — building safety, regulation, and psychological flexibility over time. This is the long game: the slow, profound work of learning to inhabit yourself fully and trust what you find there.',
     what: 'Nervous system regulation as a daily, lived capacity. Psychological flexibility — the ability to stay present with difficulty while moving toward what matters. Self-trust that does not collapse when things get hard. The story of your life, rewritten from soul outward.',
-    format: '50-minute sessions via secure telehealth · Every other week or 3×/month',
+    format: '55-minute sessions via secure telehealth · Every other week or 3×/month',
     price: '$175/session (new clients) · Sliding scale $100–175 for ongoing current clients',
     image: '/images/card-truth.jpg',
     alt: 'Alexis opening into truth and reclaimed aliveness in a natural landscape.',
@@ -93,7 +93,7 @@ const individualOfferings = [
     subtitle: 'Slow, precise sessions with the body and nervous system — where insight becomes lived capacity, not just an idea.',
     body: 'Your nervous system holds what your mind cannot yet articulate — and it also holds the capacity for its own healing. Somatic work means we listen to the body as a living intelligence, work with it directly through sensation and breath, and create the conditions where regulation happens in felt experience rather than concept. This is how deep, lasting change actually occurs.',
     what: null,
-    format: '50-minute sessions via secure telehealth · Integrated into ongoing guidance work or as standalone sessions',
+    format: '55-minute sessions via secure telehealth · Integrated into ongoing guidance work or as standalone sessions',
     price: 'Same as Transformational Guidance',
     image: '/images/card-coregulating.jpg',
     alt: 'A grounding body-based co-regulation practice in the grass.',

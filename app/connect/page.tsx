@@ -29,8 +29,6 @@ const connectJsonLd = {
 };
 
 export default function Connect() {
-  const calendly = process.env.NEXT_PUBLIC_CALENDLY_URL;
-
   return (
     <main id="page-content">
       <JsonLd data={connectJsonLd} />
@@ -45,16 +43,6 @@ export default function Connect() {
           </div>
 
           <aside className="space-y-5">
-            {/* Calendly */}
-            <div className="rounded-[2rem] bg-warm p-8">
-              <h2 className="display text-3xl text-forest">Book a Consultation</h2>
-              {calendly ? (
-                <iframe title="Schedule with Alexis Lyon" src={calendly} className="mt-6 h-[700px] w-full rounded-2xl bg-cream" />
-              ) : (
-                <p className="mt-5 leading-8 text-mid">Calendly booking coming soon — use the contact form to reach Alexis directly.</p>
-              )}
-            </div>
-
             {/* Session Availability */}
             <div className="rounded-[2rem] bg-forest p-8 text-cream">
               <p className="eyebrow !text-gold-lt">Session Availability</p>

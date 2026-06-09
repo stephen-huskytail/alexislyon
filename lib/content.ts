@@ -21,13 +21,13 @@ export const offeringsDetail: [string, string, string, string][] = [
   [
     'Transformational Guidance',
     'Sustained, integrative one-on-one work that weaves together the somatic, the psychological, the spiritual, and the natural world. We move at the pace your nervous system can metabolize — building safety, regulation, and psychological flexibility over time.',
-    '50-min sessions via secure telehealth · Every other week or 3×/month',
+    '55-min sessions via secure telehealth · Every other week or 3×/month',
     '$175/session (new clients) · Sliding scale $100–175 for ongoing clients'
   ],
   [
     'Somatic Depth Work',
     'Your nervous system holds what your mind cannot yet articulate — and it also holds the capacity for its own healing. Somatic work means we listen to the body as a living intelligence and create the conditions where regulation happens in felt experience, not concept.',
-    '50-min sessions via secure telehealth · Integrated into ongoing work or standalone',
+    '55-min sessions via secure telehealth · Integrated into ongoing work or standalone',
     'Same as Transformational Guidance'
   ],
   [
