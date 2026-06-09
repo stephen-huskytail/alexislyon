@@ -41,7 +41,7 @@ const pillarVisuals: Record<string, { image: string; alt: string; position: stri
   'Psychological Flexibility': {
     image: '/images/card-truth.jpg',
     alt: 'Alexis standing in nature with arms open, returning to truth and values-led movement.',
-    position: 'center 34%'
+    position: 'center 46%'
   }
 };
 
