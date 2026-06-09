@@ -49,7 +49,7 @@ export default function About() {
           <div className="flex flex-col items-center">
             <div className="relative w-64 sm:w-80 rounded-t-full overflow-hidden shadow-soft aspect-[3/4]">
               <Image
-                src="/images/alexis-portrait.jpg"
+                src="/images/alexis-about-portrait.jpg"
                 alt="Alexis Lyon — Transformational Guide & Healer"
                 fill
                 className="object-cover object-top"
