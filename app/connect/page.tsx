@@ -37,8 +37,8 @@ export default function Connect() {
         <div className="container grid gap-12 lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <p className="eyebrow">Connect</p>
-            <h1 className="display mt-5 text-4xl sm:text-5xl md:text-6xl text-forest">Schedule a free consultation.</h1>
-            <p className="body-large mt-7 text-mid">Begin with a 20-minute conversation. If the work feels aligned, Alexis will share the next step.</p>
+            <h1 className="display mt-5 text-4xl sm:text-5xl md:text-6xl text-forest">Begin the conversation.</h1>
+            <p className="body-large mt-7 text-mid">Reach out for a free 20-minute conversation. If the work feels aligned, Alexis will share the next step.</p>
             <div className="mt-8"><ContactForm /></div>
           </div>
 
@@ -46,7 +46,7 @@ export default function Connect() {
             {/* Session Availability */}
             <div className="rounded-[2rem] bg-forest p-8 text-cream">
               <p className="eyebrow !text-gold-lt">Session Availability</p>
-              <h3 className="display mt-4 text-2xl text-gold-lt">Starting August 1, 2026</h3>
+              <h3 className="display mt-4 text-2xl text-gold-lt">Now booking</h3>
               <div className="mt-5 space-y-4 text-sm leading-7">
                 <div>
                   <p className="font-medium">Costa Rica time</p>

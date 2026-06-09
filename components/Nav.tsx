@@ -111,7 +111,7 @@ export function Nav() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${navClass}`}>
       <a className="skip-link" href="#page-content">Skip to content</a>
       <nav className="container flex items-center justify-between" aria-label="Primary navigation">
-        <Link href="/" className="font-display text-3xl tracking-wide" onClick={() => setOpen(false)}>
+        <Link href="/" className="font-signature text-4xl leading-none" onClick={() => setOpen(false)}>
           Alexis Lyon
         </Link>
 

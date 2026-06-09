@@ -21,7 +21,7 @@ export const offeringsDetail: [string, string, string, string][] = [
   [
     'Transformational Guidance',
     'Sustained, integrative one-on-one work that weaves together the somatic, the psychological, the spiritual, and the natural world. We move at the pace your nervous system can metabolize — building safety, regulation, and psychological flexibility over time.',
-    '55-min sessions via secure telehealth · Every other week or 3×/month',
+    '55-min sessions via secure telehealth',
     '$175/session (new clients) · Sliding scale $100–175 for ongoing clients'
   ],
   [

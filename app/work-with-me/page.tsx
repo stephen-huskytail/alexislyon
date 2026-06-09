@@ -65,7 +65,7 @@ const serviceJsonLd = [
       {
         '@type': 'Question',
         name: 'What is the session format?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Individual sessions are 55 minutes via secure telehealth, every other week or 3×/month. Nature-based sessions are 90 minutes in person on the Pacific coast of Costa Rica. Group sessions are 75–90 minutes, minimum 3-month commitment.' }
+        acceptedAnswer: { '@type': 'Answer', text: 'Individual sessions are 55 minutes via secure telehealth. Nature-based sessions are 90 minutes in person on the Pacific coast of Costa Rica, with telehealth options available. Group sessions are 75–90 minutes, minimum 3-month commitment.' }
       },
       {
         '@type': 'Question',
@@ -82,7 +82,7 @@ const individualOfferings = [
     subtitle: 'For women ready to heal the wound, reclaim the wildness, and learn the body-level experience of self-trust.',
     body: 'Sustained, integrative one-on-one work that weaves together the somatic, the psychological, the spiritual, and the natural world. We move at the pace your nervous system can metabolize — building safety, regulation, and psychological flexibility over time. This is the long game: the slow, profound work of learning to inhabit yourself fully and trust what you find there.',
     what: 'Nervous system regulation as a daily, lived capacity. Psychological flexibility — the ability to stay present with difficulty while moving toward what matters. Self-trust that does not collapse when things get hard. The story of your life, rewritten from soul outward.',
-    format: '55-minute sessions via secure telehealth · Every other week or 3×/month',
+    format: '55-minute sessions via secure telehealth',
     price: '$175/session (new clients) · Sliding scale $100–175 for ongoing current clients',
     image: '/images/card-truth.jpg',
     alt: 'Alexis opening into truth and reclaimed aliveness in a natural landscape.',
@@ -101,7 +101,7 @@ const individualOfferings = [
   },
   {
     title: 'Nature-Based Sessions',
-    subtitle: 'For clients in Costa Rica: nature as co-regulator, living presence, and the oldest healing force on earth.',
+    subtitle: 'For clients in Costa Rica: nature as co-regulator, living presence, and the oldest healing force on earth. (Telehealth Options Are Available)',
     body: 'The natural world is one of the most powerful nervous system regulators available to us — and one of the most underused. Research confirms what our bodies already know: time in nature downregulates the stress response, restores capacity for presence, and reconnects us to something larger than our own suffering. When we bring healing into the natural world, we bring the most ancient co-regulator into the room.',
     what: null,
     format: '90-minute sessions · In person · Pacific coast of Costa Rica · Location by arrangement',
