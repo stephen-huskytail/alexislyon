@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { ContactForm } from '@/components/ContactForm';
@@ -62,6 +63,11 @@ export default function Connect() {
                 </div>
               </div>
               <p className="mt-6 text-xs text-cream/50 leading-6">All sessions via secure telehealth. Evening availability may be possible for Women's Group — inquire when connecting.</p>
+            </div>
+
+            {/* Portrait */}
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-soft">
+              <Image src="/images/alexis-portrait.jpg" alt="Alexis Lyon" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 40vw" />
             </div>
           </aside>
         </div>

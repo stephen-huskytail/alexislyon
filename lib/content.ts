@@ -39,7 +39,7 @@ export const offeringsDetail: [string, string, string, string][] = [
   [
     'The Becoming — Women\'s Group',
     'An intimate group of 4–8 women gathering regularly to do real inner work in community. We work with the body, the nervous system, the stories we carry, the dreams we are reaching toward, and the wounds we are learning to alchemize into wisdom.',
-    '75–90 min · 3×/month or every other week · Secure telehealth · Min. 3-month commitment',
+    '75–90 min · Secure telehealth · Min. 3-month commitment',
     '$50/session · Approximately $100–150/month'
   ]
 ];

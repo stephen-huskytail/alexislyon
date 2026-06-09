@@ -49,7 +49,7 @@ const serviceJsonLd = [
         name: "The Becoming — Women's Group",
         url: 'https://alexislyon.com/connect',
         availability: 'https://schema.org/InStock',
-        priceSpecification: { '@type': 'PriceSpecification', price: 50, priceCurrency: 'USD', description: "Women's group session — 75–90 minutes, 3×/month or every other week" }
+        priceSpecification: { '@type': 'PriceSpecification', price: 50, priceCurrency: 'USD', description: "Women's group session — 75–90 minutes" }
       }
     ]
   },
@@ -128,7 +128,7 @@ const groupWork = {
     { label: 'Daytime group', detail: 'Timing confirmed based on members\' availability' },
     { label: 'Evening group', detail: 'Approximately 6:00–8:00 PM Pacific (8:00–10:00 PM Costa Rica time)' }
   ],
-  format: '75–90 minutes per session · 3×/month or every other week · Via secure telehealth · Minimum 3-month commitment',
+  format: '75–90 minutes per session · Via secure telehealth · Minimum 3-month commitment',
   price: '$50/session · Approximately $100–150/month',
   starting: 'August 2026 — exact date confirmed with group members',
   cta: 'Currently forming — inquire to reserve your spot. This group is by personal invitation; please mention your interest in the consultation form.'
