@@ -48,21 +48,8 @@ export default function Connect() {
             <div className="rounded-[2rem] bg-forest p-8 text-cream">
               <p className="eyebrow !text-gold-lt">Session Availability</p>
               <h3 className="display mt-4 text-2xl text-gold-lt">Now booking</h3>
-              <div className="mt-5 space-y-4 text-sm leading-7">
-                <div>
-                  <p className="font-medium">Costa Rica time</p>
-                  <p className="text-cream/70">9:00 AM – 1:45 PM (CST)</p>
-                </div>
-                <div>
-                  <p className="font-medium">Summer hours (Aug – Oct)</p>
-                  <p className="text-cream/70">8:00 AM – 12:45 PM Pacific</p>
-                </div>
-                <div>
-                  <p className="font-medium">Winter hours (Nov onward)</p>
-                  <p className="text-cream/70">7:00 AM – 11:45 AM Pacific</p>
-                </div>
-              </div>
-              <p className="mt-6 text-xs text-cream/50 leading-6">All sessions via secure telehealth. Evening availability may be possible for Women's Group — inquire when connecting.</p>
+              <p className="mt-5 text-sm leading-7">Sessions are available weekday mornings, Pacific time. Some evening availability may be possible — including for The Becoming women&rsquo;s group. Please inquire when you connect.</p>
+              <p className="mt-6 text-xs text-cream/50 leading-6">All sessions via secure telehealth. Nature-based sessions in person on the Pacific coast of Costa Rica by arrangement.</p>
             </div>
 
             {/* Portrait */}

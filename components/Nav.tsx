@@ -105,7 +105,7 @@ export function Nav() {
         href="/connect"
         className="fixed bottom-0 inset-x-0 z-40 flex items-center justify-center gap-2 bg-forest py-4 text-cream text-sm font-medium tracking-[.06em] shadow-[0_-4px_24px_rgba(27,74,58,.18)] transition-colors hover:bg-sage active:bg-sage lg:hidden"
       >
-        Begin the Conversation →
+        Schedule Your Free Consultation →
       </Link>
     )}
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${navClass}`}>

@@ -11,6 +11,12 @@ const securityHeaders = [
 
 const nextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      { source: '/the-foundation', destination: '/philosophy', permanent: true },
+      { source: '/work-with-me', destination: '/#work', permanent: true }
+    ];
+  },
   async headers() {
     return [
       {

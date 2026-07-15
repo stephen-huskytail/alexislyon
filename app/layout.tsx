@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   description: 'Transformational guidance rooted in somatic depth, nervous system regulation, psychological flexibility, nature-based healing, and self-trust.',
   openGraph: {
     title: 'Alexis Lyon | Transformational Guide & Somatic Healer',
-    description: 'Healing for the wound. Reclaiming for the wildness. Rooted from soul.',
+    description: 'Healing for the wound. Reclaiming for the wildness. Trauma-informed transformational guidance.',
     url: 'https://alexislyon.com',
     siteName: 'Alexis Lyon',
     locale: 'en_US',
     type: 'website',
     images: [{ url: '/api/og', width: 1200, height: 630, alt: 'Alexis Lyon — Transformational Guide & Somatic Healer' }]
   },
-  twitter: { card: 'summary_large_image', images: ['/api/og'] },
+  twitter: { card: 'summary_large_image', description: 'Healing for the wound. Reclaiming for the wildness. Trauma-informed transformational guidance.', images: ['/api/og'] },
   alternates: { canonical: '/' }
 };
 
