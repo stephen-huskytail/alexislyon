@@ -1,0 +1,90 @@
+[
+  {
+    "label": "01 Hero \u2014 misty canopy",
+    "file": "alexis-nature-hero-canopy.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 221398,
+    "sha256": "456aec4f8791cdb2316aadccfc19ba4938b676ef15f370fd02bc079297639b10"
+  },
+  {
+    "label": "02 Tender \u2014 fern + dew",
+    "file": "alexis-nature-tender-fern.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 54758,
+    "sha256": "3ac8578b52256bdbe7a372943df5453a15641604e7bb7eeb4cf18036957a2cc7"
+  },
+  {
+    "label": "03 Wildness \u2014 waterfall",
+    "file": "alexis-nature-wildness-waterfall.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 350378,
+    "sha256": "bc8adb161758201e582d037af52b409e842f2784c6a1d1af1b5c9ae45d84b175"
+  },
+  {
+    "label": "04 Safety \u2014 grounded roots",
+    "file": "alexis-nature-safety-roots.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 317410,
+    "sha256": "6cc7babc3a05587fae3b16c4b9eb6a0c3315baae00071d17a9d0448721ed9638"
+  },
+  {
+    "label": "05 Regulation \u2014 stream",
+    "file": "alexis-nature-regulation-stream.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 224104,
+    "sha256": "e98983a9b1d06b6eb00adf2144fb3d4b82985c30fcb127229028c7b8333e074f"
+  },
+  {
+    "label": "06 Flexibility \u2014 open path",
+    "file": "alexis-nature-flexibility-path.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 259072,
+    "sha256": "386e0f92bba72d62a462c2841a37e47b3e8e59cdc60b965f7ff249b51f4d2156"
+  },
+  {
+    "label": "07 Co-regulating \u2014 two trees",
+    "file": "alexis-nature-coregulation-trees.webp",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 283094,
+    "sha256": "32c7e0bec253dffeee8d5ef3ace7551f9bbae95db613d7a349cd743364fae305"
+  },
+  {
+    "label": "08 Wound \u2014 still pool",
+    "file": "alexis-nature-wound-still-water.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 143396,
+    "sha256": "fff23c4bc9be29c5e066b8658471f78e96f2df3301b66b5e03e6dc61a7fdefb3"
+  },
+  {
+    "label": "09 Wildness \u2014 Pacific ocean",
+    "file": "alexis-nature-wildness-ocean.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 288644,
+    "sha256": "c3f455a7c69749b3801147123f235d888ff093bcc404d26eb19e779969f74792"
+  },
+  {
+    "label": "10 Post-traumatic growth",
+    "file": "alexis-nature-post-traumatic-growth.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 232668,
+    "sha256": "76f32944cae4200d25d575cd79ab3033ad7f758b0ee8eaaef56399b521a206c6"
+  },
+  {
+    "label": "11 Psychological flexibility",
+    "file": "alexis-nature-psychological-flexibility.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 106770,
+    "sha256": "ddca4901005d39c3124fb9757b82022a30f98e18e628bfa71537c292b23cea5b"
+  }
+]
