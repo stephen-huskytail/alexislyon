@@ -76,6 +76,17 @@ export default function Philosophy() {
           <p className="body-large mt-7 max-w-4xl text-mid">
             The work is grounded in safety built inside relationship, regulation that supports aliveness, and psychological flexibility that lets you move toward what matters while difficulty is still present. This page is the deeper frame beneath everything we do together.
           </p>
+          <div className="relative mt-10 h-72 overflow-hidden rounded-[2rem] shadow-soft sm:h-96">
+            <Image
+              src="/images/nature/philosophy-path.webp"
+              alt="A rainforest path opening toward warm morning light"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-forest/20 via-transparent to-gold/10" />
+          </div>
         </div>
       </section>
 

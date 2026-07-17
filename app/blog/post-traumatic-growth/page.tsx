@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
@@ -16,9 +17,9 @@ export const metadata: Metadata = {
     description: post.description,
     type: 'article',
     publishedTime: post.datePublished,
-    images: [{ url: '/api/og?title=Post-Traumatic+Growth&sub=The+Alchemy+of+the+Wound', width: 1200, height: 630, alt: post.title }]
+    images: [{ url: post.image, width: 1536, height: 1024, alt: post.imageAlt }]
   },
-  twitter: { card: 'summary_large_image', images: ['/api/og?title=Post-Traumatic+Growth&sub=The+Alchemy+of+the+Wound'] }
+  twitter: { card: 'summary_large_image', images: [post.image] }
 };
 
 const articleJsonLd = {
@@ -32,7 +33,7 @@ const articleJsonLd = {
   inLanguage: 'en-US',
   author: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
   publisher: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
-  image: 'https://alexislyon.com/api/og?title=Post-Traumatic+Growth&sub=The+Alchemy+of+the+Wound',
+  image: `https://alexislyon.com${post.image}`,
   keywords: ['post-traumatic growth', 'trauma healing', 'wound to wisdom'],
   mainEntityOfPage: `https://alexislyon.com/blog/${post.slug}`
 };
@@ -47,6 +48,9 @@ export default function PostTraumaticGrowth() {
           <p className="eyebrow">{post.eyebrow}</p>
           <h1 className="display mt-5 text-4xl sm:text-5xl text-forest">Post-Traumatic Growth: The Alchemy of the Wound</h1>
           <p className="mt-6 text-xs uppercase tracking-[.16em] text-mid">By Alexis Lyon · July 15, 2026 · {post.readingTime}</p>
+          <div className="relative mt-10 aspect-[3/2] overflow-hidden rounded-[2rem] shadow-soft">
+            <Image src={post.image} alt={post.imageAlt} fill priority className="object-cover" sizes="(max-width: 768px) 100vw, 768px" />
+          </div>
 
           <div className="mt-10 space-y-6 leading-8 text-mid">
             <p className="body-large text-dark">The alchemy begins where the wound is honored and the wildness is free.</p>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
@@ -31,7 +32,8 @@ const blogJsonLd = {
     headline: p.title,
     url: `https://alexislyon.com/blog/${p.slug}`,
     datePublished: p.datePublished,
-    author: { '@type': 'Person', name: 'Alexis Lyon' }
+    author: { '@type': 'Person', name: 'Alexis Lyon' },
+    image: `https://alexislyon.com${p.image}`
   }))
 };
 
@@ -47,15 +49,20 @@ export default function Blog() {
           <p className="body-large mt-7 max-w-3xl text-mid">Depth material for the curious reader — the frameworks, science, and soul beneath the work.</p>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {posts.map((p) => (
-              <article className="card flex h-full flex-col bg-cream" key={p.slug}>
-                <p className="eyebrow">{p.eyebrow}</p>
-                <h2 className="display mt-5 text-3xl text-forest"><Link className="transition-colors hover:text-sage" href={`/blog/${p.slug}`}>{p.title}</Link></h2>
-                <p className="mt-4 flex-1 leading-8 text-mid">{p.description}</p>
-                <div className="mt-6 flex items-center justify-between border-t border-warm-dk pt-4 text-xs uppercase tracking-[.16em] text-mid">
-                  <span>{new Date(`${p.datePublished}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</span>
-                  <span>{p.readingTime}</span>
+              <article className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-warm-dk bg-cream shadow-soft" key={p.slug}>
+                <Link className="relative block h-64 overflow-hidden" href={`/blog/${p.slug}`} aria-label={`Read ${p.title}`}>
+                  <Image src={p.image} alt={p.imageAlt} fill className="object-cover transition duration-500 hover:scale-[1.03]" sizes="(max-width: 768px) 100vw, 50vw" />
+                </Link>
+                <div className="flex flex-1 flex-col p-8">
+                  <p className="eyebrow">{p.eyebrow}</p>
+                  <h2 className="display mt-5 text-3xl text-forest"><Link className="transition-colors hover:text-sage" href={`/blog/${p.slug}`}>{p.title}</Link></h2>
+                  <p className="mt-4 flex-1 leading-8 text-mid">{p.description}</p>
+                  <div className="mt-6 flex items-center justify-between border-t border-warm-dk pt-4 text-xs uppercase tracking-[.16em] text-mid">
+                    <span>{new Date(`${p.datePublished}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</span>
+                    <span>{p.readingTime}</span>
+                  </div>
+                  <Link className="btn btn-forest mt-6 self-start" href={`/blog/${p.slug}`}>Read the essay</Link>
                 </div>
-                <Link className="btn btn-forest mt-6 self-start" href={`/blog/${p.slug}`}>Read the essay</Link>
               </article>
             ))}
           </div>

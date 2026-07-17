@@ -11,27 +11,22 @@ Rich, calming, photorealistic nature imagery aligned to the live site palette:
 
 Mood: serenity, safety, awe, groundedness, movement, and nature as co-regulator. No people, text, logos, purple sunsets, harsh contrast, or generic wellness-stock styling.
 
-## Exact 50% Alexis-Image Reduction
+## Alexis Image Balance
 
-The current site renders Alexis in 12 meaningful photo placements. The proposed change keeps six and replaces six.
+The current site renders Alexis in 12 meaningful photo placements. Per Stephen’s updated direction, the implementation replaces only two and keeps the remaining ten.
 
-### Keep Alexis — trust and relationship anchors (6)
+### Keep Alexis — trust and relationship anchors (10)
 
-1. Homepage About story portrait
-2. `/about` primary portrait
-3. `/connect` portrait
-4. Philosophy relationship card — Witnessing
-5. Philosophy relationship card — Practicing Presence
-6. Philosophy relationship card — Returning to Truth
+- Homepage About story portrait
+- `/about` primary portrait
+- `/connect` portrait
+- All three Philosophy Foundation cards
+- All four Philosophy relationship cards
 
-### Replace with AI nature imagery (6)
+### Replace with AI nature imagery (2)
 
 1. Homepage You Belong Here — Tender → **02 Fern + Dew**
 2. Homepage You Belong Here — Wildness → **03 Waterfall**
-3. Philosophy Foundation — Safety → **04 Grounded Roots**
-4. Philosophy Foundation — Regulation → **05 Stream**
-5. Philosophy Foundation — Psychological Flexibility → **06 Open Path**
-6. Philosophy relationship card — Co-regulating → **07 Two Trees**
 
 ## Additional Nature Placements
 
@@ -40,10 +35,11 @@ These do not replace Alexis; they make the nature direction feel intentional acr
 1. Homepage hero background → **01 Misty Canopy**
 2. Homepage Wound card → **08 Still Pool**
 3. Homepage Wildness card → **09 Pacific Ocean**
-4. Post-Traumatic Growth article hero/card → **10 New Growth**
-5. Psychological Flexibility article hero/card → **11 Sunrise / Open Horizon**
+4. Philosophy hero panel → **06 Open Path**
+5. Post-Traumatic Growth article hero/card → **10 New Growth**
+6. Psychological Flexibility article hero/card → **11 Sunrise / Open Horizon**
 
-## Technical Plan After Approval
+## Technical Implementation
 
 - Use the optimized WebP files in this folder.
 - Render with `next/image` and descriptive alt text.
@@ -52,6 +48,6 @@ These do not replace Alexis; they make the nature direction feel intentional acr
 - Verify desktop and 390px mobile crops, image natural dimensions, console, overflow, production build, and Lighthouse performance.
 - Stage on an immutable Preview first. Production remains unchanged until Stephen approves release.
 
-## Review
+## Release State
 
-Approve the set as-is, or identify any image numbers to regenerate before implementation.
+Implementation is staged on the review branch. Production remains unchanged until Stephen approves release.
