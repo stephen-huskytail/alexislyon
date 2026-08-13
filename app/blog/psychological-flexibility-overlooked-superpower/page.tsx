@@ -5,6 +5,12 @@ import { JsonLd } from '@/components/JsonLd';
 import { posts } from '@/lib/posts';
 
 const post = posts.find((p) => p.slug === 'psychological-flexibility-overlooked-superpower')!;
+const formattedDate = new Date(`${post.datePublished}T12:00:00Z`).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC'
+});
 
 export const metadata: Metadata = {
   title: { absolute: 'What Is Psychological Flexibility? An Overlooked Superpower' },
@@ -36,6 +42,7 @@ export default function PsychologicalFlexibilityOverlookedSuperpower() {
         <div className="container max-w-3xl">
           <h1 className="display text-4xl text-forest sm:text-5xl">Psychological Flexibility: An Overlooked Superpower</h1>
           <p className="body-large mt-6 text-dark">What psychological flexibility is, why it matters, and how we cultivate it.</p>
+          <p className="mt-6 text-xs uppercase tracking-[.16em] text-mid">By Alexis Lyon · {formattedDate} · {post.readingTime}</p>
 
           <div className="mt-10 space-y-6 leading-8 text-mid">
             <h2 className="display mt-12 text-3xl text-forest">What Is Psychological Flexibility?</h2>
