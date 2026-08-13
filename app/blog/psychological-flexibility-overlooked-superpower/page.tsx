@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
@@ -122,6 +123,11 @@ export default function PsychologicalFlexibilityOverlookedSuperpower() {
             <p>“In this moment, am I willing to practice it?”</p>
             <h2 className="display mt-12 text-3xl text-forest">Source</h2>
             <p>Steven C. Hayes, PhD, “What Actually Works in Therapy (And What Doesn’t),” Psychology Today, March/April 2026, p. 23.</p>
+          </div>
+
+          <div className="mt-12 rounded-[2rem] bg-forest p-8 text-center text-cream">
+            <p className="display text-3xl">This is the work I do. Let&rsquo;s talk.</p>
+            <Link className="btn btn-gold mt-6" href="/connect">Schedule Your Free Consultation</Link>
           </div>
         </div>
       </article>
