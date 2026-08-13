@@ -29,6 +29,7 @@ export const posts: PostMeta[] = [
     title: 'Psychological Flexibility: An Overlooked Superpower',
     description: 'Discover what psychological flexibility is, why it helps create meaningful change, and how awareness, openness, values, and Nature can help us cultivate it.',
     datePublished: '2026-08-13',
-    readingTime: '9 min read'
+    readingTime: '9 min read',
+    eyebrow: 'How change happens'
   }
 ];
