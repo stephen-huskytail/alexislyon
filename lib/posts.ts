@@ -18,6 +18,14 @@ export const posts: PostMeta[] = [
   },
   {
     slug: 'psychological-flexibility',
+    title: 'Psychological Flexibility: How Change Actually Happens',
+    description: 'Psychological flexibility — the heart of Acceptance and Commitment Therapy — is the capacity to stay present with difficulty while moving toward what matters. It is how change actually happens.',
+    datePublished: '2026-07-15',
+    readingTime: '6 min read',
+    eyebrow: 'How change happens'
+  },
+  {
+    slug: 'psychological-flexibility-overlooked-superpower',
     title: 'Psychological Flexibility: An Overlooked Superpower',
     description: 'Discover what psychological flexibility is, why it helps create meaningful change, and how awareness, openness, values, and Nature can help us cultivate it.'
   }
