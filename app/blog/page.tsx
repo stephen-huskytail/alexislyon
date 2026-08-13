@@ -48,13 +48,15 @@ export default function Blog() {
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {posts.map((p) => (
               <article className="card flex h-full flex-col bg-cream" key={p.slug}>
-                <p className="eyebrow">{p.eyebrow}</p>
-                <h2 className="display mt-5 text-3xl text-forest"><Link className="transition-colors hover:text-sage" href={`/blog/${p.slug}`}>{p.title}</Link></h2>
+                {p.eyebrow && <p className="eyebrow">{p.eyebrow}</p>}
+                <h2 className={`display text-3xl text-forest ${p.eyebrow ? 'mt-5' : ''}`}><Link className="transition-colors hover:text-sage" href={`/blog/${p.slug}`}>{p.title}</Link></h2>
                 <p className="mt-4 flex-1 leading-8 text-mid">{p.description}</p>
-                <div className="mt-6 flex items-center justify-between border-t border-warm-dk pt-4 text-xs uppercase tracking-[.16em] text-mid">
-                  <span>{new Date(`${p.datePublished}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</span>
-                  <span>{p.readingTime}</span>
-                </div>
+                {(p.datePublished || p.readingTime) && (
+                  <div className="mt-6 flex items-center justify-between border-t border-warm-dk pt-4 text-xs uppercase tracking-[.16em] text-mid">
+                    <span>{p.datePublished ? new Date(`${p.datePublished}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }) : null}</span>
+                    <span>{p.readingTime}</span>
+                  </div>
+                )}
                 <Link className="btn btn-forest mt-6 self-start" href={`/blog/${p.slug}`}>Read the essay</Link>
               </article>
             ))}

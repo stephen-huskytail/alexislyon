@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog`, lastModified, changeFrequency: 'weekly' as const, priority: 0.7 },
     ...posts.map((p) => ({
       url: `${base}/blog/${p.slug}`,
-      lastModified: new Date(`${p.datePublished}T12:00:00Z`),
+      lastModified: p.datePublished ? new Date(`${p.datePublished}T12:00:00Z`) : lastModified,
       changeFrequency: 'yearly' as const,
       priority: 0.6
     })),
