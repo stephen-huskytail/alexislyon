@@ -1,5 +1,7 @@
 'use client';
+
 import { useState } from 'react';
+import { ApiErrorHero } from '@/components/ApiErrorHero';
 
 export function ForestBodyForm() {
   const [email, setEmail] = useState('');
@@ -36,9 +38,18 @@ export function ForestBodyForm() {
         disabled={status === 'loading'}
       />
       <button className="btn btn-gold shrink-0" type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Sending…' : 'Receive Audio'}
+        {status === 'loading' ? 'Sending' : 'Receive Audio'}
       </button>
-      {status === 'error' && <p className="w-full text-xs text-gold-lt/70 mt-1">Something went wrong — please try again.</p>}
+      {status === 'error' && (
+        <div className="w-full mt-3">
+          <ApiErrorHero
+            title="Delivery failed"
+            message="Something went wrong — please try again."
+            onRetry={() => setStatus('idle')}
+            retryLabel="Try again"
+          />
+        </div>
+      )}
     </form>
   );
 }
