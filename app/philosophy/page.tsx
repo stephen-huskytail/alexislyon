@@ -118,6 +118,14 @@ export default function Philosophy() {
           <div>
             <p className="eyebrow">A brief primer</p>
             <h2 className="display mt-5 text-5xl text-forest">What your nervous system is doing all day.</h2>
+            <Image
+              src="/images/philosophy-nervous-system-sunset.png"
+              alt="A sunlit path through a meadow and trees at sunset."
+              width={1586}
+              height={992}
+              className="mt-8 h-auto w-full rounded-2xl"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
           <div className="space-y-5 leading-8 text-mid">
             <p>Beneath every thought you have, your nervous system is asking one question, over and over: am I safe? When the answer has too often been no — through rupture, loss, or years of holding more than one person should hold — the body learns to protect first and live second.</p>
