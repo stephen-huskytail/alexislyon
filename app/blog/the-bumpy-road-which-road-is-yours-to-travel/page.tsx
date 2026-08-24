@@ -31,6 +31,8 @@ const articleJsonLd = {
   description: post.description,
   url: `https://alexislyon.com/blog/${post.slug}`,
   inLanguage: 'en-US',
+  datePublished: post.datePublished,
+  dateModified: post.datePublished,
   mainEntityOfPage: `https://alexislyon.com/blog/${post.slug}`
 };
 
