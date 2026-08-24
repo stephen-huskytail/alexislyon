@@ -13,11 +13,12 @@ test.describe('homepage portrait regression prevention', () => {
     const pageErrors = [];
     const failedRequests = [];
     const badResponses = [];
+    let vercel404Seen = false;
 
     page.on('console', msg => {
       if (msg.type() === 'error') {
         const text = msg.text();
-        if (isAllowedVercelInsights(text) || text.includes('Failed to load resource: the server responded with a status of 404 (Not Found)')) {
+        if (isAllowedVercelInsights(text) || (vercel404Seen && text.includes('Failed to load resource') && text.includes('404'))) {
           console.log('[allowed-vercel-404]', text);
         } else {
           consoleErrors.push(text);
@@ -36,8 +37,11 @@ test.describe('homepage portrait regression prevention', () => {
       const url = response.url();
       if (status === 404) {
         console.log('[404-response]', url);
+        if (isAllowedVercelInsights(url)) {
+          vercel404Seen = true;
+        }
       }
-      if (status >= 400 && !isAllowedVercelInsights(url) && !url.includes('/_next/static/') && !url.includes('/_next/image')) {
+      if (status >= 400 && !isAllowedVercelInsights(url)) {
         badResponses.push(`${status} ${url}`);
       }
     });
@@ -87,7 +91,7 @@ test.describe('homepage portrait regression prevention', () => {
     const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     expect(hasOverflow, 'no horizontal overflow allowed at desktop').toBe(false);
 
-    expect(consoleErrors, `unexpected console errors (only /_vercel/insights/script.js permitted): ${consoleErrors.join('; ')}`).toHaveLength(0);
+    expect(consoleErrors, `unexpected console errors (only exact /_vercel/insights/script.js by pathname permitted): ${consoleErrors.join('; ')}`).toHaveLength(0);
     expect(pageErrors, `unexpected page errors: ${pageErrors.join('; ')}`).toHaveLength(0);
     expect(failedRequests, `unexpected failed requests: ${failedRequests.join('; ')}`).toHaveLength(0);
     expect(badResponses, `unexpected >=400 responses: ${badResponses.join('; ')}`).toHaveLength(0);
@@ -98,11 +102,12 @@ test.describe('homepage portrait regression prevention', () => {
     const pageErrors = [];
     const failedRequests = [];
     const badResponses = [];
+    let vercel404Seen = false;
 
     page.on('console', msg => {
       if (msg.type() === 'error') {
         const text = msg.text();
-        if (isAllowedVercelInsights(text) || text.includes('Failed to load resource: the server responded with a status of 404 (Not Found)')) {
+        if (isAllowedVercelInsights(text) || (vercel404Seen && text.includes('Failed to load resource') && text.includes('404'))) {
           console.log('[allowed-vercel-404]', text);
         } else {
           consoleErrors.push(text);
@@ -121,8 +126,11 @@ test.describe('homepage portrait regression prevention', () => {
       const url = response.url();
       if (status === 404) {
         console.log('[404-response]', url);
+        if (isAllowedVercelInsights(url)) {
+          vercel404Seen = true;
+        }
       }
-      if (status >= 400 && !isAllowedVercelInsights(url) && !url.includes('/_next/static/') && !url.includes('/_next/image')) {
+      if (status >= 400 && !isAllowedVercelInsights(url)) {
         badResponses.push(`${status} ${url}`);
       }
     });
@@ -172,7 +180,7 @@ test.describe('homepage portrait regression prevention', () => {
     const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     expect(hasOverflow, 'no horizontal overflow allowed at mobile').toBe(false);
 
-    expect(consoleErrors, `unexpected console errors on mobile (only /_vercel/insights/script.js permitted): ${consoleErrors.join('; ')}`).toHaveLength(0);
+    expect(consoleErrors, `unexpected console errors on mobile (only exact /_vercel/insights/script.js by pathname permitted): ${consoleErrors.join('; ')}`).toHaveLength(0);
     expect(pageErrors, `unexpected page errors on mobile: ${pageErrors.join('; ')}`).toHaveLength(0);
     expect(failedRequests, `unexpected failed requests on mobile: ${failedRequests.join('; ')}`).toHaveLength(0);
     expect(badResponses, `unexpected >=400 responses on mobile: ${badResponses.join('; ')}`).toHaveLength(0);
