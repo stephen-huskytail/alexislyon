@@ -44,8 +44,8 @@ test.describe('homepage portrait regression prevention', () => {
     expect(hasOverflow, 'no horizontal overflow allowed at desktop').toBe(false);
 
     // Classify local test env noise (vercel insights 404, chunk MIME/400 errors from Next.js in isolated run) as unrelated to portrait
-    const unexpected = errors.filter(e => 
-      !e.includes('_vercel/insights') && 
+    const unexpected = errors.filter(e =>
+      !e.includes('_vercel/insights') &&
       !e.includes('vercel') &&
       !e.includes('Failed to load resource') &&
       !e.includes('MIME type') &&
@@ -96,8 +96,8 @@ test.describe('homepage portrait regression prevention', () => {
     const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     expect(hasOverflow, 'no horizontal overflow allowed at mobile').toBe(false);
 
-    const unexpected = errors.filter(e => 
-      !e.includes('_vercel/insights') && 
+    const unexpected = errors.filter(e =>
+      !e.includes('_vercel/insights') &&
       !e.includes('vercel') &&
       !e.includes('Failed to load resource') &&
       !e.includes('MIME type') &&
