@@ -9,6 +9,14 @@ export type PostMeta = {
 
 export const posts: PostMeta[] = [
   {
+    slug: 'the-bumpy-road-which-road-is-yours-to-travel',
+    title: 'The Bumpy Road: Which Road Is Yours to Travel?',
+    description: 'A reflection on meaningful discomfort, self-trust, and listening for the road that calls us more fully into life.',
+    datePublished: '2026-08-24',
+    readingTime: '8 min read',
+    eyebrow: 'Self-trust'
+  },
+  {
     slug: 'psychological-flexibility-overlooked-superpower',
     title: 'Psychological Flexibility: An Overlooked Superpower',
     description: 'Discover what psychological flexibility is, why it helps create meaningful change, and how awareness, openness, values, and Nature can help us cultivate it.',
