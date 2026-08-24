@@ -3,45 +3,41 @@ import { test, expect } from '@playwright/test';
 
 const VERCEL_INSIGHTS_PATH = '/_vercel/insights/script.js';
 
-function isAllowedVercelInsights(textOrUrl) {
-  return textOrUrl.includes(VERCEL_INSIGHTS_PATH);
-}
-
 test.describe('homepage portrait regression prevention', () => {
   test('desktop 1440px: #about portrait frame <=420px, image loaded, no horizontal overflow', async ({ page }) => {
-    const consoleErrors = [];
-    const pageErrors = [];
-    const failedRequests = [];
-    const badResponses = [];
-    let vercel404Seen = false;
+    const consoleErrors: string[] = [];
+    const pageErrors: string[] = [];
+    const failedRequests: string[] = [];
+    const badResponses: string[] = [];
+
+    // Deterministic exact-only fulfillment for the known local non-production baseline.
+    // Intercept ONLY the exact pathname and fulfill as successful empty JS.
+    // This prevents any error from being emitted for it.
+    await page.route(`**${VERCEL_INSIGHTS_PATH}`, route => {
+      console.log('[intercepted-vercel-insights] fulfilling exact /_vercel/insights/script.js as successful empty JS response');
+      route.fulfill({
+        status: 200,
+        contentType: 'application/javascript',
+        body: '// local test baseline fulfillment for /_vercel/insights/script.js\n',
+      });
+    });
 
     page.on('console', msg => {
       if (msg.type() === 'error') {
-        const text = msg.text();
-        if (isAllowedVercelInsights(text) || (vercel404Seen && text.includes('Failed to load resource') && text.includes('404'))) {
-          console.log('[allowed-vercel-404]', text);
-        } else {
-          consoleErrors.push(text);
-        }
+        consoleErrors.push(msg.text());
       }
     });
     page.on('pageerror', err => pageErrors.push(err.message));
     page.on('requestfailed', request => {
-      const url = request.url();
-      if (!isAllowedVercelInsights(url)) {
-        failedRequests.push(`${request.failure()?.errorText || 'failed'}: ${url}`);
-      }
+      failedRequests.push(`${request.failure()?.errorText || 'failed'}: ${request.url()}`);
     });
     page.on('response', response => {
       const status = response.status();
       const url = response.url();
       if (status === 404) {
         console.log('[404-response]', url);
-        if (isAllowedVercelInsights(url)) {
-          vercel404Seen = true;
-        }
       }
-      if (status >= 400 && !isAllowedVercelInsights(url)) {
+      if (status >= 400) {
         badResponses.push(`${status} ${url}`);
       }
     });
@@ -91,46 +87,46 @@ test.describe('homepage portrait regression prevention', () => {
     const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     expect(hasOverflow, 'no horizontal overflow allowed at desktop').toBe(false);
 
-    expect(consoleErrors, `unexpected console errors (only exact /_vercel/insights/script.js by pathname permitted): ${consoleErrors.join('; ')}`).toHaveLength(0);
-    expect(pageErrors, `unexpected page errors: ${pageErrors.join('; ')}`).toHaveLength(0);
-    expect(failedRequests, `unexpected failed requests: ${failedRequests.join('; ')}`).toHaveLength(0);
-    expect(badResponses, `unexpected >=400 responses: ${badResponses.join('; ')}`).toHaveLength(0);
+    // Gate is fail-closed: every console error, page error, request failure, and >=400 (incl. all _next/*) must be zero.
+    // Only the exact intercepted /_vercel/insights/script.js is deliberately fulfilled as success (logged above).
+    expect(consoleErrors, `unexpected console errors (fail-closed; only exact interception allowed): ${consoleErrors.join('; ')}`).toHaveLength(0);
+    expect(pageErrors, `unexpected page errors (fail-closed): ${pageErrors.join('; ')}`).toHaveLength(0);
+    expect(failedRequests, `unexpected failed requests (fail-closed): ${failedRequests.join('; ')}`).toHaveLength(0);
+    expect(badResponses, `unexpected >=400 responses (fail-closed, incl. all _next/*): ${badResponses.join('; ')}`).toHaveLength(0);
   });
 
   test('mobile 390px: #about portrait frame <=420px, image loaded, no horizontal overflow', async ({ page }) => {
-    const consoleErrors = [];
-    const pageErrors = [];
-    const failedRequests = [];
-    const badResponses = [];
-    let vercel404Seen = false;
+    const consoleErrors: string[] = [];
+    const pageErrors: string[] = [];
+    const failedRequests: string[] = [];
+    const badResponses: string[] = [];
+
+    // Deterministic exact-only fulfillment for the known local non-production baseline.
+    await page.route(`**${VERCEL_INSIGHTS_PATH}`, route => {
+      console.log('[intercepted-vercel-insights] fulfilling exact /_vercel/insights/script.js as successful empty JS response');
+      route.fulfill({
+        status: 200,
+        contentType: 'application/javascript',
+        body: '// local test baseline fulfillment for /_vercel/insights/script.js\n',
+      });
+    });
 
     page.on('console', msg => {
       if (msg.type() === 'error') {
-        const text = msg.text();
-        if (isAllowedVercelInsights(text) || (vercel404Seen && text.includes('Failed to load resource') && text.includes('404'))) {
-          console.log('[allowed-vercel-404]', text);
-        } else {
-          consoleErrors.push(text);
-        }
+        consoleErrors.push(msg.text());
       }
     });
     page.on('pageerror', err => pageErrors.push(err.message));
     page.on('requestfailed', request => {
-      const url = request.url();
-      if (!isAllowedVercelInsights(url)) {
-        failedRequests.push(`${request.failure()?.errorText || 'failed'}: ${url}`);
-      }
+      failedRequests.push(`${request.failure()?.errorText || 'failed'}: ${request.url()}`);
     });
     page.on('response', response => {
       const status = response.status();
       const url = response.url();
       if (status === 404) {
         console.log('[404-response]', url);
-        if (isAllowedVercelInsights(url)) {
-          vercel404Seen = true;
-        }
       }
-      if (status >= 400 && !isAllowedVercelInsights(url)) {
+      if (status >= 400) {
         badResponses.push(`${status} ${url}`);
       }
     });
@@ -180,9 +176,10 @@ test.describe('homepage portrait regression prevention', () => {
     const hasOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     expect(hasOverflow, 'no horizontal overflow allowed at mobile').toBe(false);
 
-    expect(consoleErrors, `unexpected console errors on mobile (only exact /_vercel/insights/script.js by pathname permitted): ${consoleErrors.join('; ')}`).toHaveLength(0);
-    expect(pageErrors, `unexpected page errors on mobile: ${pageErrors.join('; ')}`).toHaveLength(0);
-    expect(failedRequests, `unexpected failed requests on mobile: ${failedRequests.join('; ')}`).toHaveLength(0);
-    expect(badResponses, `unexpected >=400 responses on mobile: ${badResponses.join('; ')}`).toHaveLength(0);
+    // Gate is fail-closed: every console error, page error, request failure, and >=400 (incl. all _next/*) must be zero.
+    expect(consoleErrors, `unexpected console errors on mobile (fail-closed; only exact interception allowed): ${consoleErrors.join('; ')}`).toHaveLength(0);
+    expect(pageErrors, `unexpected page errors on mobile (fail-closed): ${pageErrors.join('; ')}`).toHaveLength(0);
+    expect(failedRequests, `unexpected failed requests on mobile (fail-closed): ${failedRequests.join('; ')}`).toHaveLength(0);
+    expect(badResponses, `unexpected >=400 responses on mobile (fail-closed, incl. all _next/*): ${badResponses.join('; ')}`).toHaveLength(0);
   });
 });
