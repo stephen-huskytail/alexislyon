@@ -119,8 +119,8 @@ export default function Philosophy() {
             <p className="eyebrow">A brief primer</p>
             <h2 className="display mt-5 text-5xl text-forest">What your nervous system is doing all day.</h2>
             <Image
-              src="/images/nature-red-eyed-tree-frog.webp"
-              alt="A vivid green red-eyed tree frog with orange toes resting on a tropical leaf"
+              src="/images/nature-alpine-meadow.webp"
+              alt="An alpine meadow with orange and yellow wildflowers beneath snow-capped mountains."
               width={1200}
               height={900}
               className="mt-8 h-auto w-full rounded-2xl"
