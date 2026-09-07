@@ -69,9 +69,28 @@ export default function About() {
               <p>For nearly two decades, I worked as a therapist with foster care youth and families — people whose nervous systems had been shaped by profound rupture, and who were finding their way back to themselves against significant odds. Those years taught me something I have never forgotten: the innate resilience and courage that is available within all of us when we are met with unconditional acceptance, kindness, curiosity, and respect.</p>
               <p>Those youth were my greatest teachers. They showed me, over and over, what becomes possible when a person is genuinely met — not managed, not fixed, not assessed, but truly met. I carry that lesson into every session I hold.</p>
               <p>I have spent the last three years in private practice working with a range of children and adults, which has deepened my conviction that people of all ages and backgrounds can overcome their challenges when given the opportunity and the right relational field. For 22 years it has been my privilege and delight to see what becomes possible when people commit to their healing and growth within a genuine healing relationship — and uncover and embrace their true self.</p>
+              <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft">
+                <Image
+                  src="/images/nature-sunlit-forest.webp"
+                  alt="Morning sunlight filtering through the branches of a mature forest tree"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 815px) calc(100vw - 3rem), 768px"
+                />
+              </div>
               <p>I come to this work as someone who has done my own deep nervous system healing. I know what it is to feel overwhelmed and far from yourself — and I know the particular quality of arriving home. I work somatically because I have felt, in my own body, what it means to move from dysregulation to ground. I integrate nature into the healing space because the living world has been my most reliable co-regulator and teacher. I hold space for the spiritual and mystical alongside the psychological because I have found, again and again, that the deepest healing happens when all levels of a person are welcomed into the room.</p>
               <p>I am not a blank screen. I bring my full self — 22 years of clinical mastery, my own deep inner work, my reverence for the body and the natural world, and my unshakeable faith in what becomes possible when people are met with unconditional presence. I am here to walk the path with you, not observe it from a safe distance.</p>
               <p className="italic">You are the heroine of this story. I am simply the guide who has walked this territory before — and who is ready, right now, to walk it with you.</p>
+            </div>
+
+            <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft">
+              <Image
+                src="/images/nature-ocean-sunset.webp"
+                alt="Warm sunset reflected across a peaceful ocean"
+                fill
+                className="object-cover"
+                sizes="(max-width: 815px) calc(100vw - 3rem), 768px"
+              />
             </div>
 
             {/* Credentials */}
