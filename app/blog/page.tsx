@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
@@ -29,6 +30,7 @@ const blogJsonLd = {
   blogPost: posts.map((p) => ({
     '@type': 'BlogPosting',
     headline: p.title,
+    image: `https://alexislyon.com${p.featuredImage}`,
     url: `https://alexislyon.com/blog/${p.slug}`,
     datePublished: p.datePublished,
     author: { '@type': 'Person', name: 'Alexis Lyon' }
@@ -48,6 +50,9 @@ export default function Blog() {
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {posts.map((p) => (
               <article className="card flex h-full flex-col bg-cream" key={p.slug}>
+                <Link href={`/blog/${p.slug}`} aria-label={`Read ${p.title}`} className="relative mb-7 block aspect-[16/9] overflow-hidden rounded-2xl">
+                  <Image src={p.featuredImage} alt={p.featuredImageAlt} fill className="object-cover" sizes="(max-width: 767px) calc(100vw - 6rem), (max-width: 1207px) calc(50vw - 6rem), 510px" />
+                </Link>
                 {p.eyebrow && <p className="eyebrow">{p.eyebrow}</p>}
                 <h2 className={`display text-3xl text-forest ${p.eyebrow ? 'mt-5' : ''}`}><Link className="transition-colors hover:text-sage" href={`/blog/${p.slug}`}>{p.title}</Link></h2>
                 <p className="mt-4 flex-1 leading-8 text-mid">{p.description}</p>

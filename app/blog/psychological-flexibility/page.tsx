@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
@@ -16,9 +17,9 @@ export const metadata: Metadata = {
     description: post.description,
     type: 'article',
     publishedTime: post.datePublished,
-    images: [{ url: '/api/og?title=Psychological+Flexibility&sub=How+Change+Actually+Happens', width: 1200, height: 630, alt: post.title }]
+    images: [{ url: post.featuredImage, width: 1200, height: 675, alt: post.featuredImageAlt }]
   },
-  twitter: { card: 'summary_large_image', images: ['/api/og?title=Psychological+Flexibility&sub=How+Change+Actually+Happens'] }
+  twitter: { card: 'summary_large_image', images: [post.featuredImage] }
 };
 
 const articleJsonLd = {
@@ -32,7 +33,7 @@ const articleJsonLd = {
   inLanguage: 'en-US',
   author: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
   publisher: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
-  image: 'https://alexislyon.com/api/og?title=Psychological+Flexibility&sub=How+Change+Actually+Happens',
+  image: `https://alexislyon.com${post.featuredImage}`,
   keywords: ['psychological flexibility', 'ACT therapy', 'acceptance and commitment'],
   mainEntityOfPage: `https://alexislyon.com/blog/${post.slug}`
 };
@@ -47,6 +48,10 @@ export default function PsychologicalFlexibility() {
           <p className="eyebrow">{post.eyebrow}</p>
           <h1 className="display mt-5 text-4xl sm:text-5xl text-forest">Psychological Flexibility: How Change Actually Happens</h1>
           <p className="mt-6 text-xs uppercase tracking-[.16em] text-mid">By Alexis Lyon · July 15, 2026 · {post.readingTime}</p>
+
+          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft">
+            <Image src={post.featuredImage} alt={post.featuredImageAlt} fill priority className="object-cover" sizes="(max-width: 815px) calc(100vw - 3rem), 768px" />
+          </div>
 
           <div className="mt-10 space-y-6 leading-8 text-mid">
             <p className="body-large text-dark">You may have been told — or told yourself — that you need to finish healing before you are allowed to start living. Psychological flexibility is the research-backed answer to that myth.</p>

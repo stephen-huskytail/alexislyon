@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
@@ -20,14 +21,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Bumpy Road: Which Road Is Yours to Travel?',
     description: post.description,
-    type: 'article'
-  }
+    type: 'article',
+    images: [{ url: post.featuredImage, width: 1200, height: 675, alt: post.featuredImageAlt }]
+  },
+  twitter: { card: 'summary_large_image', images: [post.featuredImage] }
 };
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: post.title,
+  image: `https://alexislyon.com${post.featuredImage}`,
   description: post.description,
   url: `https://alexislyon.com/blog/${post.slug}`,
   inLanguage: 'en-US',
@@ -46,6 +50,10 @@ export default function TheBumpyRoadWhichRoadIsYoursToTravel() {
           <h1 className="display text-4xl text-forest sm:text-5xl">The Bumpy Road: Which Road Is Yours to Travel?</h1>
           <p className="body-large mt-6 text-dark">On meaningful discomfort, self-trust, and listening for what calls us more fully into life</p>
           <p className="mt-6 text-xs uppercase tracking-[.16em] text-mid">By Alexis Lyon · {formattedDate} · {post.readingTime}</p>
+
+          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft">
+            <Image src={post.featuredImage} alt={post.featuredImageAlt} fill priority className="object-cover" sizes="(max-width: 815px) calc(100vw - 3rem), 768px" />
+          </div>
 
           <div className="mt-10 space-y-6 leading-8 text-mid">
             <p>“Oh my god, this is intense, but I think life is actually supposed to be more like this!”</p>

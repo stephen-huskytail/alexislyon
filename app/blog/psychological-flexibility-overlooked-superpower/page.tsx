@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
@@ -20,14 +21,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'What Is Psychological Flexibility? An Overlooked Superpower',
     description: post.description,
-    type: 'article'
-  }
+    type: 'article',
+    images: [{ url: post.featuredImage, width: 1200, height: 675, alt: post.featuredImageAlt }]
+  },
+  twitter: { card: 'summary_large_image', images: [post.featuredImage] }
 };
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: post.title,
+  image: `https://alexislyon.com${post.featuredImage}`,
   description: post.description,
   url: `https://alexislyon.com/blog/${post.slug}`,
   inLanguage: 'en-US',
@@ -44,6 +48,10 @@ export default function PsychologicalFlexibilityOverlookedSuperpower() {
           <h1 className="display text-4xl text-forest sm:text-5xl">Psychological Flexibility: An Overlooked Superpower</h1>
           <p className="body-large mt-6 text-dark">What psychological flexibility is, why it matters, and how we cultivate it.</p>
           <p className="mt-6 text-xs uppercase tracking-[.16em] text-mid">By Alexis Lyon · {formattedDate} · {post.readingTime}</p>
+
+          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft">
+            <Image src={post.featuredImage} alt={post.featuredImageAlt} fill priority className="object-cover" sizes="(max-width: 815px) calc(100vw - 3rem), 768px" />
+          </div>
 
           <div className="mt-10 space-y-6 leading-8 text-mid">
             <h2 className="display mt-12 text-3xl text-forest">What Is Psychological Flexibility?</h2>
