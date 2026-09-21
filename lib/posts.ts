@@ -32,8 +32,8 @@ export const posts: PostMeta[] = [
   },
   {
     slug: 'post-traumatic-growth',
-    featuredImage: '/images/blog-post-traumatic-growth.webp',
-    featuredImageAlt: 'Fresh fern fronds unfolding beside a moss-covered fallen tree',
+    featuredImage: '/images/blog-post-traumatic-growth-alchemy.png',
+    featuredImageAlt: 'A young green plant growing from moss beside flowing water at sunrise, with a ribbon of warm golden light',
     title: 'Post-Traumatic Growth: The Alchemy of Wound and Wildness',
     description: 'What needs healing, what needs reclaiming, and what becomes possible at the places where life breaks us open.',
     datePublished: '2026-07-15',
