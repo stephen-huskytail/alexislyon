@@ -34,10 +34,10 @@ export const posts: PostMeta[] = [
     slug: 'post-traumatic-growth',
     featuredImage: '/images/blog-post-traumatic-growth.webp',
     featuredImageAlt: 'Fresh fern fronds unfolding beside a moss-covered fallen tree',
-    title: 'Post-Traumatic Growth: The Alchemy of the Wound',
-    description: 'Post-traumatic growth is real, researched, and available. How the wound, fully honored, becomes the ground for wisdom, beauty, and a life led by your own values.',
+    title: 'Post-Traumatic Growth: The Alchemy of Wound and Wildness',
+    description: 'What needs healing, what needs reclaiming, and what becomes possible at the places where life breaks us open.',
     datePublished: '2026-07-15',
-    readingTime: '6 min read',
+    readingTime: '12 min read',
     eyebrow: 'Trauma healing'
   },
   {
