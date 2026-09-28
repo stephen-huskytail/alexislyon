@@ -164,7 +164,7 @@ export default function SomaticCoaching() {
             <p className="mt-4 max-w-3xl text-[1.2rem] leading-[1.9]">Somatic coaching works with both. We regulate the nervous system so the wound can finally be witnessed, and so the wildness in you can safely come home.</p>
           </Reveal>
           <Reveal delay={0.36}>
-            <div className="mt-10"><Link className="btn btn-gold" href="/connect">Book a free 20-minute consultation →</Link></div>
+            <div className="mt-10"><Link className="btn btn-gold" href="/connect">Book a free 20-minute consultation&nbsp;→</Link></div>
             <p className="mt-6 text-xs uppercase tracking-[.18em] text-cream/75 sm:text-sm">Online worldwide · In person on the Pacific coast of Costa Rica</p>
           </Reveal>
         </div>
@@ -262,7 +262,7 @@ export default function SomaticCoaching() {
           <div className="mt-12 rounded-[2rem] bg-forest p-8 text-cream lg:p-10">
             <p className="eyebrow !text-gold-lt">Getting started</p>
             <p className="mt-5 max-w-3xl leading-8 text-cream/85">We start with a free 20-minute consultation to see if we&rsquo;re a fit. From there, sessions are held by video, and we build the right container together rather than from a menu. Packages range from $100&ndash;$1,000 per month, depending on the depth and frequency of support you are looking for.</p>
-            <Link className="btn btn-gold mt-7" href="/connect">Book your free consultation →</Link>
+            <Link className="btn btn-gold mt-7" href="/connect">Book your free consultation&nbsp;→</Link>
           </div>
         </div>
       </section>
@@ -372,7 +372,7 @@ export default function SomaticCoaching() {
         <div className="container relative max-w-3xl text-center text-cream">
           <h2 className="display text-4xl sm:text-5xl">Your body already knows the way back.</h2>
           <p className="body-large mx-auto mt-6 max-w-2xl text-cream/85">Let&rsquo;s find out if we&rsquo;re a fit. The consultation is free, 20 minutes, and online.</p>
-          <Link className="btn btn-gold mt-8" href="/connect">Book your free consultation →</Link>
+          <Link className="btn btn-gold mt-8" href="/connect">Book your free consultation&nbsp;→</Link>
         </div>
       </section>
 
