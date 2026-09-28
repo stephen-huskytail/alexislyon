@@ -75,7 +75,7 @@ SERP for "somatic coaching" (US): AI Overview on top (cites coachingstudies.org,
 
 ## Verification (2026-09-28)
 
-- Vercel Preview (branch `feat/somatic-coaching-page`, page commit 8abdbb5, deployment `dpl_HioTsW4A2EXpDAC2QX47NkY143tZ`): https://alexislyon-mys33p42j-husky-tail-digital-marketing.vercel.app/somatic-coaching — 200, title/description/canonical as specified, WebPage + Service + FAQPage + BreadcrumbList emitted, sitemap lists the URL, all six generated images serve via `/_next/image`, no horizontal overflow at 1440 or 390, no broken images. The preview carries Vercel's automatic `x-robots-tag: noindex`; production will not.
+- Vercel Preview, stable branch alias (follows the latest push to `feat/somatic-coaching-page`; page commit 8abdbb5, CTA polish 98ac3b6, deployment `dpl_9gE3XwyL1CrZn3BgsUFCqPADMFdd`): https://alexislyon-git-feat-somatic-81b2e7-husky-tail-digital-marketing.vercel.app/somatic-coaching — 200, title/description/canonical as specified, WebPage + Service + FAQPage + BreadcrumbList emitted, sitemap lists the URL, all six generated images serve via `/_next/image`, no horizontal overflow at 1440 or 390, no broken images. The preview carries Vercel's automatic `x-robots-tag: noindex`; production will not.
 - `npx playwright test e2e/somatic-coaching.spec.ts`: 4/4 pass (desktop + mobile projects). `npm run build` and `tsc --noEmit` clean.
 - Pre-existing, unrelated: `e2e/portrait-regression.spec.ts` fails identically on a clean `origin/main` checkout (fail-closed on an `ERR_ABORTED` request for the homepage hero `_next/image`). Not introduced by this branch; worth a separate fix.
 - Trackers: Multica HUS-954 (in_review, assignee Stephen), ledger HT-520, Close note `acti_56bAS4NPO6UlBYuB6B5wLqb3s9F9DaFxF5iDUvijb5V`.
