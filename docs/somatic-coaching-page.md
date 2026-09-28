@@ -5,10 +5,10 @@ Route: `/somatic-coaching` (`app/somatic-coaching/page.tsx`). Test: `e2e/somatic
 
 ## What shipped
 
-- Full page from the draft: hero (H1 "Somatic Coaching for the Wound and the Wildness"), What is somatic coaching?, Healing for the wound / Reclaiming for the wildness, How we work together, Who this is for, Online somatic coaching wherever you are, Your somatic coach, FAQ (5), closing CTA. Every H2 matches the draft's heading text.
+- Full page from the draft: hero (H1 "Somatic Coaching for the Wound and the Wildness"), What is somatic coaching?, Healing for the wound / Reclaiming for the wildness, How we work together, Who this is for, Online somatic coaching wherever you are, Your somatic coach, FAQ (the draft's 5 plus 2 added 2026-09-28 for the open People Also Ask questions: "What happens in a somatic coaching session?" and "How is somatic coaching different from somatic therapy?"), closing CTA. Every H2 matches the draft's heading text.
 - Metadata per the brief: title tag `Somatic Coaching Online with Alexis Lyon` (40 chars, rendered without the site template suffix), meta description 130 chars, canonical `/somatic-coaching`, OG/Twitter card via `/api/og`.
 - Structured data: `WebPage`, `Service` (provider = Person, free 20-minute consultation offer), `FAQPage` mirroring the five visible questions, `BreadcrumbList`.
-- Internal links in: homepage `#work` block (below the offering), Philosophy nervous-system primer, footer. Person schema `knowsAbout` on home + about now includes "Somatic coaching". Sitemap entry added at priority 0.8.
+- Internal links in: primary nav ("Somatic Coaching", second item; desktop nav uses gap-5/text-xs at 1024–1279px and gap-7/text-sm from 1280px so six items fit), homepage `#work` block (below the offering), Philosophy nervous-system primer, footer. Person schema `knowsAbout` on home + about now includes "Somatic coaching". Sitemap entry added at priority 0.8.
 - All CTAs go to `/connect`. `/about` and homepage `#natural-world` are the other outbound links.
 - Vocabulary guard: the page never uses "telehealth" or "somatic therapist" (asserted by the test), per the brief's "deliberately avoided" list. "Therapy" appears only in the coaching-is-not-therapy context the draft wrote.
 
@@ -36,7 +36,8 @@ Closing CTA reuses the existing `soul-story-bg.webp` (Philosophy pattern).
 | `Disclaimer: [paste your existing site disclaimer here]` | Site-wide `disclaimerText` from `lib/content.ts` | Same text the homepage and footer use. |
 | Optional client testimonial | Omitted | Still waiting on 2–3 real testimonials; nothing verified to quote. |
 | CTA text | Kept "Book a free 20-minute consultation" verbatim | Note: `/connect` is a contact form, not a calendar. The rest of the site says "Schedule Your Free Consultation"; switch if the word "Book" over-promises. |
-| Primary nav | Not added | IA decision for Stephen/Alexis; see recommendation 1 below. |
+| Primary nav | Added 2026-09-28 (Stephen: proceed, keep in preview) | Verified at 1024/1280/1440 and in the mobile drawer. |
+| Two extra FAQ answers | Written by HuskyTail in the draft's voice | Alexis should read them as hers before release. |
 
 ## Keyword data (Ahrefs, US, pulled 2026-09-28)
 
@@ -63,8 +64,8 @@ SERP for "somatic coaching" (US): AI Overview on top (cites coachingstudies.org,
 
 ## SEO recommendations (site-level, related to this page)
 
-1. **Add "Somatic Coaching" to the primary nav.** Site-wide nav is the strongest internal-link signal the site can give this page. Needs a visual check at 1024–1280px (six items plus the Begin button) and a decision on whether it sits beside or replaces "Work With Me".
-2. **Answer the two open PAA questions.** Add FAQ entries "What happens in a somatic coaching session?" and "How is somatic coaching different from somatic therapy?" (phrase it without "somatic therapist"). The second one is exactly what the DR 2 site ranks #4 with.
+1. **Add "Somatic Coaching" to the primary nav.** DONE on the preview branch 2026-09-28 (second item, beside "Work With Me"; nav tightened at 1024–1279px).
+2. **Answer the two open PAA questions.** DONE on the preview branch 2026-09-28: FAQ now has 7 entries, mirrored in FAQPage schema. The comparison answer is what the DR 2 site ranks #4 with.
 3. **Supporting blog posts, each linking to `/somatic-coaching`:** "Somatic coaching vs. somatic therapy: what's the difference" and "What happens in a somatic coaching session". Add contextual links from the existing psychological-flexibility and bumpy-road essays wherever "somatic" or "nervous system" appears.
 4. **Build the nervous system regulation hub** the brief anticipates (`/nervous-system-regulation`): lift the Philosophy "brief primer" into a full page, target "nervous system coach" (90) and "nervous system regulation coach" (40), and cross-link both ways with this page.
 5. **Homepage descriptor:** the site's title/OG/Person schema say "Somatic Healer" (no search demand). Use "Somatic Coach" as the descriptor (e.g. `Alexis Lyon | Somatic Coach & Transformational Guide`) and set Person `jobTitle` to match. Keep the homepage brand-first so it does not compete with `/somatic-coaching` for the topic.
@@ -75,8 +76,8 @@ SERP for "somatic coaching" (US): AI Overview on top (cites coachingstudies.org,
 
 ## Verification (2026-09-28)
 
-- Vercel Preview, stable branch alias (follows the latest push to `feat/somatic-coaching-page`; page commit 8abdbb5, CTA polish 98ac3b6, deployment `dpl_9gE3XwyL1CrZn3BgsUFCqPADMFdd`): https://alexislyon-git-feat-somatic-81b2e7-husky-tail-digital-marketing.vercel.app/somatic-coaching — 200, title/description/canonical as specified, WebPage + Service + FAQPage + BreadcrumbList emitted, sitemap lists the URL, all six generated images serve via `/_next/image`, no horizontal overflow at 1440 or 390, no broken images. The preview carries Vercel's automatic `x-robots-tag: noindex`; production will not.
-- `npx playwright test e2e/somatic-coaching.spec.ts`: 4/4 pass (desktop + mobile projects). `npm run build` and `tsc --noEmit` clean.
+- Vercel Preview, stable branch alias (follows the latest push to `feat/somatic-coaching-page`; page commit 8abdbb5, CTA polish 98ac3b6, nav + 2 FAQs 1012424): https://alexislyon-git-feat-somatic-81b2e7-husky-tail-digital-marketing.vercel.app/somatic-coaching — 200, title/description/canonical as specified, WebPage + Service + FAQPage + BreadcrumbList emitted, sitemap lists the URL, all six generated images serve via `/_next/image`, no horizontal overflow at 1440 or 390, no broken images. The preview carries Vercel's automatic `x-robots-tag: noindex`; production will not.
+- `npx playwright test e2e/somatic-coaching.spec.ts`: 4/4 pass (desktop + mobile projects), re-run after the nav + FAQ commit; nav measured at 1024/1280/1440 with no overflow. `npm run build` and `tsc --noEmit` clean.
 - Pre-existing, unrelated: `e2e/portrait-regression.spec.ts` fails identically on a clean `origin/main` checkout (fail-closed on an `ERR_ABORTED` request for the homepage hero `_next/image`). Not introduced by this branch; worth a separate fix.
 - Trackers: Multica HUS-954 (in_review, assignee Stephen), ledger HT-520, Close note `acti_56bAS4NPO6UlBYuB6B5wLqb3s9F9DaFxF5iDUvijb5V`.
 
