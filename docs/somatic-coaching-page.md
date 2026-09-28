@@ -73,6 +73,13 @@ SERP for "somatic coaching" (US): AI Overview on top (cites coachingstudies.org,
 8. **Expectation setting:** Google no longer shows FAQ rich results for most sites (since Aug 2023), so the `FAQPage` schema is for entity understanding and AI answers, not visible stars/expanders.
 9. **Nature-based sessions page:** low search demand ("somatic coaching costa rica" has none), but it completes the internal-link plan in the brief and gives the Wildness story a home. Repoint the placeholder link when it ships.
 
+## Verification (2026-09-28)
+
+- Vercel Preview (branch `feat/somatic-coaching-page`, page commit 8abdbb5, deployment `dpl_HioTsW4A2EXpDAC2QX47NkY143tZ`): https://alexislyon-mys33p42j-husky-tail-digital-marketing.vercel.app/somatic-coaching — 200, title/description/canonical as specified, WebPage + Service + FAQPage + BreadcrumbList emitted, sitemap lists the URL, all six generated images serve via `/_next/image`, no horizontal overflow at 1440 or 390, no broken images. The preview carries Vercel's automatic `x-robots-tag: noindex`; production will not.
+- `npx playwright test e2e/somatic-coaching.spec.ts`: 4/4 pass (desktop + mobile projects). `npm run build` and `tsc --noEmit` clean.
+- Pre-existing, unrelated: `e2e/portrait-regression.spec.ts` fails identically on a clean `origin/main` checkout (fail-closed on an `ERR_ABORTED` request for the homepage hero `_next/image`). Not introduced by this branch; worth a separate fix.
+- Trackers: Multica HUS-954 (in_review, assignee Stephen), ledger HT-520, Close note `acti_56bAS4NPO6UlBYuB6B5wLqb3s9F9DaFxF5iDUvijb5V`.
+
 ## Release checklist
 
 - [ ] Stephen reviews the Vercel Preview (desktop + 390px).
