@@ -64,6 +64,14 @@ const faqs = [
     answer: 'It means we go at your nervous system’s pace. You stay in charge of what we explore, and we build safety and capacity before going deeper.'
   },
   {
+    question: 'What happens in a somatic coaching session?',
+    answer: 'We begin by checking in with your body, not just your week. Then we slow down and track what is happening in your breath, posture, and sensation while we talk about what matters to you. Some sessions include simple regulation practices you can take home. Others stay with one feeling until it has been fully witnessed. You set the pace, and nothing is forced.'
+  },
+  {
+    question: 'How is somatic coaching different from somatic therapy?',
+    answer: 'Somatic therapy is clinical treatment from a licensed clinician. It can diagnose and treat trauma and other mental health conditions. Somatic coaching is not treatment. It uses the same body-based awareness to build regulation, self-trust, and forward movement for people who are ready for growth work. My clinical background informs how carefully I hold the work, but what we do together is coaching.'
+  },
+  {
     question: 'How do I get started?',
     answer: 'Book a free 20-minute consultation. We’ll talk about what you’re hoping for and whether we’re a good fit.'
   }

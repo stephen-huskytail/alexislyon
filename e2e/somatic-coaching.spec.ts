@@ -60,7 +60,7 @@ test.describe('somatic coaching page', () => {
     const types = graph.map((node) => node['@type']);
     for (const type of ['WebPage', 'Service', 'FAQPage', 'BreadcrumbList']) expect(types, `schema ${type}`).toContain(type);
     const faq = graph.find((node) => node['@type'] === 'FAQPage');
-    expect(faq.mainEntity.length, 'five FAQ entries').toBe(5);
+    expect(faq.mainEntity.length, 'seven FAQ entries').toBe(7);
     const visibleFaqs = await page.locator('#faq h3').allTextContents();
     expect(visibleFaqs, 'FAQ schema must mirror visible questions').toEqual(faq.mainEntity.map((q) => q.name));
 
@@ -103,7 +103,8 @@ test.describe('somatic coaching page', () => {
 
     for (const path of ['/', '/philosophy']) {
       await page.goto(path, { waitUntil: 'domcontentloaded' });
-      expect(await page.locator('a[href="/somatic-coaching"]').count(), `${path} links to the page`).toBeGreaterThanOrEqual(2);
+      expect(await page.locator('a[href="/somatic-coaching"]').count(), `${path} links to the page`).toBeGreaterThanOrEqual(3);
+      expect(await page.locator('header nav a[href="/somatic-coaching"]').count(), `${path} primary nav links to the page`).toBeGreaterThanOrEqual(1);
     }
   });
 });

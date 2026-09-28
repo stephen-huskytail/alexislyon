@@ -115,7 +115,7 @@ export function Nav() {
           Alexis Lyon
         </Link>
 
-        <div className="hidden items-center gap-7 text-sm font-medium uppercase tracking-[.12em] lg:flex">
+        <div className="hidden items-center gap-5 text-xs font-medium uppercase tracking-[.12em] lg:flex xl:gap-7 xl:text-sm">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className={linkClass(item.href)}>
               {item.label}
