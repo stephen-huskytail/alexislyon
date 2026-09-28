@@ -131,6 +131,7 @@ export default function Philosophy() {
             <p>Beneath every thought you have, your nervous system is asking one question, over and over: am I safe? When the answer has too often been no — through rupture, loss, or years of holding more than one person should hold — the body learns to protect first and live second.</p>
             <p>Regulation is not calming yourself into stillness, and it is not control. It is the growing capacity to stay connected to yourself while sensation, grief, longing, and truth move through. It is built the way it was always meant to be built: with another regulated nervous system alongside yours, and with the natural world — the oldest co-regulator there is.</p>
             <p>This is why the work is somatic. Insight alone does not change what the body expects. Felt experience does.</p>
+            <p><Link className="font-medium text-forest underline decoration-gold underline-offset-4 hover:text-sage" href="/somatic-coaching">Explore somatic coaching with Alexis →</Link></p>
           </div>
         </div>
       </section>

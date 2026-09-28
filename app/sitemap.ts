@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, lastModified, changeFrequency: 'monthly' as const, priority: 1.0 },
     { url: `${base}/connect`, lastModified, changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${base}/about`, lastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${base}/somatic-coaching`, lastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${base}/philosophy`, lastModified, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${base}/blog`, lastModified, changeFrequency: 'weekly' as const, priority: 0.7 },
     ...posts.map((p) => ({

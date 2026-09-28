@@ -27,7 +27,7 @@ const homeJsonLd = [
     jobTitle: 'Trauma-Informed Transformational Guide and Somatic Healer',
     description: 'Trauma-informed transformational guide and healer based on the Pacific coast of Costa Rica, serving clients globally through telehealth.',
     hasCredential: 'Licensed Marriage and Family Therapist, California',
-    knowsAbout: ['Somatic depth work', 'Nervous system regulation', 'Psychological flexibility', 'Nature-based healing', 'Self-trust', 'Transformational coaching'],
+    knowsAbout: ['Somatic coaching', 'Somatic depth work', 'Nervous system regulation', 'Psychological flexibility', 'Nature-based healing', 'Self-trust', 'Transformational coaching'],
     address: { '@type': 'PostalAddress', addressCountry: 'CR' },
     areaServed: ['Worldwide', 'Costa Rica'],
     sameAs: []
@@ -137,6 +137,7 @@ export default function Home() {
               {offering.includes.map(([t, d]) => <li key={t} className="flex gap-3 leading-7"><span className="mt-1 shrink-0 text-gold-lt">◆</span><span><span className="font-medium text-cream">{t}</span> — {d}</span></li>)}
             </ul>
             <p className="mt-6 italic text-cream/80">{offering.close}</p>
+            <p className="mt-5"><Link className="font-medium text-gold-lt underline decoration-gold underline-offset-4 hover:text-cream" href="/somatic-coaching">Curious about the somatic side of this work? Explore somatic coaching →</Link></p>
           </div>
           <div className="space-y-4">
             <div className="rounded-[2rem] border border-cream/15 bg-cream/5 p-8">

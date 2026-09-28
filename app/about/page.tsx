@@ -31,7 +31,7 @@ const aboutJsonLd = {
     image: 'https://alexislyon.com/images/alexis-portrait.jpg',
     jobTitle: 'Transformational Guide and Somatic Healer',
     hasCredential: 'Licensed Marriage and Family Therapist, California',
-    knowsAbout: ['Somatic depth work', 'Nervous system regulation', 'Psychological flexibility', 'Nature-based healing', 'Transformational coaching'],
+    knowsAbout: ['Somatic coaching', 'Somatic depth work', 'Nervous system regulation', 'Psychological flexibility', 'Nature-based healing', 'Transformational coaching'],
     address: { '@type': 'PostalAddress', addressCountry: 'CR' },
     areaServed: ['Worldwide', 'Costa Rica']
   }
