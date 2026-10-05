@@ -29,26 +29,36 @@ test.describe('somatic coaching page', () => {
     const response = await page.goto(`${PAGE_PATH}?_t=${Date.now()}`, { waitUntil: 'networkidle' });
     expect(response?.status(), 'page must return 200').toBe(200);
 
-    // Copy + headings
-    await expect(page.locator('h1')).toHaveText('Somatic Coaching for the Wound and the Wildness');
+    // Copy + headings — Tab 2 section titles, in order
+    await expect(page.locator('h1')).toHaveText('Somatic Coaching');
     const h2s = await page.locator('h2').allTextContents();
-    for (const heading of [
-      'What is somatic coaching?',
-      'Healing for the wound. Reclaiming for the wildness.',
-      'How we work together',
-      'Who this is for',
-      'Online somatic coaching, wherever you are',
-      'Your somatic coach',
+    const expectedH2s = [
+      'Somatic Coaching for the Wound and the Wildness',
+      'What Is Somatic Coaching?',
+      'Healing the Wound. Reclaiming the Wildness.',
+      'Nervous System Regulation Is Not About Becoming Less',
+      'Learning to Hold More of Who You Are',
+      'Somatic Coaching Can Support You If…',
+      'From Self-Protection to Self-Trust',
+      'Somatic Coaching and Psychological Flexibility',
+      'Somatic Coaching for Aliveness, Purpose, and Meaning',
+      'Online Somatic Coaching',
+      'Wound and Wildness',
       'Frequently asked questions',
-      'Your body already knows the way back.'
-    ]) {
-      expect(h2s, `missing H2: ${heading}`).toContain(heading);
-    }
+      'Begin with a conversation.'
+    ];
+    expect(h2s, 'H2s match Tab 2 section order').toEqual(expectedH2s);
     expect(await page.locator('h1').count(), 'exactly one H1').toBe(1);
 
-    // Metadata
+    // Contextual essays
+    await expect(page.locator('main a[href="/blog/psychological-flexibility-overlooked-superpower"]')).toHaveCount(1);
+    await expect(page.locator('main a[href="/blog/the-bumpy-road-which-road-is-yours-to-travel"]')).toHaveCount(1);
+    await expect(page.locator('main a[href="/blog/post-traumatic-growth"]')).toHaveCount(1);
+
+    // Metadata — preserved performing tags
     await expect(page).toHaveTitle('Somatic Coaching Online with Alexis Lyon');
     const description = await page.locator('meta[name="description"]').getAttribute('content');
+    expect(description).toBe('Trauma-informed somatic coaching, online worldwide. Regulate your nervous system, heal the wound, and reclaim the wildness in you.');
     expect(description?.length, 'meta description 120–160 chars').toBeGreaterThanOrEqual(120);
     expect(description?.length, 'meta description 120–160 chars').toBeLessThanOrEqual(160);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://alexislyon.com/somatic-coaching');
