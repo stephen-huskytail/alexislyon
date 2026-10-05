@@ -73,6 +73,10 @@ test.describe('somatic coaching page', () => {
     expect(faq.mainEntity.length, 'seven FAQ entries').toBe(7);
     const visibleFaqs = await page.locator('#faq h3').allTextContents();
     expect(visibleFaqs, 'FAQ schema must mirror visible questions').toEqual(faq.mainEntity.map((q) => q.name));
+    // FAQ is an accordion: collapsed answers must still be in the DOM, word for word with the schema
+    const faqText = (await page.locator('#faq').textContent()) ?? '';
+    for (const q of faq.mainEntity) expect(faqText, `answer on the page for "${q.name}"`).toContain(q.acceptedAnswer.text);
+    await expect(page.locator('#faq details').first(), 'first FAQ starts open').toHaveAttribute('open', '');
 
     // Deliberately avoided vocabulary (client SEO brief)
     const bodyText = (await page.locator('main').innerText()).toLowerCase();
@@ -105,6 +109,23 @@ test.describe('somatic coaching page', () => {
     expect(pageErrors, 'no page errors').toEqual([]);
     expect(consoleErrors, 'no console errors').toEqual([]);
     expect(badResponses, 'no >=400 responses').toEqual([]);
+  });
+
+  test('hero and revealed blocks stay visible when the visitor prefers reduced motion', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto(PAGE_PATH, { waitUntil: 'networkidle' });
+    // toBeVisible() treats opacity 0 as visible, so measure the effective opacity instead
+    const effectiveOpacity = (selector: string) =>
+      page.locator(selector).first().evaluate((el) => {
+        let opacity = 1;
+        for (let node: Element | null = el; node && node !== document.body; node = node.parentElement) opacity *= parseFloat(getComputedStyle(node).opacity);
+        return opacity;
+      });
+    await expect.poll(() => effectiveOpacity('h1'), { message: 'hero heading is not left transparent' }).toBe(1);
+    await expect.poll(() => effectiveOpacity('#hero a[href="/connect"]'), { message: 'hero CTA is not left transparent' }).toBe(1);
+    const fern = page.locator('img[src*="somatic-coaching-body"]').first();
+    await fern.scrollIntoViewIfNeeded();
+    await expect.poll(() => effectiveOpacity('img[src*="somatic-coaching-body"]'), { message: 'section image is not left transparent' }).toBe(1);
   });
 
   test('is linked from the sitemap, footer, homepage, and philosophy page', async ({ page }) => {

@@ -3,6 +3,21 @@
 Built 2026-09-28 from Alexis's draft copy doc "Somatic Coaching Page — Draft Copy" (Sep 25, 2026).
 Route: `/somatic-coaching` (`app/somatic-coaching/page.tsx`). Test: `e2e/somatic-coaching.spec.ts`.
 
+## Layout pass (2026-10-05)
+
+The page is live. On 2026-10-05 the body was replaced with Alexis's Tab 2 copy (commit ef86725), which supersedes the section list under "What shipped" below. The same day the page got a formatting-only pass. No copy, heading, link, image, metadata, or schema changed: the body text is character-for-character identical to the pre-pass page (13,103 non-whitespace characters, same order).
+
+What the pass changed:
+
+- **Reading copy** is 17–18px in `text-dark/80` instead of 16px `text-mid`, which fell under AA contrast on the `bg-warm` sections.
+- **Section layout:** heading rail on the left (sticky from `lg`), reading column on the right, about 630px wide. Below `lg` it is one centered 40rem column. Three sections break the pattern on purpose: wound/wildness (two image cards), "Can Support You If…" (four cards), and the closing "Wound and Wildness" coda (centered).
+- **Line groups:** the one-sentence-per-paragraph copy is grouped into stanzas (`Lines`), gold-diamond lists (`Diamonds`), display-face litanies (`Litany`), question cards (`Inquiry`), and key lines (`Key`). These are small helpers at the top of `app/somatic-coaching/page.tsx`. Markers are CSS shapes, not glyphs, so no characters were added to the text.
+- **"Learning to Hold More of Who You Are"** is the one dark section, placed mid-page to break up six text-only sections.
+- **Online section:** the two interior/path images sit beside the "How we begin" card instead of stacking as a full-width 3:4 pair.
+- **FAQ** is a native `<details>` accordion, first question open. Answers stay in the DOM and the test asserts they match the `FAQPage` schema word for word.
+
+Also fixed in this pass, site-wide: `components/Reveal.tsx` left its content at `opacity: 0` for visitors with reduced motion turned on, so the hero heading, tagline, and CTA were invisible on this page and the homepage. It now skips the slide and delay but still reveals. `e2e/somatic-coaching.spec.ts` covers it.
+
 ## What shipped
 
 - Full page from the draft: hero (H1 "Somatic Coaching for the Wound and the Wildness"), What is somatic coaching?, Healing for the wound / Reclaiming for the wildness, How we work together, Who this is for, Online somatic coaching wherever you are, Your somatic coach, FAQ (the draft's 5 plus 2 added 2026-09-28 for the open People Also Ask questions: "What happens in a somatic coaching session?" and "How is somatic coaching different from somatic therapy?"), closing CTA. Every H2 matches the draft's heading text.
