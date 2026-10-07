@@ -533,7 +533,7 @@ export default function SomaticCoaching() {
           </div>
           <div className={copy}>
             <p>
-              <Link className={inlineLink} href="/blog/psychological-flexibility-overlooked-superpower">Psychological flexibility</Link> is the capacity to remain present with our internal experience while continuing to move toward what matters.
+              <Link className={inlineLink} href="/blog/psychological-flexibility">Psychological flexibility</Link> is the capacity to remain present with our internal experience while continuing to move toward what matters.
             </p>
             <Lines>
               <p>This is deeply connected to somatic work.</p>
@@ -611,7 +611,9 @@ export default function SomaticCoaching() {
       <section id="online-somatic-coaching" className="section bg-warm">
         <div className={split}>
           <div className={rail}>
-            <div className="relative mx-auto aspect-[3/4] w-64 overflow-hidden rounded-t-full shadow-soft sm:w-80 lg:mx-0 lg:w-full lg:max-w-[22rem]">
+            <Rule className="mx-auto lg:mx-0" />
+            <h2 className={`${h2} text-center lg:text-left`}>Your Somatic Coach</h2>
+            <div className="relative mx-auto mt-8 aspect-[3/4] w-64 overflow-hidden rounded-t-full shadow-soft sm:w-80 lg:mx-0 lg:w-full lg:max-w-[22rem]">
               <Image
                 src="/images/alexis-about-portrait.jpg"
                 alt="Alexis Lyon, transformational guide and somatic healing coach"
@@ -720,7 +722,6 @@ export default function SomaticCoaching() {
           <div className={rail}>
             <p className="eyebrow">Questions</p>
             <h2 className={h2}>Frequently asked questions</h2>
-            <p className="body-large mt-6 text-dark/80">Coaching is not therapy, and it is not psychotherapy. I do not diagnose or treat.</p>
           </div>
           <div>
             <div className="border-t border-warm-dk">

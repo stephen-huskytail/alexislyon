@@ -10,11 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/connect`, lastModified, changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${base}/about`, lastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${base}/somatic-coaching`, lastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${base}/the-becoming`, lastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${base}/philosophy`, lastModified, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${base}/blog`, lastModified, changeFrequency: 'weekly' as const, priority: 0.7 },
     ...posts.map((p) => ({
       url: `${base}/blog/${p.slug}`,
-      lastModified: p.datePublished ? new Date(`${p.datePublished}T12:00:00Z`) : lastModified,
+      lastModified: p.dateModified || p.datePublished ? new Date(`${p.dateModified || p.datePublished}T12:00:00Z`) : lastModified,
       changeFrequency: 'yearly' as const,
       priority: 0.6
     })),

@@ -111,11 +111,12 @@ export function Nav() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${navClass}`}>
       <a className="skip-link" href="#page-content">Skip to content</a>
       <nav className="container flex items-center justify-between" aria-label="Primary navigation">
-        <Link href="/" className="font-signature text-4xl leading-none" onClick={() => setOpen(false)}>
+        <Link href="/" className="font-signature text-4xl leading-none whitespace-nowrap" onClick={() => setOpen(false)}>
           Alexis Lyon
         </Link>
 
-        <div className="hidden items-center gap-5 text-xs font-medium uppercase tracking-[.12em] lg:flex xl:gap-7 xl:text-sm">
+        {/* Seven items + Begin: 11px/gap-4 fits a 1024px viewport, 12px/gap-6 fits the 1160px container from xl. Labels never wrap. */}
+        <div className="hidden items-center gap-4 whitespace-nowrap text-[11px] font-medium uppercase tracking-[.08em] lg:flex xl:gap-6 xl:text-xs xl:tracking-[.12em]">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className={linkClass(item.href)}>
               {item.label}

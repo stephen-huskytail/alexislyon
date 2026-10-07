@@ -8,30 +8,81 @@ import { posts } from '@/lib/posts';
 
 const post = posts.find((p) => p.slug === 'post-traumatic-growth')!;
 const formattedDate = new Date(`${post.datePublished}T12:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const description = post.metaDescription ?? post.description;
 
 export const metadata: Metadata = {
   title: post.title,
-  description: post.description,
+  description,
   alternates: { canonical: `/blog/${post.slug}` },
-  openGraph: { title: post.title, description: post.description, type: 'article', publishedTime: post.datePublished, images: [{ url: post.featuredImage, width: 1200, height: 675, alt: post.featuredImageAlt }] },
+  openGraph: { title: post.title, description, type: 'article', publishedTime: post.datePublished, modifiedTime: post.dateModified, images: [{ url: post.featuredImage, width: 1200, height: 675, alt: post.featuredImageAlt }] },
   twitter: { card: 'summary_large_image', images: [post.featuredImage] }
 };
 
-const articleJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: post.title,
-  description: post.description,
-  url: `https://alexislyon.com/blog/${post.slug}`,
-  datePublished: post.datePublished,
-  dateModified: post.datePublished,
-  inLanguage: 'en-US',
-  author: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
-  publisher: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
-  image: `https://alexislyon.com${post.featuredImage}`,
-  keywords: ['post-traumatic growth', 'trauma healing', 'healing and reclaiming'],
-  mainEntityOfPage: `https://alexislyon.com/blog/${post.slug}`
-};
+// Added 2026-10-07 (handoff item 4). Rendered after "The Garden Keeps Growing" and mirrored in FAQPage schema.
+const faqs = [
+  {
+    question: 'What is post-traumatic growth?',
+    answer:
+      'Post-traumatic growth is the positive psychological change some people experience as a result of struggling with highly challenging life circumstances. Psychologists Richard Tedeschi and Lawrence Calhoun coined the term in the 1990s. It describes growth that comes through the struggle, not from the trauma itself.'
+  },
+  {
+    question: 'What is the definition of post-traumatic growth?',
+    answer:
+      'A simple definition: post-traumatic growth is meaningful positive change in how a person sees themselves, their relationships, and their life, emerging from their struggle with a traumatic or deeply disruptive experience.'
+  },
+  {
+    question: 'What are the five areas of post-traumatic growth?',
+    answer:
+      'Tedeschi and Calhoun’s research describes five broad areas where people report growth: greater appreciation of life, deeper relationships, recognition of new possibilities, a greater sense of personal strength, and spiritual or existential change.'
+  },
+  {
+    question: 'Is post-traumatic growth real?',
+    answer:
+      'Many people report it, and the research is promising. It is also debated. Much of it relies on people looking back and describing how they believe they have changed, and researchers are still studying how perceived growth relates to measurable change over time.'
+  },
+  {
+    question: 'Does post-traumatic growth mean trauma is good?',
+    answer:
+      'No. Post-traumatic growth does not mean trauma was necessary, deserved, or secretly a gift. No one owes the world growth from their pain, and no one should be expected to feel grateful for what hurt them.'
+  },
+  {
+    question: 'How is post-traumatic growth different from resilience?',
+    answer:
+      'Resilience is the capacity to bend without breaking and return to a steady baseline. Post-traumatic growth describes change beyond that baseline: people who, through their struggle, find their lives, relationships, or sense of meaning have shifted in ways they value.'
+  },
+  {
+    question: 'How can somatic coaching support post-traumatic growth?',
+    answer:
+      'Growth tends to need a nervous system that feels safe enough to explore. Somatic coaching works at that level: tending what needs healing, reclaiming what wants to live, and building the capacity to stay with yourself long enough to tell the difference. It is coaching, not trauma treatment.'
+  }
+];
+
+const articleJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description,
+    url: `https://alexislyon.com/blog/${post.slug}`,
+    datePublished: post.datePublished,
+    dateModified: post.dateModified ?? post.datePublished,
+    inLanguage: 'en-US',
+    author: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
+    publisher: { '@type': 'Person', name: 'Alexis Lyon', url: 'https://alexislyon.com' },
+    image: `https://alexislyon.com${post.featuredImage}`,
+    keywords: ['post-traumatic growth', 'trauma healing', 'healing and reclaiming'],
+    mainEntityOfPage: `https://alexislyon.com/blog/${post.slug}`
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer }
+    }))
+  }
+];
 
 export default function PostTraumaticGrowth() {
   return (
@@ -50,7 +101,7 @@ export default function PostTraumaticGrowth() {
             <p className="body-large text-dark">{"What needs healing, what needs reclaiming, and what becomes possible at the places where life breaks us open"}</p>
             <p className="font-medium italic text-dark">{"“The alchemy begins where the wound is honored and the wildness is free.”"}</p>
             <p>{"What happens at the intersection of our wounding and our wildness?"}</p>
-            <p>{"Both personally and in my work as a therapist, I have been exploring a series of questions that have evolved over time."}</p>
+            <p>{"Both personally and in my clinical work, I have been exploring a series of questions that have evolved over time."}</p>
             <p>{"What wounds and what heals?"}</p>
             <p>{"How do we safely express our True Self? And what does safety even mean?"}</p>
             <p>{"How do we find the parts of ourselves that have been buried, suppressed, exiled? Why did these parts go underground in the first place?"}</p>
@@ -91,7 +142,7 @@ export default function PostTraumaticGrowth() {
             <p>{"Human beings sometimes experience meaningful growth in the midst and aftermath of profound disruption."}</p>
             <p>{"And from there, I find myself wondering about rupture itself."}</p>
             <h2 className="display mt-12 text-3xl text-forest">{"When the Ground Breaks Open"}</h2>
-            <p>{"This is where I move from what research can tell us into something more exploratory—something shaped by my work as a therapist, my own life, and my relationship with the natural world."}</p>
+            <p>{"This is where I move from what research can tell us into something more exploratory—something shaped by my years of clinical work, my own life, and my relationship with the natural world."}</p>
             <p>{"What can become possible when the ground of a life is ruptured?"}</p>
             <p>{"In nature, rupture is not inherently good."}</p>
             <p>{"A fire can devastate a forest. A storm can tear apart a landscape. A tree can fall and leave an enormous opening where there was once shade and structure."}</p>
@@ -250,11 +301,22 @@ export default function PostTraumaticGrowth() {
             <p>{"What here needs reclaiming?"}</p>
             <p>{"And what might become possible if I simply stay with myself long enough to hear the difference?"}</p>
           </div>
+          <section id="faq" aria-labelledby="ptg-faq-heading" className="mt-14 border-t border-warm-dk pt-12">
+            <h2 id="ptg-faq-heading" className="display text-3xl text-forest">Post-Traumatic Growth: Frequently Asked Questions</h2>
+            <div className="mt-8 space-y-8 leading-8 text-mid">
+              {faqs.map(({ question, answer }) => (
+                <div key={question}>
+                  <h3 className="display text-2xl text-forest">{question}</h3>
+                  <p className="mt-3">{answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
           <div className="mt-12 rounded-[2rem] bg-forest p-8 text-center text-cream">
             <p className="display text-3xl">This is the work I do. Let&rsquo;s talk.</p>
             <Link className="btn btn-gold mt-6" href="/connect">Begin the conversation</Link>
           </div>
-          <p className="mt-10 text-sm leading-7 text-mid">Related reading: <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/blog/psychological-flexibility-overlooked-superpower">Psychological Flexibility: An Overlooked Superpower</Link> · <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/philosophy">The Philosophy Behind the Work</Link></p>
+          <p className="mt-10 text-sm leading-7 text-mid">Related reading: <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/blog/psychological-flexibility">Psychological Flexibility: An Overlooked Superpower</Link> · <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/philosophy">The Philosophy Behind the Work</Link></p>
         </div>
       </article>
       <Footer />

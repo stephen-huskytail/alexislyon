@@ -42,6 +42,7 @@ test.describe('somatic coaching page', () => {
       'From Self-Protection to Self-Trust',
       'Somatic Coaching and Psychological Flexibility',
       'Somatic Coaching for Aliveness, Purpose, and Meaning',
+      'Your Somatic Coach',
       'Online Somatic Coaching',
       'Wound and Wildness',
       'Frequently asked questions',
@@ -51,7 +52,7 @@ test.describe('somatic coaching page', () => {
     expect(await page.locator('h1').count(), 'exactly one H1').toBe(1);
 
     // Contextual essays
-    await expect(page.locator('main a[href="/blog/psychological-flexibility-overlooked-superpower"]')).toHaveCount(1);
+    await expect(page.locator('main a[href="/blog/psychological-flexibility"]')).toHaveCount(1);
     await expect(page.locator('main a[href="/blog/the-bumpy-road-which-road-is-yours-to-travel"]')).toHaveCount(1);
     await expect(page.locator('main a[href="/blog/post-traumatic-growth"]')).toHaveCount(1);
 
@@ -73,6 +74,9 @@ test.describe('somatic coaching page', () => {
     expect(faq.mainEntity.length, 'seven FAQ entries').toBe(7);
     const visibleFaqs = await page.locator('#faq h3').allTextContents();
     expect(visibleFaqs, 'FAQ schema must mirror visible questions').toEqual(faq.mainEntity.map((q) => q.name));
+    // Handoff 2026-10-06 item 1b: the line under the FAQ heading is gone (the first answer already says it)
+    const faqRail = (await page.locator('#faq').textContent()) ?? '';
+    expect(faqRail, 'no standalone "I do not diagnose or treat" line').not.toContain('I do not diagnose or treat.');
     // FAQ is an accordion: collapsed answers must still be in the DOM, word for word with the schema
     const faqText = (await page.locator('#faq').textContent()) ?? '';
     for (const q of faq.mainEntity) expect(faqText, `answer on the page for "${q.name}"`).toContain(q.acceptedAnswer.text);

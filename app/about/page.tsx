@@ -105,7 +105,7 @@ export default function About() {
                 <li>◆ Transformational guide &amp; coach — services offered are not therapy or clinical treatment</li>
                 <li>◆ Holistic Somatic Ecotherapy — body, mind, spirit, and the natural world</li>
                 <li>◆ Currently based on the Pacific coast of Costa Rica</li>
-                <li>◆ Serving clients globally via secure telehealth</li>
+                <li>◆ Serving clients worldwide online</li>
               </ul>
             </div>
 

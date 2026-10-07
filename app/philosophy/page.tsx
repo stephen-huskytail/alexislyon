@@ -146,7 +146,7 @@ export default function Philosophy() {
           </div>
           <div className="flex flex-col justify-center">
             <p className="leading-8 text-mid">Grounded in Acceptance and Commitment Therapy&rsquo;s decades of research, this is the quiet engine of the work: learning to open to what is here, notice the stories the mind tells, and take one values-led step at a time — while the difficulty is still present.</p>
-            <Link className="mt-6 font-medium text-forest underline decoration-gold underline-offset-4 hover:text-sage" href="/blog/psychological-flexibility">Read the full essay: Psychological Flexibility — How Change Actually Happens →</Link>
+            <Link className="mt-6 font-medium text-forest underline decoration-gold underline-offset-4 hover:text-sage" href="/blog/psychological-flexibility">Read the full essay: Psychological Flexibility — An Overlooked Superpower →</Link>
           </div>
         </div>
       </section>

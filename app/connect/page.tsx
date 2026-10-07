@@ -49,7 +49,7 @@ export default function Connect() {
               <p className="eyebrow !text-gold-lt">Session Availability</p>
               <h3 className="display mt-4 text-2xl text-gold-lt">Now booking</h3>
               <p className="mt-5 text-sm leading-7">Sessions are available weekday mornings, Pacific time. Some evening availability may be possible — including for The Becoming women&rsquo;s group. Please inquire when you connect.</p>
-              <p className="mt-6 text-xs text-cream/50 leading-6">All sessions via secure telehealth. Nature-based sessions in person on the Pacific coast of Costa Rica by arrangement.</p>
+              <p className="mt-6 text-xs text-cream/50 leading-6">All sessions are online by video. Nature-based sessions in person on the Pacific coast of Costa Rica by arrangement.</p>
             </div>
 
             {/* Portrait */}

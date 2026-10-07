@@ -37,7 +37,7 @@ const sections = [
     ]
   },
   {
-    title: 'Telehealth and Online Sessions',
+    title: 'Online Sessions',
     body: [
       'Alexis may work with clients remotely or online where appropriate. Online sessions require a private location, reliable internet, and your active participation in maintaining your own safety and confidentiality.',
       'Availability and suitability of services may vary based on your location, needs, and applicable legal or professional requirements. Scheduling a consultation does not guarantee that services will be available or appropriate for your situation.'

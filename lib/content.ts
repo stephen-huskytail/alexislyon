@@ -1,5 +1,5 @@
 export const navItems = [
-  { label: 'You Belong Here', href: '/#for-you' }, { label: 'Somatic Coaching', href: '/somatic-coaching' }, { label: 'Work With Me', href: '/#work' }, { label: 'About', href: '/about' }, { label: 'Philosophy', href: '/philosophy' }, { label: 'Blog', href: '/blog' }
+  { label: 'You Belong Here', href: '/#for-you' }, { label: 'Somatic Coaching', href: '/somatic-coaching' }, { label: 'Work With Me', href: '/#work' }, { label: 'The Becoming', href: '/the-becoming' }, { label: 'About', href: '/about' }, { label: 'Philosophy', href: '/philosophy' }, { label: 'Blog', href: '/blog' }
 ];
 export const disclaimerText = 'The services offered on this site are transformational coaching and guidance, not therapy or clinical mental health treatment, and do not constitute a therapeutic relationship. Alexis Lyon holds an LMFT license in California; that clinical background informs the depth of this work but does not define its scope. If you are experiencing a mental health crisis, please contact a licensed mental health professional or call 988.';
 export const permissions = [
@@ -35,8 +35,9 @@ export const offering = {
 export const becomingGroup = {
   title: 'The Becoming — Women\'s Group',
   body: 'An intimate group of 4–8 women gathering regularly to do real inner work in community. We work with the body, the nervous system, the stories we carry, the dreams we are reaching toward, and the wounds we are learning to alchemize into wisdom.',
-  format: '75–90 min · Secure telehealth · Min. 3-month commitment',
-  price: '$50/session · Approximately $100–150/month'
+  format: '75–90 min · Online by video · Min. 3-month commitment',
+  price: '$50/session · Approximately $100–150/month',
+  href: '/the-becoming'
 };
 
 export const availabilityText = 'Sessions are available weekday mornings, Pacific time. Some evening availability may be possible — including for The Becoming women\'s group. Please inquire when you connect.';

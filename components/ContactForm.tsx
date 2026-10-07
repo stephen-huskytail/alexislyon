@@ -3,8 +3,14 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ApiErrorHero } from '@/components/ApiErrorHero';
+
+// `/connect?interest=<key>` pre-selects the matching topic (e.g. links from /the-becoming).
+// Read from window.location rather than useSearchParams so the form stays statically rendered.
+const interestTopics: Record<string, string> = {
+  becoming: "The Becoming — Women's Group"
+};
 
 const schema = z.object({
   name: z.string().min(2),
@@ -23,7 +29,14 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    setValue,
   } = useForm<Form>({ resolver: zodResolver(schema) });
+
+  useEffect(() => {
+    const interest = new URLSearchParams(window.location.search).get('interest');
+    const topic = interest ? interestTopics[interest.toLowerCase()] : undefined;
+    if (topic) setValue('topic', topic);
+  }, [setValue]);
 
   async function onSubmit(data: Form) {
     setErr('');
