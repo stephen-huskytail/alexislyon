@@ -69,14 +69,19 @@ Branch `feat/website-updates-20261007`. Trackers: Multica HUS-967, ledger HT-524
 2. Schedule wording and the "$100–150 per month" figure against three sessions a month. See §2.
 3. The hero/section imagery on `/the-becoming` (three generated nature images, no people). Swap any of them by replacing the file in `public/images/` with the same name.
 
-## Verification
+## Verification (2026-10-07, commit 1193903)
 
-Filled in at release. See the commit message and HUS-967 comments for the run.
+- `npx tsc --noEmit` clean.
+- Playwright on the production build (`rm -rf .next && next build && next start -p 3480`): **26/26** — `e2e/website-updates-20261007.spec.ts` (10 tests × desktop 1440 + mobile 390) and `e2e/somatic-coaching.spec.ts` (3 × 2). Third run, on the final code after the nav change.
+- Nav measured on a dev server at 1024 / 1180 / 1280 / 1440 with seven items: every label on one line, logo on one line, 32–84px of space after the logo, Begin button inside the container. The live six-item nav was measured the same way as the baseline. Mobile drawer checked at 390.
+- Section renders reviewed at 1440 (What happens in the circle, Why a women's group, The details, About your guide) plus the full page at 390. Note: lazy-loaded images do not appear in non-scrolling full-page screenshots; the test scrolls to each image and asserts it loads.
+- Pre-release live checks: production is READY at 3b73751 (`dpl_wAcp97iffNAZ5xUtd4HULopiqVvE`); `/somatic-coaching` already serves real H3s in a `<details>` accordion with FAQPage (item 1a); the old Superpower URL still returns 200 and `/the-becoming` 404 until this branch lands.
+- Release state: branch pushed, PR https://github.com/stephen-huskytail/alexislyon/pull/8 open. The push to `main` was blocked for the agent by the production-deploy guard; Stephen runs `git push origin feat/website-updates-20261007:main` (fast-forward) or merges the PR.
 
 ## Release checklist
 
-- [ ] `npx tsc --noEmit` clean; `npx playwright test e2e/website-updates-20261007.spec.ts e2e/somatic-coaching.spec.ts` green (desktop + mobile).
-- [ ] Nav checked at 1024 / 1280 / 1440 with 7 items.
+- [x] `npx tsc --noEmit` clean; `npx playwright test e2e/website-updates-20261007.spec.ts e2e/somatic-coaching.spec.ts` green (desktop + mobile).
+- [x] Nav checked at 1024 / 1180 / 1280 / 1440 with 7 items.
 - [ ] Merge to `main` (push to main = production deploy on Vercel).
 - [ ] Live: `/the-becoming` 200 + FAQPage; old Superpower URL returns 301 → `/blog/psychological-flexibility`; `grep -ci telehealth` on every page = 0; `/connect?interest=becoming` pre-selects.
 - [ ] Search Console: request indexing for `/the-becoming` and `/blog/psychological-flexibility`.
