@@ -4,22 +4,23 @@ import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Alexis Lyon, including cookieless analytics, no cookie banner, contact forms, privacy rights, and data deletion.',
+  description: 'Privacy Policy for Alexis Lyon, including analytics and cookies, contact forms, privacy rights, and data deletion.',
   openGraph: {
     title: 'Privacy Policy',
-    description: 'Cookieless analytics, privacy rights, and data practices for alexislyon.com.',
-    images: [{ url: '/api/og?title=Privacy+Policy&sub=Cookieless+Analytics+and+Privacy+Rights', width: 1200, height: 630, alt: 'Privacy Policy' }]
+    description: 'Analytics, cookies, privacy rights, and data practices for alexislyon.com.',
+    images: [{ url: '/api/og?title=Privacy+Policy&sub=Analytics,+Cookies+and+Privacy+Rights', width: 1200, height: 630, alt: 'Privacy Policy' }]
   },
-  twitter: { card: 'summary_large_image', images: ['/api/og?title=Privacy+Policy&sub=Cookieless+Analytics+and+Privacy+Rights'] },
+  twitter: { card: 'summary_large_image', images: ['/api/og?title=Privacy+Policy&sub=Analytics,+Cookies+and+Privacy+Rights'] },
   alternates: { canonical: '/privacy-policy' }
 };
 
 const effectiveDate = 'May 6, 2026';
+const lastUpdated = 'October 17, 2026';
 
 const highlights = [
-  'This site uses Vercel Web Analytics, which is cookieless and privacy-friendly.',
+  'This site uses two analytics tools: Vercel Web Analytics, which is cookieless, and Google Analytics, which uses first-party cookies.',
   'This site does not use ad trackers, retargeting pixels, or marketing cookies.',
-  'A cookie banner is not shown because the site does not currently set non-essential cookies.',
+  'You can opt out of Google Analytics at any time. The Analytics and Cookies section below explains how.',
   'Personal information submitted through forms is not sold.',
   'You may request access, correction, or deletion of information you voluntarily submit.'
 ];
@@ -33,11 +34,17 @@ const sections = [
     ]
   },
   {
-    title: 'Analytics — No Cookies, No Banner',
+    title: 'Analytics and Cookies',
     body: [
-      'This site uses Vercel Web Analytics to understand basic website activity, performance, and visitor behavior in aggregate. Vercel Analytics may collect information such as pages viewed, referrer, device or browser type, approximate region, and performance events.',
-      'Vercel Web Analytics is designed to be privacy-friendly and cookieless. It does not use advertising cookies, retargeting cookies, or cross-site visitor profiles. Because the site currently relies on cookieless analytics and does not set non-essential marketing cookies, a cookie consent banner is not displayed.',
-      'If tools are added later that set non-essential cookies — including Google Analytics 4, Meta Pixel, remarketing tags, or cookie-based embeds — the site should add an appropriate consent mechanism before those tools go live.'
+      'This site uses two analytics tools to understand, in aggregate, how visitors find and use the site and how many people reach out, including consultation requests sent through the Connect form.',
+      'Vercel Web Analytics is cookieless. It may collect information such as pages viewed, referrer, device or browser type, approximate region, and performance events. It does not use advertising cookies, retargeting cookies, or cross-site visitor profiles.',
+      'Google Analytics 4, provided by Google, sets two first-party cookies on your device: _ga, which tells one visitor apart from another, and _ga_P07XZGT10P, which keeps track of your current visit. By Google’s default settings, both expire after 2 years. Google Analytics shows which pages are visited and how people arrive, and counts contact actions such as a successful Connect form request or a tap on an email or phone link. It is set up for measurement only, with Google’s advertising features turned off.',
+      'What you write in the Connect form is never sent to Google. Neither is your email address or phone number.',
+      'To opt out of Google Analytics, you can install the Google Analytics opt-out browser add-on. You can also block or delete cookies in your browser settings. Google handles the data it collects under its own privacy policy.'
+    ],
+    links: [
+      { label: 'Google Analytics opt-out browser add-on', href: 'https://tools.google.com/dlpage/gaoptout' },
+      { label: 'Google Privacy Policy', href: 'https://policies.google.com/privacy' }
     ]
   },
   {
@@ -50,7 +57,7 @@ const sections = [
   {
     title: 'Third-Party Services',
     body: [
-      'This website may use trusted third-party services to host the site, measure traffic, process forms, deliver email, or embed media. These may include Vercel, email delivery providers, and other operational tools.',
+      'This website may use trusted third-party services to host the site, measure traffic, process forms, deliver email, or embed media. These may include Vercel, Google (for Google Analytics), email delivery providers, and other operational tools.',
       'Third-party services may process information only as needed to provide their services. If you interact with an embedded scheduler, email platform, video, payment tool, or other third-party feature, that provider may have its own privacy policy and terms.'
     ]
   },
@@ -104,7 +111,7 @@ export default function Privacy() {
         <div className="container max-w-4xl">
           <p className="eyebrow">Website privacy</p>
           <h1 className="display mt-5 text-4xl sm:text-5xl md:text-6xl text-forest">Privacy Policy</h1>
-          <p className="body-large mt-6 text-mid">Effective date: {effectiveDate}</p>
+          <p className="body-large mt-6 text-mid">Effective date: {effectiveDate} · Last updated: {lastUpdated}</p>
 
           <div className="mt-10 rounded-[2rem] border border-gold/30 bg-warm p-8 shadow-soft">
             <h2 className="display text-4xl text-forest">Short version</h2>
@@ -121,6 +128,15 @@ export default function Privacy() {
                 <h2 className="display text-3xl text-forest">{section.title}</h2>
                 <div className="mt-4 space-y-4 leading-8">
                   {section.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                  {section.links && (
+                    <ul className="space-y-2">
+                      {section.links.map((link) => (
+                        <li key={link.href}>
+                          <a className="font-medium text-forest underline decoration-gold underline-offset-4" href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </section>
             ))}
