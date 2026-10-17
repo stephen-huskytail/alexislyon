@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useEffect, useState } from 'react';
 import { ApiErrorHero } from '@/components/ApiErrorHero';
+import { trackLead } from '@/lib/analytics';
 
 // `/connect?interest=<key>` pre-selects the matching topic (e.g. links from /the-becoming).
 // Read from window.location rather than useSearchParams so the form stays statically rendered.
@@ -47,6 +48,7 @@ export function ContactForm() {
     });
 
     if (res.ok) {
+      trackLead('form');
       setOk(true);
       reset();
     } else {
