@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Jost, Dancing_Script } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: ['300','400','600'], style: ['normal','italic'], variable: '--font-cormorant', display: 'swap' });
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" className={`${cormorant.variable} ${jost.variable} ${signature.variable}`}><body>{children}<Analytics /></body></html>;
+  return <html lang="en" className={`${cormorant.variable} ${jost.variable} ${signature.variable}`}><body>{children}<Analytics /><GoogleAnalytics /></body></html>;
 }
