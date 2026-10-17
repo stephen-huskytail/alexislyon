@@ -17,7 +17,8 @@ export function GoogleAnalytics() {
       try {
         const url = new URL(href, window.location.href);
         if (url.origin === window.location.origin && url.pathname.replace(/\/$/, '') === '/connect') {
-          trackLead('form');
+          const link_location = link.closest('header') ? 'header' : link.closest('footer') ? 'footer' : 'content';
+          window.gtag?.('event', 'cta_click', { link_location });
         }
       } catch {
         // Ignore non-URL links without changing navigation.
