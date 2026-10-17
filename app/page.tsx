@@ -23,7 +23,7 @@ const homeJsonLd = [
     '@type': 'Person',
     name: 'Alexis Lyon',
     url: 'https://alexislyon.com',
-    image: 'https://alexislyon.com/images/alexis-portrait.jpg',
+    image: 'https://alexislyon.com/images/alexis-portrait-2.webp',
     jobTitle: 'Trauma-Informed Transformational Guide and Somatic Healer',
     description: 'Trauma-informed transformational guide and healer based on the Pacific coast of Costa Rica, serving clients worldwide online.',
     hasCredential: 'Licensed Marriage and Family Therapist, California',

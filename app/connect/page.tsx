@@ -54,7 +54,7 @@ export default function Connect() {
 
             {/* Portrait */}
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-soft">
-              <Image src="/images/alexis-portrait.jpg" alt="Alexis Lyon" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 40vw" />
+              <Image src="/images/alexis-portrait-2.webp" alt="Alexis Lyon" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 40vw" />
             </div>
           </aside>
         </div>

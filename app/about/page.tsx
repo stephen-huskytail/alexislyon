@@ -28,7 +28,7 @@ const aboutJsonLd = {
     '@type': 'Person',
     name: 'Alexis Lyon',
     url: 'https://alexislyon.com',
-    image: 'https://alexislyon.com/images/alexis-portrait.jpg',
+    image: 'https://alexislyon.com/images/alexis-portrait-2.webp',
     jobTitle: 'Transformational Guide and Somatic Healer',
     hasCredential: 'Licensed Marriage and Family Therapist, California',
     knowsAbout: ['Somatic coaching', 'Somatic depth work', 'Nervous system regulation', 'Psychological flexibility', 'Nature-based healing', 'Transformational coaching'],
