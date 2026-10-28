@@ -163,8 +163,6 @@ export default function Home() {
         <p className="mt-8 rounded-2xl bg-cream/5 p-5 text-sm leading-7">{disclaimerText}</p>
       </div></section>
 
-      <section id="testimonial" className="section bg-warm"><div className="container max-w-4xl text-center"><p className="display text-4xl italic leading-relaxed text-forest">&ldquo;Alexis holds tenderness and fire with the same steady presence.&rdquo;</p></div></section>
-
       <section id="connect" className="section"><div className="container grid gap-12 lg:grid-cols-2"><div><p className="eyebrow">Let&rsquo;s connect</p><h2 className="display mt-5 text-5xl text-forest">Begin the conversation.</h2><p className="body-large mt-6 text-mid">Share what is calling you here. Alexis reads every message personally and responds within 48 hours.</p><ul className="mt-6 space-y-2 text-mid text-sm leading-7"><li>◆ Tell Alexis what you are looking for</li><li>◆ She will respond and share the right next step</li><li>◆ A free 20-minute consultation follows if aligned</li></ul><div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft"><Image src="/images/nature-ocean-sunset.webp" alt="Golden sunset reflected across a calm ocean" fill sizes="(max-width: 1023px) calc(100vw - 3rem), 560px" className="object-cover" /></div></div><div><ContactForm /></div></div></section>
       <Footer />
     </main>
