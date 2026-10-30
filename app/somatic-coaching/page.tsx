@@ -398,26 +398,7 @@ export default function SomaticCoaching() {
               <p>But regulation does not have to mean becoming calm all the time.</p>
               <p>And it does not have to mean making yourself smaller, quieter, less emotional, or less intense.</p>
             </Lines>
-            <p>I think of regulation more as developing the capacity to remain in relationship with ourselves through a wider range of human experience.</p>
-            <Diamonds
-              items={[
-                'To feel activation without immediately being consumed by it.',
-                'To notice fear without automatically organizing our lives around avoiding it.',
-                'To experience anger without either suppressing it or allowing it to take over.',
-                'To feel desire without immediately judging it.',
-                'To experience intensity and become curious about what it carries.'
-              ]}
-            />
-            <Lines>
-              <p>Sometimes our nervous systems need settling.</p>
-              <p>Sometimes they need movement.</p>
-              <p>Sometimes they need protection, rest, expression, connection, grieving, boundaries, or play.</p>
-            </Lines>
-            <Key>Different tools are needed for different jobs.</Key>
-            <Lines>
-              <p>The work is not simply learning how to calm yourself down.</p>
-              <p>It is developing enough relationship with your body to begin discerning what this particular moment is asking of you.</p>
-            </Lines>
+            <p><Link className={inlineLink} href="/nervous-system-regulation">Read more about nervous system regulation →</Link></p>
           </div>
         </div>
       </section>

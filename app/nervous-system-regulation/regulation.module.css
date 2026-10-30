@@ -1,0 +1,11 @@
+.tools { width: 100%; table-layout: fixed; border-collapse: collapse; text-align: left; font-size: 1rem; line-height: 1.65; }
+.tools th, .tools td { padding: 1rem; border-bottom: 1px solid var(--warm-dk); vertical-align: top; overflow-wrap: break-word; }
+.tools th { background: var(--forest); color: var(--cream); font-weight: 500; }
+.cellLabel { display: none; }
+@media (max-width: 639px) {
+  .tools, .tools tbody { display: block; }
+  .tools thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .tools tr { display: block; margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--warm-dk); border-radius: 1rem; background: var(--cream); }
+  .tools td { display: block; border: 0; padding: .5rem 0; }
+  .cellLabel { display: block; margin-bottom: .25rem; color: var(--forest); font-weight: 500; }
+}
