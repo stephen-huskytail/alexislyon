@@ -134,7 +134,7 @@ export default function Home() {
             <p className="mt-5 leading-8">{offering.body}</p>
             <p className="mt-5 leading-8">{offering.lead}</p>
             <ul className="mt-5 space-y-3">
-              {offering.includes.map(([t, d]) => <li key={t} className="flex gap-3 leading-7"><span className="mt-1 shrink-0 text-gold-lt">◆</span><span><span className="font-medium text-cream">{t}</span> — {d}</span></li>)}
+              {offering.includes.map(([t, d]) => <li key={t} className="flex gap-3 leading-7"><span className="mt-1 shrink-0 text-gold-lt">◆</span><span><span className="font-medium text-cream">{t === 'Nervous system regulation' ? <Link href="/nervous-system-regulation" className="underline decoration-gold-lt underline-offset-4 hover:text-gold-lt">{t}</Link> : t}</span> — {d}</span></li>)}
             </ul>
             <p className="mt-6 italic text-cream/80">{offering.close}</p>
             <p className="mt-5"><Link className="font-medium text-gold-lt underline decoration-gold underline-offset-4 hover:text-cream" href="/somatic-coaching">Curious about the somatic side of this work? Explore somatic coaching →</Link></p>
