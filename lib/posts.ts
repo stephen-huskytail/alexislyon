@@ -16,6 +16,17 @@ export type PostMeta = {
 
 export const posts: PostMeta[] = [
   {
+    "slug": "compassion-and-courage-how-the-wound-and-the-wildness-lead-us-home",
+    "title": "Compassion and Courage: How the Wound and the Wildness Lead Us Home",
+    "description": "On Chiron, Lilith, and the treasure hidden in our exiled parts",
+    "metaDescription": "On Chiron, Lilith, and the treasure hidden in our exiled parts. Our wounds and exiled parts are the clues to the treasure.",
+    "featuredImage": "/images/blog-compassion-and-courage.webp",
+    "featuredImageAlt": "Old tree roots reaching over moss and small white flowers into a sunlit forest stream",
+    "datePublished": "2026-11-08",
+    "readingTime": "9 min read",
+    "eyebrow": "Trauma healing"
+},
+  {
     slug: 'diversity-breeds-vitality',
     title: "Diversity Breeds Vitality: Nervous System Capacity and the Courage to Welcome Otherness",
     description: "On nervous system regulation, self-trust, and the life-giving possibilities of difference",
