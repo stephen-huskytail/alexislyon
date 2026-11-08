@@ -23,7 +23,7 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        headers: securityHeaders
+        headers: [...securityHeaders, ...(process.env.VERCEL_ENV === 'preview' ? [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] : [])]
       }
     ];
   }
