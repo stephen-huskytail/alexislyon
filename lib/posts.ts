@@ -31,8 +31,8 @@ export const posts: PostMeta[] = [
     title: "Diversity Breeds Vitality: Nervous System Capacity and the Courage to Welcome Otherness",
     description: "On nervous system regulation, self-trust, and the life-giving possibilities of difference",
     metaDescription: "On nervous system regulation, self-trust, and the life-giving possibilities of difference. Diversity breeds vitality, at every scale.",
-    featuredImage: '/images/blog-diversity-breeds-vitality.webp',
-    featuredImageAlt: 'A river flowing out between lush green banks to meet ocean waves at sunrise',
+    featuredImage: '/images/blog-diversity-breeds-vitality-20261109.webp',
+    featuredImageAlt: 'A tropical coastline with a volcano, mangroves, birds, a monkey and flowers, with fish, a sea turtle, a ray and coral beneath the water.',
     datePublished: '2026-11-08',
     readingTime: '14 min read',
     eyebrow: 'Nervous system regulation'
