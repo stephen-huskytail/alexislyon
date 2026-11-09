@@ -20,8 +20,8 @@ export const posts: PostMeta[] = [
     "title": "Compassion and Courage: How the Wound and the Wildness Lead Us Home",
     "description": "On Chiron, Lilith, and the treasure hidden in our exiled parts",
     "metaDescription": "On Chiron, Lilith, and the treasure hidden in our exiled parts. Our wounds and exiled parts are the clues to the treasure.",
-    "featuredImage": "/images/blog-compassion-and-courage.webp",
-    "featuredImageAlt": "Old tree roots reaching over moss and small white flowers into a sunlit forest stream",
+    "featuredImage": "/images/blog-compassion-and-courage-20261109.webp",
+    "featuredImageAlt": "A fantasy illustration of a woman beside a spotted big cat and a deer, with flowers, a full moon and a centaur archer above a sunset landscape.",
     "datePublished": "2026-11-08",
     "readingTime": "9 min read",
     "eyebrow": "Trauma healing"
