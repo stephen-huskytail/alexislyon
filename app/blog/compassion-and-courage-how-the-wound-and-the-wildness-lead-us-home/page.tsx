@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
@@ -7,11 +8,11 @@ import { posts } from '@/lib/posts';
 
 const post = posts.find((p) => p.slug === 'compassion-and-courage-how-the-wound-and-the-wildness-lead-us-home')!;
 export const metadata: Metadata = {
-  title: { absolute: 'Compassion and Courage: How the Wound and the Wildness Lead Us Home' },
+  title: { absolute: post.seoTitle || post.title },
   description: post.metaDescription || post.description,
   alternates: { canonical: `/blog/${post.slug}` },
   openGraph: {
-    title: 'Compassion and Courage: How the Wound and the Wildness Lead Us Home',
+    title: post.seoTitle || post.title,
     description: post.metaDescription || post.description,
     type: 'article',
     images: [{ url: post.featuredImage, width: 1200, height: 675, alt: post.featuredImageAlt }]
@@ -51,7 +52,7 @@ export default function CompassionAndCourage() {
             <h2 className="display mt-12 text-3xl text-forest">Becoming a beginner again</h2>
             <p>It has been just over 3 months since I moved to Costa Rica. The first stretch was mostly about surviving: finding my footing, losing my footing, learning new rhythms, and carrying more than I ever have on my own. Lately, something has shifted. There is more flow now, and even some thriving.</p>
             <p>Acculturating has a way of stirring everything at once. Being new somewhere touches old places of not fitting in, not knowing the unwritten rules, not being seen. And at the same time, something wild in me has been waking up: the ocean, the rains, the land's own rhythms, and a fierce refusal to make myself smaller to belong to anything that is not True.</p>
-            <p>In my last post I wrote about how every relationship is a chance for cross-cultural integration. This one goes inward. It is about the two territories my work is built on, the wound and the wildness, and two mythic figures who have been guiding me through both: Chiron and Lilith.</p>
+            <p>In <Link href="/blog/diversity-breeds-vitality" className="font-medium text-forest underline decoration-gold underline-offset-4">my last post</Link> I wrote about how every relationship is a chance for cross-cultural integration. This one goes inward. It is about the two territories my work is built on, <Link href="/blog/post-traumatic-growth" className="font-medium text-forest underline decoration-gold underline-offset-4">the wound and the wildness</Link>, and two mythic figures who have been guiding me through both: Chiron and Lilith.</p>
             <h2 className="display mt-12 text-3xl text-forest">The Self at the heart</h2>
             <p>In Internal Family Systems, Richard Schwartz describes a core Self within each of us: a presence that is never damaged, only sometimes hidden. You can recognize it by its qualities, often called the 8 C's: calm, curiosity, compassion, confidence, courage, clarity, creativity and connectedness. When we lead from Self, we also bring the 5 P's: presence, perspective, patience, persistence and playfulness to our relating and relationships.</p>
             <p>When I sketched this out, I drew Self as a heart at the top of the page. Two paths ran down from it. One was compassion. The other was courage. And at the end of each path stood a figure from myth: Chiron on the path of compassion, and Lilith on the path of courage.</p>
@@ -98,7 +99,10 @@ export default function CompassionAndCourage() {
             <p>If you feel the pull of either, the tender place that needs witnessing or the untamed part that's tired of making itself small, I would be honored to walk with you. In my coaching work, we use nervous system regulation, somatic practice and the wisdom of story to help you heal what hurts and reclaim what's yours.</p>
           </div>
 
-
+          <div className="mt-12 rounded-[2rem] bg-forest p-8 text-center text-cream">
+            <p className="display text-3xl">Ready to meet your wound with compassion and your wildness with courage?</p>
+            <Link className="btn btn-gold mt-6" href="/connect">Schedule your free 20-minute consultation</Link>
+          </div>
         </div>
       </article>
       <Footer />

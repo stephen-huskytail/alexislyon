@@ -39,8 +39,8 @@ const details: [string, string][] = [
   ['Session length', '75–90 minutes'],
   ['Format', 'Online by video'],
   ['Commitment', 'Minimum 3 months'],
-  ['Investment', '$50 per session (about $100–150 per month)'],
-  ['Schedule', 'Thursday evenings or Fridays at midday, Pacific time · Three sessions per month'],
+  ['Investment', '$150/month for two group sessions · 3 months, billed monthly'],
+  ['Schedule', 'Thursday evenings or Fridays at midday, Pacific time · Two sessions per month'],
   ['Next circle begins', 'November 2026 or March 2027 · Now forming — inquire to join']
 ];
 
@@ -119,10 +119,10 @@ const becomingJsonLd = [
       availability: 'https://schema.org/InStock',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: 50,
+        price: 150,
         priceCurrency: 'USD',
-        unitText: 'session',
-        description: '$50 per session, about $100–150 per month; minimum three-month commitment'
+        unitText: 'month',
+        description: '$150 per month for two online group sessions; 3 months, billed monthly'
       }
     }
   },
@@ -186,7 +186,7 @@ export default function TheBecoming() {
             <p className="display mt-6 max-w-3xl text-2xl italic leading-snug sm:text-3xl">An online women’s group for healing the wound and reclaiming the wildness.</p>
           </Reveal>
           <Reveal delay={0.36}>
-            <p className="mt-8 text-xs uppercase tracking-[.18em] text-cream/75 sm:text-sm">4–8 women · Online by video · $50 per session</p>
+            <p className="mt-8 text-xs uppercase tracking-[.18em] text-cream/75 sm:text-sm">4–8 women · Online by video · $150/month for two group sessions</p>
             <div className="mt-8"><Link className="btn btn-gold" href={CONNECT_URL}>Ask About The Becoming&nbsp;→</Link></div>
           </Reveal>
         </div>

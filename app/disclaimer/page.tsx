@@ -19,7 +19,8 @@ const sections = [
     title: 'This Is Not Therapy',
     body: [
       'The services described on this website are transformational coaching, somatic guidance, nature-based healing support, education, and personal growth work. They are not psychotherapy, clinical mental health treatment, medical care, diagnosis, or crisis services.',
-      'Using this website, reading its content, submitting a form, booking a consultation, or engaging in non-clinical services does not create a therapist-client relationship.'
+      'Using this website, reading its content, submitting a form, booking a consultation, or engaging in non-clinical services does not create a therapist-client relationship.',
+      "Coaching is not a substitute for psychotherapy, and Alexis does not act as a client's personal therapist."
     ]
   },
   {

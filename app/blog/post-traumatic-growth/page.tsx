@@ -101,7 +101,7 @@ export default function PostTraumaticGrowth() {
             <p className="body-large text-dark">{"What needs healing, what needs reclaiming, and what becomes possible at the places where life breaks us open"}</p>
             <p className="font-medium italic text-dark">{"“The alchemy begins where the wound is honored and the wildness is free.”"}</p>
             <p>{"What happens at the intersection of our wounding and our wildness?"}</p>
-            <p>{"Both personally and in my clinical work, I have been exploring a series of questions that have evolved over time."}</p>
+            <p>{"Both personally and through my years as a therapist and now as a guide, I have been exploring a series of questions that have evolved over time."}</p>
             <p>{"What wounds and what heals?"}</p>
             <p>{"How do we safely express our True Self? And what does safety even mean?"}</p>
             <p>{"How do we find the parts of ourselves that have been buried, suppressed, exiled? Why did these parts go underground in the first place?"}</p>
@@ -313,9 +313,10 @@ export default function PostTraumaticGrowth() {
             </div>
           </section>
           <div className="mt-12 rounded-[2rem] bg-forest p-8 text-center text-cream">
-            <p className="display text-3xl">This is the work I do. Let&rsquo;s talk.</p>
+            <p className="display text-3xl">If you are standing where your wound and your wildness meet, you don&rsquo;t have to find the way alone. Let&rsquo;s talk.</p>
             <Link className="btn btn-gold mt-6" href="/connect">Begin the conversation</Link>
           </div>
+          <p className="mt-10 text-sm leading-7 text-mid">Read next: <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/blog/compassion-and-courage-how-the-wound-and-the-wildness-lead-us-home">Compassion and Courage: How the Wound and the Wildness Lead Us Home</Link></p>
           <p className="mt-10 text-sm leading-7 text-mid">Related reading: <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/blog/psychological-flexibility">Psychological Flexibility: An Overlooked Superpower</Link> · <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/philosophy">The Philosophy Behind the Work</Link></p>
         </div>
       </article>

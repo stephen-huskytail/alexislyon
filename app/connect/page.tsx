@@ -4,7 +4,7 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { ContactForm } from '@/components/ContactForm';
 import { JsonLd } from '@/components/JsonLd';
-import { meta } from '@/lib/content';
+import { disclaimerFirstPerson, meta } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: meta.connect,
@@ -40,6 +40,7 @@ export default function Connect() {
             <p className="eyebrow">Connect</p>
             <h1 className="display mt-5 text-4xl sm:text-5xl md:text-6xl text-forest">Begin the conversation.</h1>
             <p className="body-large mt-7 text-mid">Reach out for a free 20-minute conversation. If the work feels aligned, Alexis will share the next step.</p>
+            <p className="mt-6 rounded-2xl bg-warm p-5 text-sm leading-7 text-mid">{disclaimerFirstPerson}</p>
             <div className="mt-8"><ContactForm /></div>
           </div>
 

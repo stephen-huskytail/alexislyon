@@ -5,6 +5,8 @@ export type PostMeta = {
   description: string;
   /** SEO meta description when it should differ from the card copy. */
   metaDescription?: string;
+  /** SEO <title> when it should differ from the on-page title. */
+  seoTitle?: string;
   featuredImage: string;
   featuredImageAlt: string;
   datePublished?: string;
@@ -19,7 +21,8 @@ export const posts: PostMeta[] = [
     "slug": "compassion-and-courage-how-the-wound-and-the-wildness-lead-us-home",
     "title": "Compassion and Courage: How the Wound and the Wildness Lead Us Home",
     "description": "On Chiron, Lilith, and the treasure hidden in our exiled parts",
-    "metaDescription": "On Chiron, Lilith, and the treasure hidden in our exiled parts. Our wounds and exiled parts are the clues to the treasure.",
+    "metaDescription": "How compassion and courage, Chiron and Lilith, and the wisdom of myth help us heal old wounds and reclaim the parts of us we exiled.",
+    "seoTitle": "Healing the Wound, Reclaiming Your Wildness: Chiron, Lilith and the Self",
     "featuredImage": "/images/blog-compassion-and-courage-20261109.webp",
     "featuredImageAlt": "A fantasy illustration of a woman beside a spotted big cat and a deer, with flowers, a full moon and a centaur archer above a sunset landscape.",
     "datePublished": "2026-11-08",
@@ -71,6 +74,6 @@ export const posts: PostMeta[] = [
     datePublished: '2026-07-15',
     dateModified: '2026-10-07',
     readingTime: '13 min read',
-    eyebrow: 'Trauma healing'
+    eyebrow: 'Healing and growth'
   }
 ];
