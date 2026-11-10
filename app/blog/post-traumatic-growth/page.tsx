@@ -101,7 +101,7 @@ export default function PostTraumaticGrowth() {
             <p className="body-large text-dark">{"What needs healing, what needs reclaiming, and what becomes possible at the places where life breaks us open"}</p>
             <p className="font-medium italic text-dark">{"“The alchemy begins where the wound is honored and the wildness is free.”"}</p>
             <p>{"What happens at the intersection of our wounding and our wildness?"}</p>
-            <p>{"Both personally and in my clinical work, I have been exploring a series of questions that have evolved over time."}</p>
+            <p>{"Both personally and through my years as a therapist and now as a guide, I have been exploring a series of questions that have evolved over time."}</p>
             <p>{"What wounds and what heals?"}</p>
             <p>{"How do we safely express our True Self? And what does safety even mean?"}</p>
             <p>{"How do we find the parts of ourselves that have been buried, suppressed, exiled? Why did these parts go underground in the first place?"}</p>
