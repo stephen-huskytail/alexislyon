@@ -11,7 +11,7 @@ const signature = Dancing_Script({ subsets: ['latin'], weight: ['500','600','700
 export const metadata: Metadata = {
   metadataBase: new URL('https://alexislyon.com'),
   title: { default: 'Alexis Lyon | Transformational Guide & Somatic Healer', template: '%s | Alexis Lyon' },
-  description: 'Transformational guidance rooted in somatic depth, nervous system regulation, psychological flexibility, nature-based healing, and self-trust.',
+  description: 'Healing for the wound. Reclaiming for the wildness. Trauma-informed transformational guidance.',
   openGraph: {
     title: 'Alexis Lyon | Transformational Guide & Somatic Healer',
     description: 'Healing for the wound. Reclaiming for the wildness. Trauma-informed transformational guidance.',

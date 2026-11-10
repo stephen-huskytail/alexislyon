@@ -6,7 +6,8 @@ import { Reveal } from '@/components/Reveal';
 import { ContactForm } from '@/components/ContactForm';
 import { ForestBodyForm } from '@/components/ForestBodyForm';
 import { JsonLd } from '@/components/JsonLd';
-import { availabilityText, becomingGroup, disclaimerText, offering, permissions, recognitions } from '@/lib/content';
+import { availabilityText, becomingGroup, checkInNote, coachingFaqs, credentialsLine, disclaimerFirstPerson, offering, packages, packagesIntro, permissions, recognitions, singleSessionLine, tendingLine } from '@/lib/content';
+import { posts } from '@/lib/posts';
 
 const homeJsonLd = [
   {
@@ -52,17 +53,24 @@ const homeJsonLd = [
       },
       {
         '@type': 'Offer',
-        name: 'Transformational Guidance — Monthly Package',
-        url: 'https://alexislyon.com/connect',
+        name: 'Rooted — 3 one-on-one sessions a month',
+        url: 'https://alexislyon.com/#work',
         availability: 'https://schema.org/InStock',
-        priceSpecification: { '@type': 'PriceSpecification', minPrice: 100, maxPrice: 1000, priceCurrency: 'USD', description: 'Monthly packages depending on depth and frequency of support' }
+        priceSpecification: { '@type': 'UnitPriceSpecification', price: 500, priceCurrency: 'USD', unitText: 'month', description: '3 one-on-one sessions a month; 3 months, billed monthly, or $1,400 paid in full' }
+      },
+      {
+        '@type': 'Offer',
+        name: 'Immersion — 4 one-on-one sessions a month',
+        url: 'https://alexislyon.com/#work',
+        availability: 'https://schema.org/InStock',
+        priceSpecification: { '@type': 'UnitPriceSpecification', price: 650, priceCurrency: 'USD', unitText: 'month', description: '4 one-on-one sessions a month (weekly); 3 months, billed monthly, or $1,800 paid in full' }
       },
       {
         '@type': 'Offer',
         name: "The Becoming — Women's Group",
         url: 'https://alexislyon.com/the-becoming',
         availability: 'https://schema.org/InStock',
-        priceSpecification: { '@type': 'PriceSpecification', price: 50, priceCurrency: 'USD', description: "Women's group session — 75–90 minutes, approximately $100–150/month" }
+        priceSpecification: { '@type': 'UnitPriceSpecification', price: 150, priceCurrency: 'USD', unitText: 'month', description: "2 online women's group sessions a month (4 to 8 members, 75 to 90 minutes each); 3 months, billed monthly" }
       }
     ]
   },
@@ -78,8 +86,13 @@ const homeJsonLd = [
       {
         '@type': 'Question',
         name: 'How much does it cost?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Transformational Guidance packages range from $100–$1,000 per month, depending on the depth and frequency of support. The Becoming Women\'s Group is $50/session, approximately $100–150/month. Every relationship begins with a free 20-minute consultation.' }
+        acceptedAnswer: { '@type': 'Answer', text: 'The Becoming (online women\'s group) is $150/month, Rooted (3 one-on-one sessions a month) is $500/month, and Immersion (4 one-on-one sessions a month) is $650/month, each with a 3-month commitment billed monthly. Returning clients can continue with Tending for $350/month, and a single 60-minute session is $200. Every relationship begins with a free 20-minute consultation.' }
       },
+      ...coachingFaqs.map(({ question, paragraphs }) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: { '@type': 'Answer', text: paragraphs.join(' ') }
+      })),
       {
         '@type': 'Question',
         name: 'Where are sessions held?',
@@ -122,9 +135,9 @@ export default function Home() {
 
       <section id="natural-world" className="section bg-warm"><div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_.9fr]"><div className="lg:order-2"><Reveal><div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-soft"><Image src="/images/sunset-tree-landscape.webp" alt="A tree silhouetted against a warm sunset sky" fill className="object-cover" sizes="(max-width: 1023px) 100vw, 55vw" /></div></Reveal></div><div className="lg:order-1"><Reveal delay={0.12}><div><p className="eyebrow">Rooted in the natural world</p><h2 className="display mt-5 text-5xl text-forest">The natural world remembers the way home.</h2><p className="body-large mt-6 text-mid">In its rhythms, spaciousness, and quiet presence, the natural world offers a gentle reminder that you belong to something larger — and that your body can find its own way back to ground.</p></div></Reveal></div></div></section>
 
-      <section id="about" className="section bg-warm -mt-12 md:mt-0"><div className="container grid gap-12 lg:grid-cols-[.8fr_1.2fr] items-start"><div className="relative min-h-[420px] rounded-t-full overflow-hidden shadow-soft"><Image src="/images/alexis-home-about.jpg" alt="Alexis Lyon" fill className="object-cover object-top" sizes="(max-width:768px) 100vw, 40vw" /></div><div><p className="eyebrow">You are the heroine of this story</p><h2 className="display mt-5 text-5xl text-forest">22 years of clinical depth — in service of your becoming.</h2><div className="mt-7 space-y-5 leading-8 text-mid"><p className="italic">I am so glad you are here.</p><p>You have probably been carrying this for a while. The sense that something in you is waiting. That you have done the work, read the books, made the progress — and still, something deeper is calling and you are not sure how to answer it.</p><p>I have spent 22 years sitting with people at exactly this threshold. Nearly two decades of that was with foster youth and families — people whose nervous systems had been shaped by profound rupture, who found their way back to themselves against real odds. They taught me what I now know for certain: the resilience and courage you need is already in you. It reveals itself when it is met with unconditional acceptance, kindness, curiosity, and respect.</p><p>That is what I am here to offer you. Not a technique applied to you. A relationship built with you — grounded in 22 years of trauma-informed clinical training and depth, and offered in service of one thing: your transformation.</p><p>I know what it is to feel overwhelmed and far from yourself. I also know the particular quality of arriving home. I work somatically because I have felt in my own body what it means to move from dysregulation to ground. I bring in the natural world because it has been my most reliable co-regulator. And I hold space for the spiritual and the mystical alongside the psychological, because I have found the deepest healing happens when all of you is welcome in the room.</p><p className="italic">You are the heroine of this story. I am simply the guide who has walked this territory before — and who is ready, right now, to walk it with you.</p></div><div className="mt-8 rounded-2xl bg-cream p-5 text-center text-xs uppercase tracking-[.16em] leading-6 text-sage"><p>22 years clinical experience · Trauma-informed · Somatic &amp; nature-based · California LMFT background</p><p className="mt-1 text-mid">Currently based on the Pacific coast of Costa Rica · Serving clients worldwide online</p></div><Link className="btn btn-forest mt-8" href="/connect">Let&rsquo;s Begin — Free 20-Minute Consultation</Link></div></div></section>
+      <section id="about" className="section bg-warm -mt-12 md:mt-0"><div className="container grid gap-12 lg:grid-cols-[.8fr_1.2fr] items-start"><div className="relative min-h-[420px] rounded-t-full overflow-hidden shadow-soft"><Image src="/images/alexis-home-about.jpg" alt="Alexis Lyon" fill className="object-cover object-top" sizes="(max-width:768px) 100vw, 40vw" /></div><div><p className="eyebrow">You are the heroine of this story</p><h2 className="display mt-5 text-5xl text-forest">22 years of clinical depth — in service of your becoming.</h2><div className="mt-7 space-y-5 leading-8 text-mid"><p className="italic">I am so glad you are here.</p><p>You have probably been carrying this for a while. The sense that something in you is waiting. That you have done the work, read the books, made the progress — and still, something deeper is calling and you are not sure how to answer it.</p><p>I have spent 22 years sitting with people at exactly this threshold. Nearly two decades of that was with foster youth and families — people whose nervous systems had been shaped by profound rupture, who found their way back to themselves against real odds. They taught me what I now know for certain: the resilience and courage you need is already in you. It reveals itself when it is met with unconditional acceptance, kindness, curiosity, and respect.</p><p>That is what I am here to offer you. Not a technique applied to you. A relationship built with you — grounded in 22 years of trauma-informed clinical training and depth, and offered in service of one thing: your transformation.</p><p>I know what it is to feel overwhelmed and far from yourself. I also know the particular quality of arriving home. I work somatically because I have felt in my own body what it means to move from dysregulation to ground. I bring in the natural world because it has been my most reliable co-regulator. And I hold space for the spiritual and the mystical alongside the psychological, because I have found the deepest healing happens when all of you is welcome in the room.</p><p className="italic">You are the heroine of this story. I am simply the guide who has walked this territory before — and who is ready, right now, to walk it with you.</p></div><div className="mt-8 rounded-2xl bg-cream p-5 text-center text-xs uppercase tracking-[.16em] leading-6 text-sage"><p>{credentialsLine}</p><p className="mt-1">22 years clinical experience · Trauma-informed · Somatic &amp; nature-based · California LMFT background</p><p className="mt-1 text-mid">Currently based on the Pacific coast of Costa Rica · Serving clients worldwide online</p></div><Link className="btn btn-forest mt-8" href="/connect">Let&rsquo;s Begin — Free 20-Minute Consultation</Link></div></div></section>
 
-      <section id="experience" className="section"><div className="container grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]"><div><p className="eyebrow">Forest Body Activation</p><h2 className="display mt-5 text-5xl text-forest">A guided doorway into the work.</h2><p className="body-large mt-6 text-mid">A guided meditation to help you find your way home to your body — and the three practices I will leave you with to take into your daily life.</p><Link className="btn btn-forest mt-8 hidden lg:inline-flex" href="/connect">Ready for more? Let&rsquo;s talk.</Link></div><div className="overflow-hidden rounded-[2rem] bg-forest text-cream shadow-soft"><div className="relative aspect-[16/7] min-h-[180px]"><Image src="/images/forest-body-cover.webp" alt="Forest Body Activation meditation cover" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 55vw" /></div><div className="p-6 sm:p-8"><h3 className="display text-3xl text-cream">Receive the Forest Body Activation.</h3><p className="mt-3 max-w-xl leading-7 text-cream/80">Enter your email and Alexis will send the audio download directly to you.</p><ForestBodyForm /></div></div><Link className="btn btn-forest lg:hidden justify-self-start" href="/connect">Ready for more? Let&rsquo;s talk.</Link></div></section>
+      <section id="experience" className="section"><span id="forest-body" className="relative -top-24 block h-0" aria-hidden="true" /><div className="container grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]"><div><p className="eyebrow">Forest Body Activation</p><h2 className="display mt-5 text-5xl text-forest">A guided doorway into the work.</h2><p className="body-large mt-6 text-mid">A guided meditation to help you find your way home to your body — and the three practices I will leave you with to take into your daily life.</p><Link className="btn btn-forest mt-8 hidden lg:inline-flex" href="/connect">Ready for more? Let&rsquo;s talk.</Link></div><div className="overflow-hidden rounded-[2rem] bg-forest text-cream shadow-soft"><div className="relative aspect-[16/7] min-h-[180px]"><Image src="/images/forest-body-cover.webp" alt="Forest Body Activation meditation cover" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 55vw" /></div><div className="p-6 sm:p-8"><h3 className="display text-3xl text-cream">Receive the Forest Body Activation.</h3><p className="mt-3 max-w-xl leading-7 text-cream/80">Enter your email and Alexis will send the audio download directly to you.</p><ForestBodyForm /></div></div><Link className="btn btn-forest lg:hidden justify-self-start" href="/connect">Ready for more? Let&rsquo;s talk.</Link></div></section>
 
       <section id="work" className="section dark-section dark"><div className="container"><p className="eyebrow">Work with me</p><h2 className="display mt-5 max-w-4xl text-5xl">The depth of 22 years of clinical training, offered in a container built for transformation.</h2>
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr]">
@@ -153,14 +166,55 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mt-8 rounded-[2rem] bg-cream/10 p-8 lg:p-10">
+        <div id="packages" className="mt-8 rounded-[2rem] bg-cream/10 p-8 lg:p-10">
           <p className="eyebrow">Investment</p>
-          <p className="mt-5 leading-8">Transformational Guidance packages range from <span className="font-medium text-gold-lt">$100–$1,000 per month</span>, depending on the depth and frequency of support you are looking for. Rather than a menu, we build the right container for you — together, in conversation.</p>
-          <p className="mt-4 leading-8">The Becoming — Women&rsquo;s Group: $50 per session, approximately $100–150 per month.</p>
-          <p className="mt-4 leading-8 italic">Every relationship begins with a free 20-minute consultation. If financial circumstances are a genuine barrier, please bring that into our first conversation — I would rather find a way than have you not reach out.</p>
+          <p className="mt-5 leading-8">{packagesIntro}</p>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {packages.map((pkg) => (
+              <div key={pkg.name} className="flex flex-col rounded-[1.5rem] border border-cream/15 bg-cream/5 p-7">
+                <h3 className="display text-3xl text-gold-lt">{pkg.name}</h3>
+                <p className="mt-3 text-2xl font-medium text-cream">{pkg.price}</p>
+                <p className="mt-4 flex-1 leading-7">{pkg.includes}</p>
+                <p className="mt-4 border-t border-cream/10 pt-4 text-sm leading-6 text-cream/75">{pkg.commitment}</p>
+                <Link className="mt-5 font-medium text-gold-lt underline decoration-gold underline-offset-4 hover:text-cream" href={pkg.href}>{pkg.name === 'The Becoming' ? 'Learn more about The Becoming →' : 'Schedule your free consultation →'}</Link>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 leading-8">{tendingLine}</p>
+          <p className="mt-3 leading-8">{singleSessionLine}</p>
+          <p className="mt-5 text-sm leading-7 text-cream/80">{checkInNote}</p>
+          <p className="mt-6 leading-8 italic">If financial circumstances are a genuine barrier, please bring that into our first conversation — I would rather find a way than have you not reach out.</p>
           <Link className="btn btn-gold mt-7" href="/connect">Schedule Your Free Consultation</Link>
         </div>
-        <p className="mt-8 rounded-2xl bg-cream/5 p-5 text-sm leading-7">{disclaimerText}</p>
+        <p className="mt-8 rounded-2xl bg-cream/5 p-5 text-sm leading-7">{disclaimerFirstPerson}</p>
+        <div id="work-faq" className="mt-8 rounded-[2rem] border border-cream/15 bg-cream/5 p-8 lg:p-10">
+          <p className="eyebrow">Questions</p>
+          <div className="mt-5 space-y-8">
+            {coachingFaqs.map(({ question, paragraphs }) => (
+              <div key={question}>
+                <h3 className="display text-2xl text-gold-lt">{question}</h3>
+                <div className="mt-3 space-y-4 leading-8">{paragraphs.map((para) => <p key={para}>{para}</p>)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div></section>
+
+      <section id="from-the-blog" className="section bg-warm"><div className="container">
+        <p className="eyebrow">From the blog</p>
+        <h2 className="display mt-5 max-w-3xl text-5xl text-forest">Recent writing.</h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {posts.slice(0, 3).map((p) => (
+            <article className="card flex h-full flex-col bg-cream" key={p.slug}>
+              <Link href={`/blog/${p.slug}`} aria-label={`Read ${p.title}`} className="relative mb-6 block aspect-[16/9] overflow-hidden rounded-2xl">
+                <Image src={p.featuredImage} alt={p.featuredImageAlt} fill className="object-cover" sizes="(max-width: 767px) calc(100vw - 6rem), 33vw" />
+              </Link>
+              <h3 className="display text-2xl text-forest"><Link className="transition-colors hover:text-sage" href={`/blog/${p.slug}`}>{p.title}</Link></h3>
+              <p className="mt-3 flex-1 leading-7 text-mid">{p.description}</p>
+            </article>
+          ))}
+        </div>
+        <Link className="btn btn-forest mt-8" href="/blog">Read all posts</Link>
       </div></section>
 
       <section id="connect" className="section"><div className="container grid gap-12 lg:grid-cols-2"><div><p className="eyebrow">Let&rsquo;s connect</p><h2 className="display mt-5 text-5xl text-forest">Begin the conversation.</h2><p className="body-large mt-6 text-mid">Share what is calling you here. Alexis reads every message personally and responds within 48 hours.</p><ul className="mt-6 space-y-2 text-mid text-sm leading-7"><li>◆ Tell Alexis what you are looking for</li><li>◆ She will respond and share the right next step</li><li>◆ A free 20-minute consultation follows if aligned</li></ul><div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft"><Image src="/images/nature-ocean-sunset.webp" alt="Golden sunset reflected across a calm ocean" fill sizes="(max-width: 1023px) calc(100vw - 3rem), 560px" className="object-cover" /></div></div><div><ContactForm /></div></div></section>

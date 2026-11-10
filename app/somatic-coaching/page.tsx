@@ -5,7 +5,7 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
 import { Reveal } from '@/components/Reveal';
-import { disclaimerText } from '@/lib/content';
+import { coachingFaqs, disclaimerText } from '@/lib/content';
 
 const SITE_URL = 'https://alexislyon.com';
 const PAGE_PATH = '/somatic-coaching';
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
+  ...coachingFaqs.map(({ question, paragraphs }) => ({ question, answer: paragraphs.join('\n\n') })),
   {
     question: 'Is somatic coaching the same as therapy or psychotherapy?',
     answer:
@@ -657,7 +658,7 @@ export default function SomaticCoaching() {
           <div className="rounded-[2rem] bg-forest p-8 text-cream lg:p-10">
             <p className="eyebrow !text-gold-lt">How we begin</p>
             <div className="mt-5 space-y-4 text-[1.0625rem] leading-[1.8] text-cream/85">
-              <p>Sessions are held by video. We build the right container together rather than from a menu. Packages range from $100–$1,000 per month, depending on the depth and frequency of support you are looking for.</p>
+              <p>Sessions are held by video. Every package starts with a free 20-minute consultation, and you can see the current packages and pricing under <Link className="underline decoration-gold underline-offset-4 hover:text-gold-lt" href="/#packages">Work With Me</Link>.</p>
               <p>If you are in or visiting Costa Rica, I also offer in-person, nature-based sessions on the Pacific coast.</p>
             </div>
             <Link className="btn btn-gold mt-7" href="/connect">Schedule Your Free Consultation&nbsp;→</Link>
@@ -715,15 +716,15 @@ export default function SomaticCoaching() {
                       className="relative mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-forest/30 transition-colors before:absolute before:h-px before:w-3 before:bg-forest after:absolute after:h-3 after:w-px after:bg-forest after:transition-transform group-open:border-forest group-open:after:scale-y-0 group-hover:border-forest"
                     />
                   </summary>
-                  <p className="pb-7 pr-2 text-[1.0625rem] leading-[1.8] text-dark/80 sm:pr-14">
+                  <div className="space-y-4 pb-7 pr-2 text-[1.0625rem] leading-[1.8] text-dark/80 sm:pr-14">
                     {question === 'How do I get started?' ? (
-                      <>
+                      <p>
                         Begin with a <Link className={inlineLink} href="/connect">free 20-minute consultation</Link>. We’ll talk about what you are hoping for and whether this work is a fit.
-                      </>
+                      </p>
                     ) : (
-                      answer
+                      answer.split('\n\n').map((para) => <p key={para}>{para}</p>)
                     )}
-                  </p>
+                  </div>
                 </details>
               ))}
             </div>

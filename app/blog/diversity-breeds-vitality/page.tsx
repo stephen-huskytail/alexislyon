@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
@@ -56,7 +57,7 @@ export default function DiversityBreedsVitality() {
             <p>I felt it poignantly, and just enough not to be overwhelmed. At the edge of my comprehension, I met expansion and wonder: a vast sense of all the ways of being human, queendoms upon kingdoms, worlds upon worlds, generations of people finding their way and creating humanity. It asked something of me: reverence.</p>
             <p>It also clarified something about my work, and about healing itself. The goal of healing isn't simply to feel safer in an increasingly controlled world. It is to develop the embodied self-trust to participate more fully in a diverse, unpredictable, and profoundly interconnected one.</p>
             <h2 className="display mt-12 text-3xl text-forest">Diversity breeds vitality, at every scale</h2>
-            <p>There is a phrase I love, and I believe it comes from Peter Levine, the founder of Somatic Experiencing: diversity breeds vitality.</p>
+            <p>There is a phrase I associate with Peter Levine, the founder of Somatic Experiencing: diversity breeds vitality.</p>
             <p>We see this truth throughout the natural world. Healthy ecosystems are sustained by intricate relationships among diverse organisms, each contributing something unique to the larger web of life. A forest or a reef has no single manager, yet it keeps finding its way back to balance through countless relationships and feedback loops. The more varied the life within it, the more ways it has to absorb a shock and recover. Health is not the absence of difference. It is the result of a thriving, diverse ecosystem.</p>
             <p>Think of an estuary, the place where a river meets the ocean. Twice a day the tide pushes salt water up into the river mouth. The river stays itself, and yet it opens to something larger and different, mixes with it, and is richer for it. That meeting of different waters makes estuaries some of the most life-filled places on Earth.</p>
             <p>Here in Costa Rica, I have been watching a version of this. During the dry months, many river mouths close off with sand and become still, quiet lagoons. Then the rains come, the sandbar breaks open, and the lagoon reconnects with the sea. Fresh water meets salt water again, and the whole place comes back to life.</p>
@@ -70,7 +71,7 @@ export default function DiversityBreedsVitality() {
             <p>Yet what is familiar is not necessarily what is healthy, nourishing, or even safe. We may stay in relationships that diminish us because their dynamics are recognizable. We may suppress emotions that were unwelcome in our early environments. We may resist new perspectives or opportunities because they challenge the identities we have organized our lives around.</p>
             <p>This is not a failure of courage or character. It is the body's remarkable capacity to learn from experience and organize itself around protection. But protection and vitality are not always the same thing. A life organized mainly around avoiding uncertainty may become more predictable, and also smaller.</p>
             <p>I notice sometimes how easy it is to silo myself from difference. When I'm single-minded and goal-oriented, just trying to get through my day and my routines, I narrow. I see what I need to see to get the next thing done, and skim past the people and ways of being that don't fit the plan. Narrowing is efficient, and sometimes protective. But a nervous system that lives in constant narrowing starts to experience the world as a series of obstacles, and other people as interruptions. We can begin to mistake our way of doing things for the only way, or the "right" way.</p>
-            <p>Difference is not inherently danger, and discomfort is not always a signal that something is wrong. Learning to tell genuine threat from manageable unfamiliarity is part of developing greater psychological flexibility.</p>
+            <p>Difference is not inherently danger, and <Link href="/blog/the-bumpy-road-which-road-is-yours-to-travel" className="font-medium text-forest underline decoration-gold underline-offset-4">discomfort is not always a signal that something is wrong</Link>. Learning to tell genuine threat from manageable unfamiliarity is part of developing greater <Link href="/blog/psychological-flexibility" className="font-medium text-forest underline decoration-gold underline-offset-4">psychological flexibility</Link>.</p>
             <h2 className="display mt-12 text-3xl text-forest">Three landscapes of otherness</h2>
             <p>We meet difference in many forms. Three landscapes feel especially meaningful: the otherness within us, the otherness between us, and the otherness of the unknown.</p>
             <h3 className="display mt-8 text-2xl text-forest">The other within</h3>
@@ -110,7 +111,10 @@ export default function DiversityBreedsVitality() {
             <p>If you notice that you brace against difference, or that your body holds old contractions that keep you narrow, you don't have to untangle it alone. In my coaching work, we use nervous system regulation and somatic practices to help you come back to flow, so you can meet the world, and yourself, with more openness and trust.</p>
           </div>
 
-
+          <div className="mt-12 rounded-[2rem] bg-forest p-8 text-center text-cream">
+            <p className="display text-3xl">Want to practice meeting difference in a circle of women? Join The Becoming, my online women&rsquo;s group.</p>
+            <Link className="btn btn-gold mt-6" href="/the-becoming">Join The Becoming</Link>
+          </div>
         </div>
       </article>
       <Footer />

@@ -116,7 +116,7 @@ export default function PsychologicalFlexibility() {
             <p>It’s being able to notice the fear (Awareness), make room for the fear (Openness), and choose behavior based on what matters—connection, authenticity, truth—rather than what the fear is telling you to avoid (Active Engagement).</p>
 
             <h2 className="display mt-12 text-3xl text-forest">Why Psychological Flexibility Is a Body Skill, Not a Mindset</h2>
-            <p>Here is where my 22 years of trauma-informed clinical work make me insistent: psychological flexibility cannot be thought into existence. If your nervous system reads openness as danger, and after trauma it often does, no amount of insight will hold when things get hard.</p>
+            <p>Here is where my 22 years of trauma-informed clinical experience make me insistent: psychological flexibility cannot be thought into existence. If your nervous system reads openness as danger, and after trauma it often does, no amount of insight will hold when things get hard.</p>
             <p>That is why my work is somatic. We build the felt experience of safety first, at your pace, inside a steady relationship. As the body learns that aliveness does not have to equal danger, staying present with difficulty stops being a white-knuckle performance and becomes something your system can actually do. Insight becomes lived capacity.</p>
             <p>If you’re curious about this side of the work, you can read more about <Link className={inlineLink} href="/somatic-coaching">somatic coaching</Link>.</p>
 
@@ -156,7 +156,7 @@ export default function PsychologicalFlexibility() {
             <p>And like all living systems, it strengthens through practice.</p>
             <p>So perhaps the real question is not “Do I have psychological flexibility?” but rather:</p>
             <p>“In this moment, am I willing to practice it?”</p>
-            <p>This is the permission psychological flexibility grants: you can be exactly where you are and take real steps toward the life you long for. Your symptoms do not disqualify your becoming. The wound does not have to close before the dream can open.</p>
+            <p>This is the permission psychological flexibility grants: you can be exactly where you are and take real steps toward the life you long for. What you are struggling with does not disqualify your becoming. The wound does not have to close before the dream can open.</p>
             <p>You do not have to be finished to begin. You never did.</p>
 
             <h2 className="display mt-12 text-3xl text-forest">Source</h2>
@@ -164,11 +164,13 @@ export default function PsychologicalFlexibility() {
           </div>
 
           <div className="mt-12 rounded-[2rem] bg-forest p-8 text-center text-cream">
-            <p className="display text-3xl">This is the work I do. Let&rsquo;s talk.</p>
-            <Link className="btn btn-gold mt-6" href="/connect">Schedule Your Free Consultation</Link>
+            <p className="display text-3xl">Start building flexibility in your body today with my free Forest Body Activation audio.</p>
+            <Link className="btn btn-gold mt-6" href="/#forest-body">Get the free audio</Link>
           </div>
 
-          <p className="mt-10 text-sm leading-7 text-mid">Related reading: <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/blog/post-traumatic-growth">Post-Traumatic Growth: The Alchemy of Wound and Wildness</Link> · <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/philosophy">The Philosophy Behind the Work</Link></p>
+          <p className="mt-10 text-sm leading-7 text-mid">Read next: <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/blog/diversity-breeds-vitality">Diversity Breeds Vitality</Link></p>
+
+          <p className="mt-4 text-sm leading-7 text-mid">Related reading: <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/blog/post-traumatic-growth">Post-Traumatic Growth: The Alchemy of Wound and Wildness</Link> · <Link className="font-medium text-forest underline decoration-gold underline-offset-4" href="/philosophy">The Philosophy Behind the Work</Link></p>
         </div>
       </article>
       <Footer />
