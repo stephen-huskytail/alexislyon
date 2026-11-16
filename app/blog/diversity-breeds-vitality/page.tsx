@@ -42,7 +42,6 @@ export default function DiversityBreedsVitality() {
         <div className="container max-w-3xl">
           <h1 className="display text-4xl text-forest sm:text-5xl">Diversity Breeds Vitality: Nervous System Capacity and the Courage to Welcome Otherness</h1>
           <p className="mt-6 text-xs uppercase tracking-[.16em] text-mid">Nov 8, 2026 · @Alexis Lyon</p>
-          <p className="body-large mt-6 text-dark">What feels familiar isn't always what's safe</p>
 
           <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft">
             <Image src={post.featuredImage} alt={post.featuredImageAlt} fill priority className="object-cover" sizes="(max-width: 815px) calc(100vw - 3rem), 768px" />
@@ -65,7 +64,7 @@ export default function DiversityBreedsVitality() {
             <p>Or think of cross-pollination. As bees, butterflies, birds and other pollinators move between flowers, they carry pollen that helps create genetically diverse seeds. New combinations become possible. Life does not flourish through isolation alone. It flourishes through relationship, exchange, and the creative possibilities that arise when differences meet.</p>
             <p>The same seems true at every scale. Within our bodies, research increasingly links a diverse gut microbiome with better health. Within our psyches, wholeness comes from welcoming the many parts of us. And in families, communities, cultures and countries, there seems to be a natural pull to widen again, back toward balance, when too much sameness has narrowed things.</p>
             <p>If you have kids, you may know this story from Frozen II. Years before the film begins, Anna and Elsa's grandfather built a dam in the forest of the Northuldra people. He called it a gift, but it was built out of fear and the wish to control a people who were different. When Anna finally sees that the dam has to come down, the river runs free, the mist lifts, and the people, the land and its spirits come back into balance.</p>
-            <h2 className="display mt-12 text-3xl text-forest">The familiar is not always the safe</h2>
+            <h2 className="display mt-12 text-3xl text-forest">What feels familiar isn't always what's safe</h2>
             <p>Our nervous system is always asking one quiet question beneath our awareness: am I safe here? Stephen Porges calls this neuroception, the body's way of scanning for cues of safety and danger before the thinking mind catches up. Drawing on past experience, it anticipates what might be threatening and what might be safe.</p>
             <p>Familiar faces, rhythms and ways of doing things tend to read as safe, even when they're not. The unfamiliar can read as uncertain, and uncertainty can read as threat, though not always. Sometimes the unfamiliar sparks something in us instead: curiosity, recognition, wonder.</p>
             <p>Yet what is familiar is not necessarily what is healthy, nourishing, or even safe. We may stay in relationships that diminish us because their dynamics are recognizable. We may suppress emotions that were unwelcome in our early environments. We may resist new perspectives or opportunities because they challenge the identities we have organized our lives around.</p>
