@@ -32,8 +32,8 @@ export const posts: PostMeta[] = [
   {
     slug: 'diversity-breeds-vitality',
     title: "Diversity Breeds Vitality: Nervous System Capacity and the Courage to Welcome Otherness",
-    description: "On nervous system regulation, self-trust, and the life-giving possibilities of difference",
-    metaDescription: "On nervous system regulation, self-trust, and the life-giving possibilities of difference. Diversity breeds vitality, at every scale.",
+    description: "What feels familiar isn't always what's safe",
+    metaDescription: "What feels familiar isn't always what's safe. Diversity breeds vitality, at every scale.",
     featuredImage: '/images/blog-diversity-breeds-vitality-20261109.webp',
     featuredImageAlt: 'A tropical coastline with a volcano, mangroves, birds, a monkey and flowers, with fish, a sea turtle, a ray and coral beneath the water.',
     datePublished: '2026-11-08',

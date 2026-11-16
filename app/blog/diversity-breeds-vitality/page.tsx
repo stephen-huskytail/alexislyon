@@ -42,7 +42,7 @@ export default function DiversityBreedsVitality() {
         <div className="container max-w-3xl">
           <h1 className="display text-4xl text-forest sm:text-5xl">Diversity Breeds Vitality: Nervous System Capacity and the Courage to Welcome Otherness</h1>
           <p className="mt-6 text-xs uppercase tracking-[.16em] text-mid">Nov 8, 2026 · @Alexis Lyon</p>
-          <p className="body-large mt-6 text-dark">On nervous system regulation, self-trust, and the life-giving possibilities of difference</p>
+          <p className="body-large mt-6 text-dark">What feels familiar isn't always what's safe</p>
 
           <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-soft">
             <Image src={post.featuredImage} alt={post.featuredImageAlt} fill priority className="object-cover" sizes="(max-width: 815px) calc(100vw - 3rem), 768px" />
@@ -106,7 +106,7 @@ export default function DiversityBreedsVitality() {
             <p>But tolerance need not be the destination. As safety, discernment and flexibility grow, we may find something beyond endurance: curiosity, wonder, connection, creativity. The possibility of being enriched by what we meet. Like cross-pollination, the point of an encounter is not only to survive contact with something different, but that something generative might emerge through the exchange.</p>
             <p>Not every encounter will be nourishing, and not every difference needs to be embraced. Growth never requires us to tolerate mistreatment, abandon our boundaries, or stay in unsafe situations. Our capacity to say no is as essential to authentic openness as our capacity to say yes. But when we meet difference from grounded choice rather than automatic defense, new possibilities open.</p>
             <p>Like the ecosystems we belong to, we are shaped through relationship, adaptation and exchange. We are not static beings meant to stay unchanged by our encounters. We are participants in an ongoing ecology of becoming, and health, in a body, a family, a community or a country, is what a thriving, diverse ecosystem produces.</p>
-            <p>This is what I mean by cross-cultural integration. Not staying wide open all the time, any more than a river mouth stays open all year, but letting our encounters, with a person, a place, a season, widen our repertoire and our aperture over time, in a rhythm that honors both opening and rest.</p>
+            <p>This is what I mean by cross-cultural integration. Not staying wide open all the time, any more than a river mouth stays open all year, but letting our encounters—with a person, a place, a season—widen our repertoire and our aperture over time, in a rhythm that honors both opening and rest.</p>
             <p>So this is what I hope for, for you and for me: not a smaller, safer life, eternally sealed off like a lagoon in the dry season, but the embodied self-trust to open to the tide when the season and cycle are right. The goal is not merely to feel safe enough to survive life. It is to become safe enough within ourselves to live it more fully.</p>
             <p>If you notice that you brace against difference, or that your body holds old contractions that keep you narrow, you don't have to untangle it alone. In my coaching work, we use nervous system regulation and somatic practices to help you come back to flow, so you can meet the world, and yourself, with more openness and trust.</p>
           </div>
